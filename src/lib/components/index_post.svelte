@@ -24,14 +24,14 @@
     itemtype="https://schema.org/BlogPosting"
     itemprop="blogPost"
     class="card bg-base-100 hover:z-30 hover:shadow-lg md:shadow-xl md:hover:shadow-2xl transition-shadow rounded-none md:rounded-box {post.layout ===
-      'article' && post.cover
+      'article' && post.thumbnail
       ? 'image-full group before:!rounded-none'
       : ''}">
-    {#if post.layout === 'article' && post.cover}
+    {#if post.layout === 'article' && post.thumbnail}
       <Cover
         figureClass="!block"
         imgClass="object-center h-full w-full absolute group-hover:scale-110 transition-transform duration-500 ease-in-out"
-        cover={post.cover}
+        cover={post.thumbnail}
         {loading}
         {decoding} />
     {/if}
@@ -46,11 +46,11 @@
       {#if post.layout === 'article'}
         <h1
           itemprop="name headline"
-          class="card-title text-3xl transition-all ease-in-out underline decoration-4 decoration-transparent hover:decoration-primary">
+          class="card-title text-2xl transition-all ease-in-out underline decoration-4 decoration-transparent hover:decoration-primary">
           <a itemprop="url" class="u-url" href={post.path}>{post.title ?? post.path.slice(1)}</a>
         </h1>
-        {#if post.descr}
-          <p itemprop="description" class="mb-auto">{post.descr}</p>
+        {#if post.summary}
+          <p itemprop="description" class="mb-auto">{post.summary}</p>
         {/if}
       {/if}
       {@html post.html}

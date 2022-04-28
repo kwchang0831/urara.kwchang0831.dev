@@ -38,7 +38,7 @@
     {/if}
   </div>
   <div slot="middle-bottom">
-    <h1 itemprop="name headline" class="card-title text-3xl p-name">{title ?? path.slice(1)}</h1>
+    <h1 itemprop="name headline" class="card-title text-2xl p-name">{title ?? path.slice(1)}</h1>
     <div class="divider my-4" />
   </div>
   <main slot="content" itemprop="articleBody" class="urara-prose prose e-content">

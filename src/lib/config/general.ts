@@ -163,16 +163,18 @@ export const date: DateConfig = {
       year: 'numeric',
       weekday: 'short',
       month: 'short',
-      day: 'numeric'
+      day: 'numeric',
+      timeZone: 'CST'
     }
   },
   toUpdatedString: {
     locales: 'en-US',
     options: {
       year: 'numeric',
-      weekday: 'long',
+      weekday: 'short',
       month: 'short',
-      day: 'numeric'
+      day: 'numeric',
+      timeZone: 'CST'
     }
   }
 }
