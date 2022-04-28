@@ -19,9 +19,9 @@ export const icon: IconConfig = {
     purpose: 'any'
   },
   any512: {
-    src: site.protocol + site.domain + '/assets/any@512.avif',
+    src: site.protocol + site.domain + '/assets/any@512.png',
     sizes: '512x512',
-    type: 'image/avif',
+    type: 'image/png',
     purpose: 'any'
   },
   maskable192: {
@@ -31,9 +31,9 @@ export const icon: IconConfig = {
     purpose: 'maskable'
   },
   maskable512: {
-    src: site.protocol + site.domain + '/assets/maskable@512.avif',
+    src: site.protocol + site.domain + '/assets/maskable@512.png',
     sizes: '512x512',
-    type: 'image/avif',
+    type: 'image/png',
     purpose: 'maskable'
   },
 }

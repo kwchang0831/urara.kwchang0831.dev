@@ -15,7 +15,7 @@ declare namespace Urara {
       layout: 'article'
       descr?: string
       summary?: string
-      thumbnail?: string
+      banner?: string
       cover?: string
       toc?: false | Article.Toc[]
     }

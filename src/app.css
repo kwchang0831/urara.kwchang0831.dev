@@ -13,7 +13,7 @@ html {
 }
 
 ::selection {
-  @apply bg-primary/20;
+  @apply bg-primary/50;
 }
 
 /* .urara-prose */
@@ -97,20 +97,11 @@ footer a {
 /* .urara-prose pre */
 
 .urara-prose pre {
-  @apply -mx-8 rounded-none pb-0
+  @apply -mx-8 rounded-none pb-0;
 }
 
 .urara-prose pre > div.code-container {
-  @apply pb-5 overflow-x-auto
-}
-
-@media (min-width: 768px) {
-  .urara-prose pre {
-    @apply mx-0 rounded-box transition-all duration-300
-  }
-  .urara-prose pre:hover {
-    @apply -mx-8 rounded-none;
-  }
+  @apply pb-5 overflow-x-auto;
 }
 
 /* shiki */
@@ -156,7 +147,7 @@ pre.shiki:hover div.dim {
 }
 
 pre.shiki div.highlight::before {
-  @apply bg-warning/20 absolute content-[''] w-full h-6
+  @apply bg-warning/20 absolute content-[''] w-full h-6;
 }
 
 pre.twoslash data-lsp {

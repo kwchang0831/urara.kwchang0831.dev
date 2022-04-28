@@ -2,15 +2,14 @@
 title: about
 descr: 關於 kwchang0831 的頁面
 created: 2022-04-27
+published: 2022-04-27
+updated: 2022-05-01
 flags:
   - hidden
 ---
 
 <script lang="ts">
   import Profile from '$lib/components/extra/profile.svelte'
-  import Lightbox from '$lib/components/extra/lightbox.svelte'
-  import Magnifier from '$lib/components/extra/magnifier.svelte'
-  import YouTube from '$lib/components/extra/youtube.svelte'
 </script>
 
 <Profile subname="成功他媽．阿瑋" bio="{`🙈🙉🙊`}">
@@ -45,4 +44,3 @@ Having fun is all it matters. YOLO!
 
 Never seeking success.  
 That’s all a loser hope for; A successful loser.
-

@@ -12,8 +12,8 @@
     itemscope
     itemtype="https://schema.org/BlogPosting"
     itemprop="blogPost"
-    class="card image-full before:!bg-transparent bg-base-100 hover:z-30 hover:shadow-lg md:shadow-xl md:hover:shadow-2xl transition-shadow rounded-none md:rounded-box">
-    <Cover figureClass="" imgClass="object-cover object-center h-full w-full" cover={post.cover} {loading} {decoding} />
+    class="h-entry card image-full before:!bg-transparent bg-base-100 rounded-none md:rounded-box">
+    <Cover figureClass="" imgClass="u-photo object-cover object-center h-full w-full" cover={post.banner} {loading} {decoding} />
     <div class="card-body mt-auto">
       <Status {post} index={true} photo={true} />
     </div>
@@ -23,34 +23,33 @@
     itemscope
     itemtype="https://schema.org/BlogPosting"
     itemprop="blogPost"
-    class="card bg-base-100 hover:z-30 hover:shadow-lg md:shadow-xl md:hover:shadow-2xl transition-shadow rounded-none md:rounded-box {post.layout ===
-      'article' && post.thumbnail
+    class="h-entry card bg-base-100 rounded-none md:rounded-box {post.layout === 'article' && post.banner
       ? 'image-full group before:!rounded-none'
       : ''}">
-    {#if post.layout === 'article' && post.thumbnail}
+    {#if post.layout === 'article' && post.banner}
       <Cover
         figureClass="!block"
-        imgClass="object-center h-full w-full absolute group-hover:scale-110 transition-transform duration-500 ease-in-out"
-        cover={post.thumbnail}
+        imgClass="u-photo object-center h-full w-full absolute group-hover:scale-110 transition-transform duration-500 ease-in-out"
+        cover={post.banner}
         {loading}
         {decoding} />
     {/if}
     <div
-      class="card-body {post.layout === 'article' && post.cover
+      class="card-body {post.layout === 'article' && post.banner
         ? 'md:col-start-1 md:row-start-1 md:text-neutral-content md:z-20'
         : ''}">
       {#if post.layout === 'reply'}
         <Reply replyTo={post.replyTo} class="-mt-4 -mx-4 mb-4" />
       {/if}
-      <Status {post} index={true} cover={post.layout === 'article' && post.cover ? true : false} />
+      <Status {post} index={true} cover={post.layout === 'article' && post.banner ? true : false} />
       {#if post.layout === 'article'}
         <h1
           itemprop="name headline"
-          class="card-title text-2xl transition-all ease-in-out underline decoration-4 decoration-transparent hover:decoration-primary">
-          <a itemprop="url" class="u-url" href={post.path}>{post.title ?? post.path.slice(1)}</a>
+          class="card-title text-2xl mr-auto bg-[length:100%_0%] bg-[position:0_88%] underline decoration-4 decoration-transparent group-hover:decoration-primary hover:bg-[length:100%_100%] hover:text-primary-content bg-gradient-to-t from-primary to-primary bg-no-repeat transition-all ease-in-out duration-500">
+          <a itemprop="url" class="u-url p-name" href={post.path}>{post.title ?? post.path.slice(1)}</a>
         </h1>
         {#if post.summary}
-          <p itemprop="description" class="mb-auto">{post.summary}</p>
+          <p itemprop="description" class="p-summary mb-auto">{post.summary}</p>
         {/if}
       {/if}
       {@html post.html}

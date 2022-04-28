@@ -11,3 +11,6 @@ workers-site/
 .netlify/
 .env.local
 .env.**.local
+.vscode/
+.vercel
+.netlify

@@ -22,7 +22,7 @@
     />
     <div class="flex-none avatar w-32 h-32 ml-auto my-auto justify-end">
       <img
-        class="hover:rotate-[360deg] transition-transform duration-1000 ease-in-out rounded-full shadow-xl hover:shadow-2xl transition-shadow w-32 h-32"
+        class="rounded-full shadow-xl w-32 h-32 hover:rotate-[360deg] transition-transform duration-1000 ease-in-out"
         src={site.author.photo}
         alt={site.author.name}
       />
@@ -44,10 +44,11 @@
         target="_blank"
         rel="noopener noreferrer"
         data-tip="Mail"
+        aria-label="Mail"
         href="mailto:contact@kwchang0831.dev"
       >
         <Mailto
-          class="fill-current hover:text-blue-500 inline-block w-8 h-8 mr-1"
+          class="fill-current hover:text-lime-500 inline-block w-8 h-8 mr-1"
         />
       </a>
       <a
@@ -55,6 +56,7 @@
         target="_blank"
         rel="noopener noreferrer"
         data-tip="Discord"
+        aria-label="Discord"
         href="https://discord.com/users/{site.author.discord}"
       >
         <Discord
@@ -66,6 +68,7 @@
         target="_blank"
         rel="noopener noreferrer"
         data-tip="Github"
+        aria-label="Github"
         href="https://github.com/{site.author.github}"
       >
         <Github
