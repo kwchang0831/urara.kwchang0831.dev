@@ -6,3 +6,9 @@
 
 ## Powered by
 - urara: [https://github.com/importantimport/urara](https://github.com/importantimport/urara)
+
+## Package Used
+- Svelte-lightbox: [https://github.com/Hejtmus/svelte-lightbox](https://github.com/Hejtmus/svelte-lightbox)
+- svelte-magnifier: [https://github.com/ambarvm/svelte-magnifier]([svelte-magnifier](https://github.com/ambarvm/svelte-magnifier))
+- avif-cli: [https://github.com/lovell/avif-cli](https://github.com/lovell/avif-cli)
+- icons: [https://icones.js.org/](https://icones.js.org/)
