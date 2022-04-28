@@ -44,6 +44,7 @@
         target="_blank"
         rel="noopener noreferrer"
         data-tip="Mail"
+        aria-label="Mail"
         href="mailto:contact@kwchang0831.dev"
       >
         <Mailto
@@ -55,6 +56,7 @@
         target="_blank"
         rel="noopener noreferrer"
         data-tip="Discord"
+        aria-label="Discord"
         href="https://discord.com/users/{site.author.discord}"
       >
         <Discord
@@ -66,6 +68,7 @@
         target="_blank"
         rel="noopener noreferrer"
         data-tip="Github"
+        aria-label="Github"
         href="https://github.com/{site.author.github}"
       >
         <Github

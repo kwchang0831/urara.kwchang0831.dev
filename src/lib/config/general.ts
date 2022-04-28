@@ -2,8 +2,8 @@ import type { ThemeConfig, HeadConfig, HeaderConfig, FooterConfig, DateConfig, F
 
 export const theme: ThemeConfig = [
   {
-    name: 'business',
-    text: '🗄️ Business'
+    name: 'default',
+    text: '❤️ default'
   },
   {
     name: 'light',
@@ -22,36 +22,12 @@ export const theme: ThemeConfig = [
     text: '🐝 Bumblebee'
   },
   {
-    name: 'emerald',
-    text: '✳️ Emerald'
-  },
-  {
-    name: 'corporate',
-    text: '🏢 Corporate'
-  },
-  {
-    name: 'valentine',
-    text: '🌸 Valentine'
-  },
-  {
     name: 'synthwave',
     text: '🌃 Synthwave'
   },
   {
-    name: 'retro',
-    text: '🌇 Retro'
-  },
-  {
-    name: 'cyberpunk',
-    text: '🌐 Cyberpunk'
-  },
-  {
     name: 'halloween',
     text: '🎃 Halloween'
-  },
-  {
-    name: 'garden',
-    text: '🏡 Garden'
   },
   {
     name: 'forest',
@@ -62,16 +38,8 @@ export const theme: ThemeConfig = [
     text: '💦 Aqua'
   },
   {
-    name: 'lofi',
-    text: '🎶 Lo-Fi'
-  },
-  {
     name: 'pastel',
     text: '🌈 Pastel'
-  },
-  {
-    name: 'fantasy',
-    text: '🐣 Fantasy'
   },
   {
     name: 'wirefream',
@@ -82,6 +50,10 @@ export const theme: ThemeConfig = [
     text: '🖤 Black'
   },
   {
+    name: 'business',
+    text: '🗄️ Business'
+  },
+  {
     name: 'luxury',
     text: '💰 Luxury'
   },
@@ -90,32 +62,12 @@ export const theme: ThemeConfig = [
     text: '🧛 Dracula'
   },
   {
-    name: 'cmyk',
-    text: '🖨️ CMYK'
-  },
-  {
-    name: 'autumn',
-    text: '🍂 Autumn'
-  },
-  {
-    name: 'acid',
-    text: '🌧️ Acid'
-  },
-  {
-    name: 'lemonade',
-    text: '🍋 Lemonade'
-  },
-  {
     name: 'night',
     text: '🌃 Night'
   },
   {
     name: 'coffee',
     text: '☕ Coffee'
-  },
-  {
-    name: 'winter',
-    text: '❄️ Winter'
   },
 ]
 
@@ -136,7 +88,7 @@ export const header: HeaderConfig = {
   },
   nav: [
     {
-      text: '關於',
+      text: '關於我',
       link: '/about',
       datatip: 'about me'
     },
@@ -164,7 +116,7 @@ export const date: DateConfig = {
       weekday: 'short',
       month: 'short',
       day: 'numeric',
-      timeZone: 'CST'
+      timeZone: 'Asia/Taipei'
     }
   },
   toUpdatedString: {
@@ -174,7 +126,7 @@ export const date: DateConfig = {
       weekday: 'short',
       month: 'short',
       day: 'numeric',
-      timeZone: 'CST'
+      timeZone: 'Asia/Taipei'
     }
   }
 }

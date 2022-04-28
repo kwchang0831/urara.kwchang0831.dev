@@ -13,7 +13,7 @@
     itemtype="https://schema.org/BlogPosting"
     itemprop="blogPost"
     class="card image-full before:!bg-transparent bg-base-100 hover:z-30 hover:shadow-lg md:shadow-xl md:hover:shadow-2xl transition-shadow rounded-none md:rounded-box">
-    <Cover figureClass="" imgClass="object-cover object-center h-full w-full" cover={post.cover} {loading} {decoding} />
+    <Cover figureClass="" imgClass="object-cover object-center h-full w-full" cover={post.banner} {loading} {decoding} />
     <div class="card-body mt-auto">
       <Status {post} index={true} photo={true} />
     </div>
@@ -24,25 +24,25 @@
     itemtype="https://schema.org/BlogPosting"
     itemprop="blogPost"
     class="card bg-base-100 hover:z-30 hover:shadow-lg md:shadow-xl md:hover:shadow-2xl transition-shadow rounded-none md:rounded-box {post.layout ===
-      'article' && post.thumbnail
+      'article' && post.banner
       ? 'image-full group before:!rounded-none'
       : ''}">
-    {#if post.layout === 'article' && post.thumbnail}
+    {#if post.layout === 'article' && post.banner}
       <Cover
         figureClass="!block"
         imgClass="object-center h-full w-full absolute group-hover:scale-110 transition-transform duration-500 ease-in-out"
-        cover={post.thumbnail}
+        cover={post.banner}
         {loading}
         {decoding} />
     {/if}
     <div
-      class="card-body {post.layout === 'article' && post.cover
+      class="card-body {post.layout === 'article' && post.banner
         ? 'md:col-start-1 md:row-start-1 md:text-neutral-content md:z-20'
         : ''}">
       {#if post.layout === 'reply'}
         <Reply replyTo={post.replyTo} class="-mt-4 -mx-4 mb-4" />
       {/if}
-      <Status {post} index={true} cover={post.layout === 'article' && post.cover ? true : false} />
+      <Status {post} index={true} cover={post.layout === 'article' && post.banner ? true : false} />
       {#if post.layout === 'article'}
         <h1
           itemprop="name headline"
