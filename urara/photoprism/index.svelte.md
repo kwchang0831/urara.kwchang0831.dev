@@ -13,7 +13,6 @@ tags:
 
 <script lang="ts">
   import Lightbox from '$lib/components/extra/lightbox.svelte'
-  import Alertbox from '$lib/components/extra/alertbox.svelte'
 </script>
 
 ## 開頭
