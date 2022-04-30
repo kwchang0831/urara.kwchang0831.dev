@@ -5,7 +5,6 @@ summary: 安裝架設開源照片管理伺服器，類似 Google 相簿，包含
 created: 2021-12-07
 updated: 2022-04-29
 cover: /photoprism/cover.avif
-banner: /photoprism/banner.webp
 tags:
   - 中文
   - Ubuntu 
