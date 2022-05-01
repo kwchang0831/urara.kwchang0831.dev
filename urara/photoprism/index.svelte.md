@@ -26,7 +26,6 @@ tags:
 
 根據[擴展性](https://docs.photoprism.org/getting-started/advanced/scalability/)，目前開發團隊主要測試環境是偏向小型伺服器主機與家用用途，檔案數量不超過 50 萬。若是有其他需求請查看[官網](https://docs.photoprism.org/)或聯繫該開發團隊。
 
-
 ## DEMO 試看看
 
 進入官方的 DEMO 網站測試看看： [https://demo.photoprism.org/browse](https://demo.photoprism.org/browse)
@@ -83,7 +82,7 @@ tags:
 
 若只是要用單主機安裝 PhotoPrism，可以直接跳過此步驟。
 
-打開 TrueNAS 的 WebAdmin (http://192.168.0.2)。進入 Virtual Machines 選單並 Add 新增新的 Instance 。
+打開 TrueNAS 的 WebAdmin (`http://192.168.0.2`)。進入 Virtual Machines 選單並 Add 新增新的 Instance 。
 
 新增一個 有一顆 4 核心雙線程 CPU 與 512GB 硬碟空間 的 VM。
 
@@ -100,7 +99,7 @@ tags:
 
 ## 安裝 Ubuntu Server
 
-下載 Ubuntu Server 20.04.3 LTS：https://ubuntu.com/download/server
+下載 Ubuntu Server 20.04.3 LTS：[https://ubuntu.com/download/server](https://ubuntu.com/download/server)
 
 進入 Ubuntu 安裝畫面。
 
@@ -430,7 +429,7 @@ docker -v
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
-這裡可以查看 Docker Compose 最新版本: https://github.com/docker/compose/releases/
+這裡可以查看 Docker Compose 最新版本: [https://github.com/docker/compose/releases/](https://github.com/docker/compose/releases/)
 
 給予執行權限
 
@@ -579,7 +578,7 @@ touch .ppignore
 
 每個子資料夾也都可以有自訂的 `.ppignore` 檔案。  
 
-詳細請參考: https://docs.photoprism.org/user-guide/library/originals/#ignoring-files-and-folders
+詳細請參考: [https://docs.photoprism.org/user-guide/library/originals/#ignoring-files-and-folders](https://docs.photoprism.org/user-guide/library/originals/#ignoring-files-and-folders)
 
 ### 掃描檔案
 
@@ -623,15 +622,15 @@ sudo docker-compose exec photoprism photoprism index -f
 sudo docker-compose exec photoprism photoprism convert
 ```
 
-更多指令請參考: https://docs.photoprism.org/getting-started/docker-compose/#examples
+更多指令請參考: [https://docs.photoprism.org/getting-started/docker-compose/#examples](https://docs.photoprism.org/getting-started/docker-compose/#examples)
 
 ## Google相簿下載與遷移
 
 透過 Google 匯出，我們可以把儲存在 Google 相簿中的相片與影片全部都下載下來，放入我們的 PhotoPrism 中。  
 
-官方教學請查看: https://support.google.com/accounts/answer/9666875?hl=zh-Hant 。
+官方教學請查看: [https://support.google.com/accounts/answer/9666875?hl=zh-Hant](https://support.google.com/accounts/answer/9666875?hl=zh-Hant) 。
 
-或是到 https://myaccount.google.com/dashboard 點選`下載您的資料` 。
+或是到 [https://myaccount.google.com/dashboard](https://myaccount.google.com/dashboard[) 點選`下載您的資料` 。
 
 <Lightbox src="photoprism/fig36.avif" alt="fig36"/>
 
@@ -652,8 +651,8 @@ sudo docker-compose exec photoprism photoprism convert
 
 ## 參考資料
 
-- https://docs.docker.com/engine/install-guide/ubuntu/
-- https://docs.photoprism.org/
-- https://docs.photoprism.org/getting-started/docker-compose/
+- [https://docs.docker.com/engine/install-guide/ubuntu/](https://docs.docker.com/engine/install-guide/ubuntu/)
+- [https://docs.photoprism.org/](https://docs.photoprism.org/)
+- [https://docs.photoprism.org/getting-started/docker-compose/](https://docs.photoprism.org/getting-started/docker-compose/)
 
 ## 完結
