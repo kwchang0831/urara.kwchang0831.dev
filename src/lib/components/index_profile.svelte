@@ -22,7 +22,7 @@
     />
     <div class="flex-none avatar w-32 h-32 ml-auto my-auto justify-end">
       <img
-        class="rotate360-img rounded-full shadow-xl hover:shadow-2xl transition-shadow w-32 h-32"
+        class="rounded-full shadow-xl w-32 h-32 hover:rotate-[360deg] transition-transform duration-1000 ease-in-out"
         src={site.author.photo}
         alt={site.author.name}
       />
@@ -48,7 +48,7 @@
         href="mailto:contact@kwchang0831.dev"
       >
         <Mailto
-          class="fill-current hover:text-blue-500 inline-block w-8 h-8 mr-1"
+          class="fill-current hover:text-lime-500 inline-block w-8 h-8 mr-1"
         />
       </a>
       <a
@@ -90,22 +90,6 @@
 </div>
 
 <style>
-  .rotate360-img {
-    -moz-transition: -moz-transform 0.7s ease-in-out;
-    -webkit-transition: -webkit-transform 0.7s ease-in-out;
-    -o-transition: -o-transform 0.7s ease-in-out;
-    -ms-transition: -ms-transform 0.7s ease-in-out;
-    transition: transform 0.7s ease-in-out;
-  }
-
-  .rotate360-img:hover{
-    -moz-transform: rotate(360deg);
-    -webkit-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-
   .heart {
     -webkit-animation: heartbeat 2s linear 1s infinite;
     -o-animation: heartbeat 2s linear 1s infinite;

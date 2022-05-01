@@ -2,7 +2,6 @@
   import { date } from '$lib/config/general'
   import { site } from '$lib/config/site'
   import CreatedAt from '~icons/mdi/pencil-outline'
-  import UpdatedAt from '~icons/mdi/pencil-plus-outline'
   export let post: Urara.Post
   export let index: boolean = false
   export let photo: boolean = false

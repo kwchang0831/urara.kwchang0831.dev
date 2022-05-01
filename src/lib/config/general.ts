@@ -2,7 +2,7 @@ import type { ThemeConfig, HeadConfig, HeaderConfig, FooterConfig, DateConfig, F
 
 export const theme: ThemeConfig = [
   {
-    name: 'default',
+    name: 'business',
     text: '❤️ default'
   },
   {
@@ -49,10 +49,10 @@ export const theme: ThemeConfig = [
     name: 'black',
     text: '🖤 Black'
   },
-  {
-    name: 'business',
-    text: '🗄️ Business'
-  },
+  // {
+  //   name: 'business',
+  //   text: '🗄️ Business'
+  // },
   {
     name: 'luxury',
     text: '💰 Luxury'
