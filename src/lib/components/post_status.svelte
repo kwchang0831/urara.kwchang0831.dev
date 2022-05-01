@@ -1,6 +1,8 @@
 <script lang="ts">
   import { date } from '$lib/config/general'
   import { site } from '$lib/config/site'
+  import CreatedAt from '~icons/mdi/pencil-outline'
+  import UpdatedAt from '~icons/mdi/pencil-plus-outline'
   export let post: Urara.Post
   export let index: boolean = false
   export let photo: boolean = false
@@ -33,7 +35,7 @@
       {#if post.layout === 'article' || 'note'}
         <span>{`${post.layout[0].toUpperCase() + post.layout.substring(1)} by`}</span>
       {/if}
-      <a rel="author" class="hover:text-secondary p-name u-url" href={site.protocol + site.domain}>{site.author.name}</a>
+      <a rel="author" class="hover:text-secondary p-name u-url" href={site.protocol + site.domain}/about>{site.author.name}</a>
     </div>
   {/if}
   <a
@@ -45,7 +47,7 @@
       ? 'text-neutral-content/50'
       : ''} badge badge-lg badge-ghost text-left bg-transparent border-none font-bold tooltip tooltip-bottom u-url u-uid"
     data-tip="Updated: {stringUpdated}">
-    {stringPublished}
+    <CreatedAt class="inline-block w-5 h-5 align-top mr-1" />{stringPublished}
     <time class="hidden dt-published" datetime={jsonPublished} itemprop="datePublished">
       {stringPublished}
     </time>

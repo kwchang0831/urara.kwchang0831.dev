@@ -3,6 +3,7 @@ title: 美化 macOS iTerm2 - Oh My Zsh + 一些好用的插件
 descr: 本篇文章紀錄如何美化 macOS iTerm2 ，讓平常工作起來更高效。 這邊會安裝以下套件 Homebrew, iTerm2, Zsh, Oh My Zsh, Powerlevel10k 主題, zsh-autosuggestions, zsh-syntax-highlighting, 還有 Zsh-z。
 summary: iTerm2, Oh My Zsh, Powerlevel 10k 與 一些好用插件的安裝流程
 created: 2021-10-12
+published: 2021-10-12
 updated: 2022-04-29
 cover: /dev-env/macos/oh-my-zsh/cover.avif
 tags:

@@ -22,7 +22,7 @@
     />
     <div class="flex-none avatar w-32 h-32 ml-auto my-auto justify-end">
       <img
-        class="hover:rotate-[360deg] transition-transform duration-1000 ease-in-out rounded-full shadow-xl hover:shadow-2xl transition-shadow w-32 h-32"
+        class="rotate360-img rounded-full shadow-xl hover:shadow-2xl transition-shadow w-32 h-32"
         src={site.author.photo}
         alt={site.author.name}
       />
@@ -90,6 +90,22 @@
 </div>
 
 <style>
+  .rotate360-img {
+    -moz-transition: -moz-transform 0.7s ease-in-out;
+    -webkit-transition: -webkit-transform 0.7s ease-in-out;
+    -o-transition: -o-transform 0.7s ease-in-out;
+    -ms-transition: -ms-transform 0.7s ease-in-out;
+    transition: transform 0.7s ease-in-out;
+  }
+
+  .rotate360-img:hover{
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+
   .heart {
     -webkit-animation: heartbeat 2s linear 1s infinite;
     -o-animation: heartbeat 2s linear 1s infinite;
