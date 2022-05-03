@@ -14,16 +14,12 @@ tags:
   - Netlify
 ---
 
-<script lang="ts">
-  import Lightbox from '$lib/components/extra/lightbox.svelte'
-  import Alertbox from '$lib/components/extra/alertbox.svelte'
-</script>
-
 ## 開頭
 
 本網站是用 Urara 建置而成，PageSpeed 的評分如下：  
 ![fig01.svg](/svelte-urara/fig01.svg)
-<Alertbox text="Performance 通常會在 90~100之間浮動。" type="info"/>
+
+Performance 通常會在 90~100之間浮動。
 
 [Urara](https://github.com/importantimport/urara) 是使用以下技術打造而成：
 
@@ -177,7 +173,7 @@ pnpm dev
 
 打開瀏覽器輸入 `http://localhost:3000/` 就可以看到了。
 
-<Lightbox src="/svelte-urara/fig01.avif" alt="fig01"/>
+![fig01](/svelte-urara/fig01.avif)
 
 若是你是用 remote 的方式，請修改 `package.json` 的 `dev:kit` 指令：增加 ``--host`` 參數，讓內網的其他電腦可以透過 `https://{IP}:3000/` 的方式看到網頁。
 

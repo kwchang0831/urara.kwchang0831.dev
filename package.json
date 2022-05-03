@@ -79,8 +79,5 @@
     "workbox-strategies": "^6.5.3",
     "workbox-window": "^6.5.3"
   },
-  "type": "module",
-  "peerDependencies": {
-    "autoprefixer": "^10.0.2"
-  }
+  "type": "module"
 }
