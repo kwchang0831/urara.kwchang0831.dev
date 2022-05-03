@@ -5,7 +5,7 @@ summary: 使用 Urara 生成並架設網誌於免費平台 Vercel 與 Netlify
 created: 2022-05-03
 published: 2022-05-03
 updated: 2022-05-03
-cover: /urara/cover.avif
+cover: /svelte-urara/cover.avif
 tags:
   - 中文
   - Svelte
@@ -22,7 +22,7 @@ tags:
 ## 開頭
 
 本網站是用 Urara 建置而成，PageSpeed 的評分如下：  
-![fig01.svg](/urara/fig01.svg)
+![fig01.svg](/svelte-urarafig01.svg)
 <Alertbox text="Performance 通常會在 90~100之間浮動。" type="info"/>
 
 [Urara](https://github.com/importantimport/urara) 是使用以下技術打造而成：
@@ -177,7 +177,7 @@ pnpm dev
 
 打開瀏覽器輸入 `http://localhost:3000/` 就可以看到了。
 
-<Lightbox src="urara/fig01.avif" alt="fig01"/>
+<Lightbox src="/svelte-urara/fig01.avif" alt="fig01"/>
 
 若是你是用 remote 的方式，請修改 `package.json` 的 `dev:kit` 指令：增加 ``--host`` 參數，讓內網的其他電腦可以透過 `https://{IP}:3000/` 的方式看到網頁。
 
@@ -225,7 +225,7 @@ export const header: HeaderConfig = {
 
 ### 修改網站圖片
 
-`./urara/assets`
+`./svelte-uraraassets`
 
 依照喜好需求，自行替換圖片檔案。
 
@@ -340,16 +340,16 @@ git push -u origin main
 ## Vercel 建置
 
 1. 登入 [Vercel](https://vercel.com/dashboard) 後，點選新增專案 `+ New Project`。
-2. 選擇 `Import Git Repository` 從 Git Repo 匯入專案。![fig02](/urara/fig02.avif)
-3. 點選 `Deploy`。 ![fig03](/urara/fig03.avif)
-4. 建構完成之後，點選回到 Dashboard 就可以看到建置的網址。![fig04](/urara/fig04.avif)
+2. 選擇 `Import Git Repository` 從 Git Repo 匯入專案。![fig02](/svelte-urara/fig02.avif)
+3. 點選 `Deploy`。 ![fig03](/svelte-urara/fig03.avif)
+4. 建構完成之後，點選回到 Dashboard 就可以看到建置的網址。![fig04](/svelte-urara/fig04.avif)
 
 ## Netlify 建置
 
-1. 登入 Netlify 後，選擇 `Import from Git` 從 Git Repo 匯入專案。 ![fig05](/urara/fig05.avif)
+1. 登入 Netlify 後，選擇 `Import from Git` 從 Git Repo 匯入專案。 ![fig05](/svelte-urara/fig05.avif)
 2. 選擇從 Github 匯入。
-3. 不用更改任何設定，點選 `Deploy site`。 ![fig06](/urara/fig06.avif)
-4. 點選 `Open published deploy` 可以看到成果。 ![fig07](/urara/fig07.avif)
+3. 不用更改任何設定，點選 `Deploy site`。 ![fig06](/svelte-urara/fig06.avif)
+4. 點選 `Open published deploy` 可以看到成果。 ![fig07](/svelte-urara/fig07.avif)
 
 ## 測試網站
 
