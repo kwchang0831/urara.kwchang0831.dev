@@ -14,7 +14,7 @@
       "headers": [
         {
           "key": "Access-Control-Allow-Origin",
-          "value": "https://kwaa.dev"
+          "value": "https://www.kwchang0831.dev"
         },
         {
           "key": "X-Frame-Options",
