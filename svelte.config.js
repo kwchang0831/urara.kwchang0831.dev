@@ -23,6 +23,7 @@ export default /** @type {import('@sveltejs/kit').Config} */ {
     csp: { mode: 'auto' },
     prerender: { default: true },
     vite: {
+      root: 'src',
       mode: process.env.MODE || 'production',
       envPrefix: 'URARA_',
       css: { postcss },

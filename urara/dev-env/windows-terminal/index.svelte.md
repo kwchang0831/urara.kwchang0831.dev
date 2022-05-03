@@ -15,7 +15,6 @@ tags:
 
 <script lang="ts">
   import Lightbox from '$lib/components/extra/lightbox.svelte'
-  import Alertbox from '$lib/components/extra/alertbox.svelte'
 </script>
 
 ## 開頭
@@ -64,7 +63,9 @@ https://windowsterminalthemes.dev/
 <Lightbox src="windows-terminal/fig02.avif" alt="fig02"/>
 
 找到 `"schemes":` 區塊, <kbd>Ctrl + V</kbd> 貼上剛剛的設定檔到 schemes 底下。  
-<Alertbox text="記得要加上一個逗號，每個設定檔之間都要有<code>'，'</code>區隔。" type="alert" />
+
+記得要加上一個逗號，每個設定檔之間都要有 `，` 區隔。
+
 <Lightbox src="windows-terminal/fig03.avif" alt="fig03"/>
 
 之後就可以在 `設定 > 色彩配置` 裡看到你剛剛新增的主題了。

@@ -16,7 +16,6 @@ tags:
 
 <script lang="ts">
   import Lightbox from '$lib/components/extra/lightbox.svelte'
-  import Alertbox from '$lib/components/extra/alertbox.svelte'
 </script>
 
 ## 開頭
@@ -243,7 +242,7 @@ Import-Module posh-git
 $env:POSH_GIT_ENABLED = $true
 ```
 
-<Alertbox text="根據 Oh My Posh 官方手冊，預設 Posh Git 的功能是關閉的，我們需要更改環境變數才能讓它開啟。" type="alert" />
+根據 Oh My Posh 官方手冊，預設 Posh Git 的功能是關閉的，我們需要更改環境變數才能讓它開啟。
 
 ## (選用) 安裝插件 [ZLocation](https://github.com/vors/ZLocation)
 

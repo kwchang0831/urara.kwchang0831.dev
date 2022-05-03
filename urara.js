@@ -82,7 +82,6 @@ const build = async () => {
   makeDir({ dest: ['static'] })
   // cpDir('urara')
   copyDir((await scanDir('urara')).flat())
-  await new Promise(r => setTimeout(r, 5000))
 }
 
 const clean = async () => {

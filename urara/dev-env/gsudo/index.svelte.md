@@ -16,7 +16,6 @@ tags:
 
 <script lang="ts">
   import Lightbox from '$lib/components/extra/lightbox.svelte'
-  import Alertbox from '$lib/components/extra/alertbox.svelte'
 </script>
 
 ## 開頭
@@ -96,7 +95,7 @@ sudo
 sudo -n
 ```
 
-<Alertbox text="在 Windows Terminal 上，並不會開啟新的 Shell Tab。而會開啟新的 PowerShell 視窗。" type="alert" />
+在 Windows Terminal 上，並不會開啟新的 Shell Tab。而會開啟新的 PowerShell 視窗。
 
 ### 離開系統管理員權限
 
@@ -104,7 +103,7 @@ sudo -n
 exit
 ```
 
-<Alertbox text="若目前有系統管理員權限會取消管理員權限；若沒有則會關閉該 Shell Tab。" type="alert" />
+若目前有系統管理員權限會取消管理員權限；若沒有則會關閉該 Shell Tab。
 
 ### 其他指令
 
