@@ -3,7 +3,8 @@
  * Version: 39
  */
 
-import { promises as fs } from 'fs'
+import pkg from 'graceful-fs'
+const { promises: fs } = pkg
 import * as path from 'path'
 import chokidar from 'chokidar'
 import chalk from 'chalk'
