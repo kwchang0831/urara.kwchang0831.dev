@@ -22,7 +22,7 @@ tags:
 ## 開頭
 
 本網站是用 Urara 建置而成，PageSpeed 的評分如下：  
-![fig01.svg](/svelte-urarafig01.svg)
+![fig01.svg](/svelte-urara/fig01.svg)
 <Alertbox text="Performance 通常會在 90~100之間浮動。" type="info"/>
 
 [Urara](https://github.com/importantimport/urara) 是使用以下技術打造而成：
