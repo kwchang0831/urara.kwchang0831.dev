@@ -13,7 +13,7 @@ specifiers:
   '@tailwindcss/typography': ^0.5.2
   '@typescript-eslint/eslint-plugin': ^5.22.0
   '@typescript-eslint/parser': ^5.22.0
-  autoprefixer: ^10.4.7
+  autoprefixer: ^10.0.2
   chalk: ^5.0.1
   chokidar: ^3.5.3
   cssnano: ^5.1.7
@@ -41,7 +41,6 @@ specifiers:
   svelte: ^3.48.0
   svelte-check: ^2.7.0
   svelte-lightbox: ^0.6.2
-  svelte-magnifier: ^0.0.1
   svelte-preprocess: ^4.10.6
   tailwindcss: ^3.0.24
   tslib: ^2.4.0
@@ -99,7 +98,6 @@ devDependencies:
   svelte: 3.48.0
   svelte-check: 2.7.0_f2ke6qjyzu5axsjd6yk3u4tn7a
   svelte-lightbox: 0.6.2_svelte@3.48.0
-  svelte-magnifier: 0.0.1
   svelte-preprocess: 4.10.6_nq4dx2skq5drra53vttuo4lltu
   tailwindcss: 3.0.24
   tslib: 2.4.0
@@ -5767,10 +5765,6 @@ packages:
       svelte: ^3.25.0
     dependencies:
       svelte: 3.48.0
-    dev: true
-
-  /svelte-magnifier/0.0.1:
-    resolution: {integrity: sha512-8KnRlem/MSc1J4tP2R99W/AUTl76+VpIXjS3DqE4rt1KbQAIQDeamiEYdhpZ9rORiPOli7YhiZfxKfsoqIVdUg==}
     dev: true
 
   /svelte-preprocess/4.10.6_nq4dx2skq5drra53vttuo4lltu:
