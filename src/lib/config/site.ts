@@ -11,9 +11,9 @@ export const site: SiteConfig = {
     name: 'kwchang0831',
     photo: '/assets/maskable@192.avif',
     status: '❤️',
-    bio: 'Do it. Just do it.<br/>Don\'t let your dream be dream!<br/>',
+    bio: "Do it. Just do it.<br/>Don't let your dream be dream!<br/>",
     github: 'kwchang0831',
-    discord: '968756691392942090',
+    discord: '968756691392942090'
   },
   themeColor: '#3D4451'
 }

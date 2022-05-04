@@ -19,7 +19,7 @@ tags:
 
 ## 環境配置
 
-Windows 10 的版本最低至少要2004
+Windows 10 的版本最低至少要 2004
 ![fig01](ubuntu/fig01.avif)
 
 ## (推薦) 安裝 Windows Terminal
@@ -44,7 +44,7 @@ wsl --install
 
 ![fig03](ubuntu/fig03.avif)
 
-若 **虛擬機器平台** 與 **Windows 子系統 Linux 版** 功能沒有啟動，  
+若 **虛擬機器平台** 與 **Windows 子系統 Linux 版** 功能沒有啟動，
 
 以系統管理員身分打開 PowerShell 輸入：
 
@@ -62,9 +62,9 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 
 ### Error 0x80370102
 
-若是遇到錯誤訊息 `0x80370102` ，檢查一下 BIOS 裡的硬體虛擬化 (Hardware Vitrualization) 功能是否有開啟。  
+若是遇到錯誤訊息 `0x80370102` ，檢查一下 BIOS 裡的硬體虛擬化 (Hardware Vitrualization) 功能是否有開啟。
 
-硬體虛擬化的名稱可能 Intel Virtualization Technology、AMD-V、Hyper-V、VT-X、Vanderpool 或是 SVM。  
+硬體虛擬化的名稱可能 Intel Virtualization Technology、AMD-V、Hyper-V、VT-X、Vanderpool 或是 SVM。
 
 ![fig04](ubuntu/fig04.avif)
 

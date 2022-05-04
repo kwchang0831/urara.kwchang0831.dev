@@ -34,7 +34,9 @@
       {#if post.layout === 'article' || 'note'}
         <span>{`${post.layout[0].toUpperCase() + post.layout.substring(1)} by`}</span>
       {/if}
-      <a rel="author" class="hover:text-secondary p-name u-url" href={site.protocol + site.domain}/about>{site.author.name}</a>
+      <a rel="author" class="hover:text-secondary p-name u-url" href="{site.protocol + site.domain}/about">
+        {site.author.name}
+      </a>
     </div>
   {/if}
   <a

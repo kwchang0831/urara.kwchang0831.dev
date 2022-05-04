@@ -58,7 +58,7 @@ https://windowsterminalthemes.dev/
 回到 Windows Terminal ， <kbd>Ctrl +，</kbd> 打開設定，點選 `開啟 JSON 檔案` 。
 ![fig02](windows-terminal/fig02.avif)
 
-找到 `"schemes":` 區塊, <kbd>Ctrl + V</kbd> 貼上剛剛的設定檔到 schemes 底下。  
+找到 `"schemes":` 區塊, <kbd>Ctrl + V</kbd> 貼上剛剛的設定檔到 schemes 底下。
 
 記得要加上一個逗號，每個設定檔之間都要有 `，` 區隔。
 

@@ -19,7 +19,7 @@ tags:
 本網站是用 Urara 建置而成，PageSpeed 的評分如下：  
 ![fig01.svg](svelte-urara/fig01.svg)
 
-Performance 通常會在 90~100之間浮動。
+Performance 通常會在 90~100 之間浮動。
 
 [Urara](https://github.com/importantimport/urara) 是使用以下技術打造而成：
 
@@ -127,7 +127,7 @@ sudo choco install nodejs
 
 ## 安裝 [degit](https://github.com/Rich-Harris/degit)
 
-degit 可以幫我們從 Git原始碼庫 建置專案鷹架。
+degit 可以幫我們從 Git 原始碼庫 建置專案鷹架。
 
 ```shell
 npm install -g degit
@@ -175,7 +175,7 @@ pnpm dev
 
 ![fig01](svelte-urara/fig01.avif)
 
-若是你是用 remote 的方式，請修改 `package.json` 的 `dev:kit` 指令：增加 ``--host`` 參數，讓內網的其他電腦可以透過 `https://{IP}:3000/` 的方式看到網頁。
+若是你是用 remote 的方式，請修改 `package.json` 的 `dev:kit` 指令：增加 `--host` 參數，讓內網的其他電腦可以透過 `https://{IP}:3000/` 的方式看到網頁。
 
 ```js title="./package.json"
 ...
@@ -281,11 +281,13 @@ tags:
   - 第一個標籤
   - 第二個標籤
 ---
-  
+
 ## 第一段文章標題
+
 第一段 內容
-  
+
 ### 第一段第一節
+
 第一段第一節 內容
 ```
 
@@ -317,7 +319,7 @@ cover: /about/cover.png
 
 ## 上傳到 Github
 
-在 Github 新增一個 Repo，不確定如何新增的請參考[Github文件](https://docs.github.com/cn/get-started/quickstart/create-a-repo)。
+在 Github 新增一個 Repo，不確定如何新增的請參考[Github 文件](https://docs.github.com/cn/get-started/quickstart/create-a-repo)。
 
 在專案資料夾內輸入以下，上傳專案到 Github。
 

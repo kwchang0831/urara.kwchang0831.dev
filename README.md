@@ -7,7 +7,7 @@
 ## Requirements
 
 - Nodejs @latest
-  
+
 ```shell
 # Ubuntu
 sudo apt install nodejs
@@ -21,7 +21,7 @@ asdf global nodejs latest
 ```
 
 - pnpm
-  
+
 ```shell
 npm install -g pnpm@next-7
 ```
@@ -48,15 +48,17 @@ eg.
 # Change the following
 "dev:kit": "export NODE_OPTIONS=--max_old_space_size=8192 && svelte-kit dev --host",
 
-# To the following 
+# To the following
 "dev:kit": "set NODE_OPTIONS=--max_old_space_size=8192 && svelte-kit dev --host",
 ```
 
 ## Powered by
+
 - urara: [https://github.com/importantimport/urara](https://github.com/importantimport/urara)
 
 ## Package Used
+
 - Svelte-lightbox: [https://github.com/Hejtmus/svelte-lightbox](https://github.com/Hejtmus/svelte-lightbox)
-- svelte-magnifier: [https://github.com/ambarvm/svelte-magnifier]([svelte-magnifier](https://github.com/ambarvm/svelte-magnifier))
+- svelte-magnifier: [https://github.com/ambarvm/svelte-magnifier](<[svelte-magnifier](https://github.com/ambarvm/svelte-magnifier)>)
 - avif-cli: [https://github.com/lovell/avif-cli](https://github.com/lovell/avif-cli)
 - icons: [https://icones.js.org/](https://icones.js.org/)

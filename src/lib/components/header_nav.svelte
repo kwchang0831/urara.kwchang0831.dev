@@ -43,7 +43,14 @@
   {#each nav as { text, link, datatip, children }}
     {#if link && !children}
       <li>
-        <a sveltekit:prefetch class="{datatip ? 'tooltip tooltip-bottom tooltip-secondary hover:text-secondary' : ''}" class:font-bold={link === path} data-tip={datatip} href={link}>{text}</a>
+        <a
+          sveltekit:prefetch
+          class={datatip ? 'tooltip tooltip-bottom tooltip-secondary hover:text-secondary' : ''}
+          class:font-bold={link === path}
+          data-tip={datatip}
+          href={link}>
+          {text}
+        </a>
       </li>
     {:else if children}
       <li tabindex="0">

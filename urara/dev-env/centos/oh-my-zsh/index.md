@@ -28,10 +28,10 @@ tags:
 - zsh-autosuggestions
 - zsh-syntax-highlighting
 - Zsh-z
-  
+
 ## 環境配置
 
-以下使用的環境配置為 Windows 10 搭配 WSL 的 Centos 7 ， 並使用 Windows Terminal 來進行操作。直接使用 Centos 的話，安裝流程也是大致相同可供參考。  
+以下使用的環境配置為 Windows 10 搭配 WSL 的 Centos 7 ， 並使用 Windows Terminal 來進行操作。直接使用 Centos 的話，安裝流程也是大致相同可供參考。
 
 ## 安裝 Patched 字型
 

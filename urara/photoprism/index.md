@@ -8,12 +8,12 @@ updated: 2022-04-29
 cover: /photoprism/cover.avif
 tags:
   - 中文
-  - Ubuntu 
+  - Ubuntu
 ---
 
 ## 開頭
 
-本篇文章紀錄如何從頭到尾架設 PhotoPrism - 類似Google相簿的開源照片管理伺服器。
+本篇文章紀錄如何從頭到尾架設 PhotoPrism - 類似 Google 相簿的開源照片管理伺服器。
 
 主要的功能包含有機器學習的圖片自動分類功能： 可偵測顏色、物體、人臉等等資訊。 讓使用者可以更快速找到照片。支援顯示照片與影片也支援顯示相機 Exif 的資訊，也包含了用世界地圖的方式來整理照片。
 
@@ -59,9 +59,9 @@ tags:
 - Ubuntu Server 安裝 Docker、Docker Compose
 - Ubuntu Server 安裝 PhotoPrism
 
-主要的差別是把實際存放照片影片檔案的部分與 PhotoPrism 的主機分開來，但安裝流程的邏輯大致上還是差不多的。  
+主要的差別是把實際存放照片影片檔案的部分與 PhotoPrism 的主機分開來，但安裝流程的邏輯大致上還是差不多的。
 
-這樣的好處是即使 PhotoPrism 的主機掛了，我們的照片影片檔案皆不會受到影響，而且 [TrueNAS](https://www.truenas.com/) 本身使用 [ZFS 檔案系統](https://zh.wikipedia.org/zh-tw/ZFS) 有很多保護措施來防止資料損壞，且可以依照我們 RAID-Z 的配置來選擇要承受硬碟壞掉的風險。舉例來說 RAID-Z2 組合需要最少 4 顆硬碟，可以容忍同時間最多 2 顆硬碟壞掉還可以繼續運轉。  
+這樣的好處是即使 PhotoPrism 的主機掛了，我們的照片影片檔案皆不會受到影響，而且 [TrueNAS](https://www.truenas.com/) 本身使用 [ZFS 檔案系統](https://zh.wikipedia.org/zh-tw/ZFS) 有很多保護措施來防止資料損壞，且可以依照我們 RAID-Z 的配置來選擇要承受硬碟壞掉的風險。舉例來說 RAID-Z2 組合需要最少 4 顆硬碟，可以容忍同時間最多 2 顆硬碟壞掉還可以繼續運轉。
 
 本篇文章不會再多著墨於 TrueNAS 與 ZFS 上，若有需求我們可以再另外寫一篇文章介紹如何安裝 [TrueNAS](https://www.truenas.com/)。
 
@@ -571,9 +571,9 @@ cd ~/photo
 touch .ppignore
 ```
 
-這個檔案可以讓你自訂哪些檔名或資料夾不要被掃描進去 PhotoPrism 的相本裡。  
+這個檔案可以讓你自訂哪些檔名或資料夾不要被掃描進去 PhotoPrism 的相本裡。
 
-每個子資料夾也都可以有自訂的 `.ppignore` 檔案。  
+每個子資料夾也都可以有自訂的 `.ppignore` 檔案。
 
 詳細請參考: [https://docs.photoprism.org/user-guide/library/originals/#ignoring-files-and-folders](https://docs.photoprism.org/user-guide/library/originals/#ignoring-files-and-folders)
 
@@ -621,9 +621,9 @@ sudo docker-compose exec photoprism photoprism convert
 
 更多指令請參考: [https://docs.photoprism.org/getting-started/docker-compose/#examples](https://docs.photoprism.org/getting-started/docker-compose/#examples)
 
-## Google相簿下載與遷移
+## Google 相簿下載與遷移
 
-透過 Google 匯出，我們可以把儲存在 Google 相簿中的相片與影片全部都下載下來，放入我們的 PhotoPrism 中。  
+透過 Google 匯出，我們可以把儲存在 Google 相簿中的相片與影片全部都下載下來，放入我們的 PhotoPrism 中。
 
 官方教學請查看: [https://support.google.com/accounts/answer/9666875?hl=zh-Hant](https://support.google.com/accounts/answer/9666875?hl=zh-Hant) 。
 

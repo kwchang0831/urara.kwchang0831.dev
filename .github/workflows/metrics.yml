@@ -1,7 +1,7 @@
 name: Metrics
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 jobs:
   kwchang0831_dev-metrics:
@@ -28,7 +28,7 @@ jobs:
           output_action: gist
           committer_gist: ${{ secrets.METRICS_GIST }}
           token: ${{ secrets.METRICS_TOKEN }}
-          base: ""
+          base: ''
           plugin_pagespeed: yes
           plugin_pagespeed_detailed: yes
           plugin_pagespeed_token: ${{ secrets.PAGESPEED_TOKEN }}

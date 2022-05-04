@@ -9,7 +9,7 @@ cover: /dev-env/macos/oh-my-zsh/cover.avif
 tags:
   - 中文
   - 開發環境
-  - macOS 
+  - macOS
 ---
 
 ## 開頭
@@ -26,7 +26,7 @@ tags:
 - zsh-autosuggestions
 - zsh-syntax-highlighting
 - Zsh-z
-  
+
 ## 環境配置
 
 環境配置為 macOS ， 並使用 iTerm2 為我們的終端機。
@@ -53,13 +53,13 @@ brew update
 brew upgrade
 ```
 
-Homebrew安裝套件
+Homebrew 安裝套件
 
 ```shell
 brew install
 ```
 
-更新用Cask安裝的套件
+更新用 Cask 安裝的套件
 
 ```shell
 brew upgrade --cask
@@ -179,6 +179,7 @@ z -h
 ## 啟動插件
 
 1.打開 Zsh 用戶設定檔
+
 ```shell
 open ~/.zshrc
 ```

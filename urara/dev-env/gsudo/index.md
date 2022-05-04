@@ -1,17 +1,17 @@
 ---
 title: gsudo - 讓 Windows 也有 sudo 功能
-descr: 本篇文章主要紀錄如何安裝 gsudo 。 gsudo 是一個類似於 sudo 功能，讓我們在 Windows 上可以使用。 sudo 功能可以讓我們更方便地提升至系統管理員權限。 
+descr: 本篇文章主要紀錄如何安裝 gsudo 。 gsudo 是一個類似於 sudo 功能，讓我們在 Windows 上可以使用。 sudo 功能可以讓我們更方便地提升至系統管理員權限。
 summary: gsudo 基本介紹與安裝
 created: 2021-09-07
 published: 2021-09-07
 updated: 2022-04-28
 cover: /dev-env/gsudo/cover.avif
 tags:
-- 中文
-- 開發環境
-- Windows
-- Windows Terminal
-- pwsh
+  - 中文
+  - 開發環境
+  - Windows
+  - Windows Terminal
+  - pwsh
 ---
 
 ## 開頭
@@ -62,7 +62,7 @@ winget install gsudo
 
 ### 修改命令列
 
-修改命令列的指令，添加 `gsudo.exe` 於前方  
+修改命令列的指令，添加 `gsudo.exe` 於前方
 
 ```shell
 gsudo.exe "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
@@ -85,7 +85,7 @@ gsudo.exe "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
 sudo
 ```
 
-### 開啟具有系統管理員權限的Shell
+### 開啟具有系統管理員權限的 Shell
 
 ```shell
 sudo -n

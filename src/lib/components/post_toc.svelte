@@ -2,19 +2,6 @@
   export const prerender = true
 </script>
 
-<style>
-  /* Hide scrollbar for Chrome, Safari and Opera */
-.no-scrollbar::-webkit-scrollbar {
-    display: none;
-}
-
-/* Hide scrollbar for IE, Edge and Firefox */
-.no-scrollbar {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-</style>
-
 <script lang="ts">
   import { onMount, onDestroy } from 'svelte'
   import Tree from '$lib/components/post_toc_tree.svelte'
@@ -72,3 +59,16 @@
       { depth: toc[0].depth - 1, children: [] }
     )} />
 </nav>
+
+<style>
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+</style>

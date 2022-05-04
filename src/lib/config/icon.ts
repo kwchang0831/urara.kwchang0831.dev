@@ -35,5 +35,5 @@ export const icon: IconConfig = {
     sizes: '512x512',
     type: 'image/png',
     purpose: 'maskable'
-  },
+  }
 }

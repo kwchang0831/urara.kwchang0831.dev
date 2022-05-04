@@ -19,7 +19,7 @@ tags:
 [Oh My Posh](https://ohmyposh.dev/) 是一個主題引擎可以美化 PowerShell 7 ，可新增插件進一步地擴充功能性與提高使用效率。
 包含指令自動完成，快速切換資料夾等等。
 
-本篇文章紀錄 Oh My Posh 的安裝與主題置換來美化你的 PowerShell 7（pwsh），並可更改主題 (theme)，讓工作環境更高效。  
+本篇文章紀錄 Oh My Posh 的安裝與主題置換來美化你的 PowerShell 7（pwsh），並可更改主題 (theme)，讓工作環境更高效。
 
 本篇文章會介紹以下套件的安裝：
 
@@ -92,7 +92,7 @@ https://gitforwindows.org/
 ### PowerShell 7
 
 以系統管理員身分執行 PowerShell 7(x64)  
-更改字型為 `MesloLGS NF`  
+更改字型為 `MesloLGS NF`
 
 ![fig02](oh-my-posh/fig02.avif)
 
@@ -128,7 +128,7 @@ Set-PoshPrompt -Theme jandedobbeleer
 ```
 
 重新開啟 Windows Terminal 後生效，  
-或是輸入以下指令應用修改，  
+或是輸入以下指令應用修改，
 
 ```shell
 . $Profile
@@ -169,13 +169,13 @@ Set-PoshPrompt -Theme Agnoster
 ```
 
 重新開啟 Windows Terminal 後生效，  
-或是輸入以下指令應用修改，  
+或是輸入以下指令應用修改，
 
 ```shell
 . $Profile
 ```
 
-# (推薦) 安裝主題 pwsh10k 
+# (推薦) 安裝主題 pwsh10k
 
 pwsh10k 是一個 Oh My Posh 的主題。  
 https://github.com/Kudostoy0u/pwsh10k
@@ -206,7 +206,7 @@ Set-PoshPrompt -Theme ~/pwsh10k.omp.json
 ```
 
 重新開啟 Windows Terminal 後生效，  
-或是輸入以下指令應用修改，  
+或是輸入以下指令應用修改，
 
 ```shell
 . $Profile
@@ -244,7 +244,7 @@ $env:POSH_GIT_ENABLED = $true
 ## (選用) 安裝插件 [ZLocation](https://github.com/vors/ZLocation)
 
 [ZLocation](https://github.com/vors/ZLocation) 類似於 [autojump](https://github.com/wting/autojump) 或是 [Zsh-z](https://github.com/agkozak/zsh-z) 的插件，  
-可以用關鍵字直接跳到想去的資料夾，比使用 `cd` 更快速。  
+可以用關鍵字直接跳到想去的資料夾，比使用 `cd` 更快速。
 
 1.安裝 ZLocation
 
@@ -269,7 +269,7 @@ Import-Module ZLocation
 ```
 
 重新開啟 Windows Terminal 後生效，  
-或是輸入以下指令應用修改，  
+或是輸入以下指令應用修改，
 
 ```shell
 . $Profile

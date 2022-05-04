@@ -13,7 +13,12 @@
     itemtype="https://schema.org/BlogPosting"
     itemprop="blogPost"
     class="h-entry card image-full before:!bg-transparent bg-base-100 rounded-none md:rounded-box">
-    <Cover figureClass="" imgClass="u-photo object-cover object-center h-full w-full" cover={post.banner} {loading} {decoding} />
+    <Cover
+      figureClass=""
+      imgClass="u-photo object-cover object-center h-full w-full"
+      cover={post.banner}
+      {loading}
+      {decoding} />
     <div class="card-body mt-auto">
       <Status {post} index={true} photo={true} />
     </div>
