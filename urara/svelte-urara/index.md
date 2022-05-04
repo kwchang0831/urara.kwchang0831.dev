@@ -4,7 +4,7 @@ descr: 用 Svelte 打造的靜態網站生成器 - Urara。 打造速度超快�
 summary: 使用 Urara 生成並架設網誌於免費平台 Vercel 與 Netlify
 created: 2022-05-03
 published: 2022-05-03
-updated: 2022-05-03
+updated: 2022-05-04
 cover: /svelte-urara/cover.avif
 tags:
   - 中文
@@ -14,12 +14,22 @@ tags:
   - Netlify
 ---
 
+<script lang="ts">
+  import Alertbox from '$lib/components/extra/alertbox.svelte'
+</script>
+
 ## 開頭
 
 本網站是用 Urara 建置而成，PageSpeed 的評分如下：  
 ![fig01.svg](svelte-urara/fig01.svg)
 
-Performance 通常會在 90~100 之間浮動。
+<Alertbox text="Performance 通常會在 90~100之間浮動。" type="sucess"/>
+
+Urara 生成的網站不但速度跑很快，而且完全還可以免費架設。
+
+那，就讓我們繼續看下去吧。
+
+## 簡介
 
 [Urara](https://github.com/importantimport/urara) 是使用以下技術打造而成：
 
@@ -29,7 +39,9 @@ Performance 通常會在 90~100 之間浮動。
 
 而文章是用 [MarkDown](https://markdown.tw/) 語法來進行寫作。
 
-網站頁面架設是透過資料夾檔案的架構方式來新增。這種方式很直覺，假設我們的資料夾結構為以下：
+網站頁面架設是透過資料夾檔案的架構方式來新增。  
+
+這種方式很直覺，假設我們的資料夾結構為以下：
 
 ```shell
 urara
@@ -47,15 +59,13 @@ urara
 - /blog
 - /blog/20220503
 
-本篇文章主要紀錄建置 Urara 於 Vercel 與 Netlify 平台的流程。
+本篇文章主要會紀錄建置 Urara 於 Vercel 與 Netlify 平台的流程。
 
-更多 Urara 的細節介紹，請參考 Urara 的 [Git Repo](https://github.com/importantimport/urara)。
+Urara 的作者目前非常勤勞地開發新功能與優化系統，或許未來會有些許變動，想知道更多 Urara 的細節介紹，請參考 Urara 的 [Git Repo](https://github.com/importantimport/urara)。
 
 ## 平台帳號需求
 
-請註冊或準備好 [Github](https://github.com/) 帳號，然後選擇要使用 [Vercel](https://vercel.com/) 或 [Netlify](https://www.netlify.com/) 來建置網站。
-
-[Vercel](https://vercel.com/) 與 [Netlify](https://www.netlify.com/) 的帳號可以用 Github 帳號來註冊。
+請註冊或準備好 [Github](https://github.com/) 帳號，然後選擇要使用 [Vercel](https://vercel.com/) 或 [Netlify](https://www.netlify.com/) 來建置網站。[Vercel](https://vercel.com/) 與 [Netlify](https://www.netlify.com/) 的帳號可以用 Github 帳號來註冊。
 
 ## 環境配置
 
@@ -179,7 +189,7 @@ pnpm dev
 
 ```js title="./package.json"
 ...
-    "dev:kit": "export NODE_OPTIONS=--max_old_space_size=8192 && svelte-kit dev --host",
+    "dev:kit": "export NODE_OPTIONS=--max_old_space_size=7168 && svelte-kit dev --host",
 ...
 ```
 
@@ -258,16 +268,17 @@ urara
 ```shell
 urara
 +-- about
-    +-- index.svelte.md
+    +-- index.md
 ```
 
 ### 頁面寫作格式
 
-每個 `index.svelte.md` 文件開頭都需要填寫 屬性 (metadata) 來標示這個文件的內容。有些屬性不一定要加入可以省略。請自行嘗試或參考 `./urara/hello-world/index.svelte.md`。
+每個 `index.md` 文件開頭都需要填寫 屬性 (metadata) 來標示這個文件的內容。有些屬性不一定要加入可以省略。
+例如 `created` 與 `updated` ，若沒有填寫，Urara 會以檔案的新建與更新日期屬性來做顯示。
 
-內文是使用 [MarkDown](https://markdown.tw/) 語法來撰寫，快速上手請參考 [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)。
+內文使用 [MarkDown](https://markdown.tw/) 語法來撰寫，快速上手請參考 [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)。
 
-以下為頁面範例：
+以下為頁面範例 (若有更新，請以原始碼庫為準)：
 
 ```md title="./urara/about/index.svelte.md"
 ---
@@ -291,11 +302,11 @@ tags:
 第一段第一節 內容
 ```
 
-更多屬性參數細節，可以自行參考 `./src/global.d.ts`。
+更多屬性參數細節，可自行參考 `./src/global.d.ts`。
 
 ### 嵌入圖片
 
-假設我們要幫 `about` 頁面新增 cover 與 其他嵌入圖片，我們可以把圖片放置於同一個資料夾，如以下：
+假如我們要幫 `about` 頁面新增 cover 與 其他嵌入圖片，我們可以把圖片放置於同一個資料夾，如以下：
 
 ```shell
 urara
@@ -361,6 +372,7 @@ git push -u origin main
 ## 最後
 
 辛苦了，希望你已經順利地架設好網誌，開始隨意摸索 Urara 了。  
+
 若文章哪裏有問題，還望不吝指教。
 
 ## 完結
