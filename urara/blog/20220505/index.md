@@ -1,10 +1,11 @@
 ---
-title: 20220505 新網站上架 更新與心得
+title: 網誌 - 新網站上架 更新與心得
 descr: 紀錄一下新舊網站上架搬遷與更新過程。 大略介紹 JAMStack 、 NextJS 與 Svelte 的靜態網站生成器 (SSG)。
 summary: 大略介紹 JAMStack 和 NextJS 與 Svelte 的靜態網站生成器 和 新網站上架
 created: 2022-05-05
 published: 2022-05-05
 updated: 2022-05-05
+cover: /blog/20220505/cover.avif
 tags:
   - 中文
   - Blog
@@ -24,43 +25,41 @@ tags:
 
 當時我並不確定應該用甚麼來做，我懂一些基礎的 HTML、CSS、與 Javascript。唯一比較很明確知道的是，我不想用 [Wordpress](https://wordpress.com/zh-tw/), [Medium](https://medium.com/) 等等之類的發佈平台。我想要擁有一個屬於自己的空間，盡量能夠掌控所有能掌握的細節。除此之外我希望網站的讀取速度要夠快。對於我過去的實際體驗來看，上述兩家的發佈平台讀取速度我完全不能接受，而且版面設計大同小異。雖說 Wordpress 可以自己架設更改模板與插件，但那個效能真的是不忍直視。
 
-再來，既然身為熱愛學習嘗試新事物的技術宅，能夠自行架設與客製化自己的網站，難道不是一個很重要且快樂的事情嗎? 所以我決定研究看看夯了一陣子的 [JAMstack](https://jamstack.org/)。
+再來，既然身為熱愛學習與嘗試新事物的技術宅，能夠自行架設與客製化自己的網站，難道不是一個很重要且快樂的事情嗎? 所以我決定研究看看夯了一陣子的 [JAMstack](https://jamstack.org/)。
 
 ## JAMStack
 
-容我大略介紹一下，JAMStack 是一個開發架構，核心概念就是 **提前生成 (Pre-render / Pre-generate)** 與 **去耦合 (Decoupling)**，標榜更快速地、更安全地、與更簡單地擴縮來提供服務。
+容我大略介紹一下，[JAMStack](https://jamstack.org/) 是一個開發架構，核心概念就是 **提前生成 (Pre-render / Pre-generate)** 與 **去耦合 (Decoupling)**，標榜更快速地、更安全地、與更簡單地擴縮來提供服務。
 
-而 JAMStack 主要是由以下三個要素組成：
+而 [JAMStack](https://jamstack.org/) 主要是由以下三個要素組成：
 
-- [ J ] JavaScript
-- [ A ] APIs
-- [ M ] Markup
+- [ J ] JavaScript : 讓網頁具有更多的功能性
+- [ A ] APIs : 讓網頁具有可溝通的服務性
+- [ M ] Markup : 網頁的內容
 
 ![jamstack01.avif](20220505/jamstack01.avif)
 
-**提前生成** 就是我們在 Build (建置) 階段，準備 Deploy (部署) 之前，就會把所有需要的網頁都生成好了。不會說等到已經上線才根據使用者的需求找從資料庫拉資料把網頁拼出來。換句話說，JAMStack 架構並不需要後端伺服器。
-你可能聽過的 SSG (Static Site Generator) - 靜態網站生成器。而 SSG 就是用來生成 JAMStack 網站的工具。幾個其中比較有名的幾個就是 [NextJS](https://nextjs.org/), [Hugo](https://gohugo.io/)，更多的清單可以參考 [Site Generators](https://jamstack.org/generators/)。
+**提前生成** 就是我們在 Build (建置) 階段，準備 Deploy (部署) 之前，就會把所有需要的網頁都生成好了。不會說等到已經上線才根據使用者的需求找從資料庫拉資料把網頁拼出來。換句話說，[JAMStack](https://jamstack.org/) 架構並不需要後端伺服器。
+你可能聽過的 SSG (Static Site Generator) - 靜態網站生成器。而 SSG 就是用來生成 [JAMStack](https://jamstack.org/) 網站的工具。幾個其中比較有名的幾個就是 [NextJS](https://nextjs.org/), [Hugo](https://gohugo.io/)，更多的清單可以參考 [Site Generators](https://jamstack.org/generators/)。
 
-**去耦合** 主要是能夠讓系統元件或是個別服務組件輕量化。彼此依賴性不會這麼高。可以更輕鬆地替換系統中的組件或是進行個別升級。舉例來說，我們文章內容也就是用來產生 **Markup** 的一部分，我們可以隨時拿走然後替換一個 SSG 來生成另外一個網站，而替換的過程並不需要很多的更改去適應新的 SSG。
+**去耦合** 就是減低系統與系統之間依賴性。在這裡而言，具體來說就是要把 frontend (前端) 與 backend (後端) 分離開來，減少彼此的依賴性。也是因為有**前提生成**，讓我們可以去耦合。不管是讓後端可以分離成單獨的服務，或是完全拋棄後端只使用靜態的資料進行**前提生成**。
 
-使用 JAMStack 開發流程，可以參考下圖：
+舉例來說，我們可以參考下圖：
 ![jamstack02.avif](20220505/jamstack02.avif)
 
-我們前面介紹的就是上圖中左邊的部分就是開發者使用 JAMStack 架構模式來開發服務。圖中的 React + NextJS + GraphQL：NextJS 是建立在 React 的框架，然後使用 GraphQL 語言來對 API 進行溝通。
+我們看到途中左邊的部分：React + NextJS + GraphQL。NextJS 是建立在 React 的框架，然後使用 GraphQL 語言來對 API 進行溝通。這邊的部分也就是我們的 SSG - 靜態網站生成器。
 
-開發完成時，開發者會把原始碼都上傳到 Github 專案託管，然後有連動的無伺服器 CI/CD 平台如圖中 Netlify 會從 Github 抓取專案來執行 Build 與 Deploy 的動作。
+當我們完成內容更新，我們會把原始碼都上傳 (Check in) 到 Github 專案託管。這時候有連動的無伺服器 CI/CD 平台，如圖中的 Netlify 就會從 Github 抓取 (Check out) 專案來執行 Build 與 Deploy 的動作。
 
-右側的 Headless CMS (Content Management System) 是選擇性的，不一定需要有。 Headless CMS 是需要後端伺服器與資料庫的，它是一個不對外顯示但可以讀取與儲存資料用的內容管理系統(CMS)。Wordpress 是一個 CMS，如果我們不用 Wordpress 來給使用者顯示內容，只是使用存在 Wordpress 裡的資料的話，就可以把它當成 Headless CMS。
+右側的 Headless CMS (Content Management System) 是選擇性的。Headless CMS 是需要後端伺服器與資料庫的，它是一個不對外顯示但可以讀取與儲存資料用的內容管理系統(CMS)。舉例來說，Wordpress 是一個 CMS，如果我們不用 Wordpress 來給使用者顯示內容，只是使用存在 Wordpress 裡的資料的話，就可以把它當成 Headless CMS 來用。這邊就是我們之前提到的**去耦合**，把後端分離開來。
 
-我現在的操作方式是把網誌內容是跟著 SSG 一起上傳 (Check in) 到 Github 上去。並沒有使用 Headless CMS。
+如果 SSG 有設置要從 Headless CMS 讀取資料的話，那在 Netlify 在建置過程中就會去抓取 Headless CMS 裡的資料來完成**提前生成**的頁面。
 
-如果 SSG 有設置要使用 Headless CMS，然後 Headless CMS 也有架設好，那在 Netlify 在建置過程中就會去抓取 Headless CMS 裡的資料來完成**提前生成**的頁面。
-
-接下來的部分就是由 Netlify 把已經建置好的靜態網站，丟去 CDN (Content Delivery Network) 上讓全世界各地都有你的靜態網站備份，讓使用者讀取時可以優先從離使用者距離比較近的伺服器取得你的靜態網站。
+接下來， Netlify 會把已經**提前生成**好的靜態網站，丟去 CDN (Content Delivery Network) 上讓全世界各地都有你的靜態網站備份，讓使用者讀取時可以優先從離使用者距離比較近的伺服器取得你的靜態網站。
 
 Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很深。
 
-總而言之，透過 JAMStack 架構與 SSG，我們可以更簡單地更快速地來部署靜態網站。透過**提前生成**，使用者想要甚麼頁面可以很快速地回應，不需要再做其他處理。並且受惠於 CDN ，讓使用者收到回應的時間更加地縮短。
+總而言之，透過 [JAMStack](https://jamstack.org/) 架構與 SSG，我們可以更簡單地更快速地來部署靜態網站。透過**提前生成**，使用者想要甚麼頁面可以很快速地回應，不需要再做其他處理。並且受惠於 CDN ，讓使用者收到回應的時間更加地縮短。以上就是我目前初淺的理解。
 
 ## 之前的網站
 
@@ -106,7 +105,7 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 
 ![https://raw.githubusercontent.com/gist/kwchang0831/f8a0fbde08b5cd6204438a90e222743e/raw/1daad5cd8b363649a06649a05b56b2d03c3e2aed/metrics.pagespeed.svg](https://raw.githubusercontent.com/gist/kwchang0831/f8a0fbde08b5cd6204438a90e222743e/raw/1daad5cd8b363649a06649a05b56b2d03c3e2aed/metrics.pagespeed.svg)
 
-[webpagetest](https://www.webpagetest.org/) 的跑分。
+[webpagetest](https://www.webpagetest.org/) 的跑分：
 ![blog2-01.avif](20220505/blog2-01.avif)
 
 如果你也想嘗試試試看，可以參考這篇安裝流程： [Urara - 用 Svelte 打造的靜態網站生成器；來架個跑超快的網誌](/svelte-urara)。
@@ -145,7 +144,7 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 
 其實阿，前面的那些更新在第一個網站也都可以實現。而因為 NextJS 是建立在 React 上，且 React 生態系相對於 Svelte 大很多，很多已經寫好的插件都可以直接拿來用。稍微改一下就可以了。
 
-事實上，我還是毅然決然地換成了 Urara 。是人總是需要一點衝動，一些火花，來嘗試學習新東西，你說呢？
+事實上，我還是毅然決然地換成了 Urara 。是人總是需要一點衝動，一些火花，來嘗試學習新東西，你說對嗎？
 
 後續搬家的過程很順利，把圖片檔案與用 Markdown 語法撰寫的 `.md` 文章本體搬過來。稍微檢查一下文章的 metadata 寫法，然後移除沒有實作的 MDX 插件就完成了。
 
