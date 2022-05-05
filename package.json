@@ -18,8 +18,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
-    "format": "prettier --write --plugin-search-dir=. .",
-    "avif": "npx avif --input \"urara/assets/*.{jpg,jpeg,png}\" --speed=0 --overwrite --verbose"
+    "format": "prettier --write --plugin-search-dir=. ."
   },
   "devDependencies": {
     "@iconify-json/heroicons-outline": "^1.1.1",
@@ -67,14 +66,16 @@
     "tslib": "^2.4.0",
     "typescript": "^4.6.4",
     "unist-util-visit": "^4.1.0",
-    "unplugin-icons": "^0.14.3",
-    "vite": "^2.9.7",
+    "unplugin-icons": "^0.14.1",
+    "vite": "^2.9.1",
+    "vite-plugin-pwa": "^0.11.13",
     "workbox": "^0.0.0",
-    "workbox-cacheable-response": "^6.5.3",
-    "workbox-expiration": "^6.5.3",
-    "workbox-precaching": "^6.5.3",
-    "workbox-routing": "^6.5.3",
-    "workbox-strategies": "^6.5.3"
+    "workbox-cacheable-response": "^6.5.2",
+    "workbox-expiration": "^6.5.2",
+    "workbox-precaching": "^6.5.2",
+    "workbox-routing": "^6.5.2",
+    "workbox-strategies": "^6.5.2",
+    "workbox-window": "^6.5.3"
   },
   "type": "module"
 }

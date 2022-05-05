@@ -78,7 +78,7 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 
 我的第一個網站是架設在 [Vercel](https://vercel.com/) 上，網址是：
 
-- [blog.kwchang0831.dev](https://blog.kwchang0831.dev/) 
+- [blog.kwchang0831.dev](https://blog.kwchang0831.dev/)
 - [kwchang0831-blog.vercel.app](https://kwchang0831-blog.vercel.app)
 
 不過第一個網址，我目前設定讓 `blog.kwchang0831.dev/blog/*` 轉址至 `kwchang0831.dev/*` 。也就是目前這個網站。
@@ -139,7 +139,7 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 
 ### CloudFlare
 
-我現在把 DNS 改放到 [CloudFlare](https://www.cloudflare.com/) 下來管理，也順便把 DNSSEC (域名系統安全擴充) 打開了。 除此之外，CloudFlare 有一些速度優化與Cache優化的功能，我也通通都給它開起來。最後就是稍早提到的 [CloudFlare Workers](https://workers.cloudflare.com/)，用來轉址把舊的網誌轉移到新的網誌。官方教學文件寫得清楚，所以我第一次寫也沒遇到甚麼障礙。
+我現在把 DNS 改放到 [CloudFlare](https://www.cloudflare.com/) 下來管理，也順便把 DNSSEC (域名系統安全擴充) 打開了。 除此之外，CloudFlare 有一些速度優化與 Cache 優化的功能，我也通通都給它開起來。最後就是稍早提到的 [CloudFlare Workers](https://workers.cloudflare.com/)，用來轉址把舊的網誌轉移到新的網誌。官方教學文件寫得清楚，所以我第一次寫也沒遇到甚麼障礙。
 
 ## 心得
 
@@ -147,7 +147,7 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 
 事實上，我還是毅然決然地換成了 Urara 。是人總是需要一點衝動，一些火花，來嘗試學習新東西，你說呢？
 
-後續搬家的過程很順利，把圖片檔案與用 Markdown 語法撰寫的 `.md` 文章本體搬過來。稍微檢查一下文章的 metadata 寫法，然後移除沒有實作的MDX插件就完成了。
+後續搬家的過程很順利，把圖片檔案與用 Markdown 語法撰寫的 `.md` 文章本體搬過來。稍微檢查一下文章的 metadata 寫法，然後移除沒有實作的 MDX 插件就完成了。
 
 ## 最後
 
