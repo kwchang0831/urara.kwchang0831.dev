@@ -1,7 +1,7 @@
 ---
 title: 網誌 - 新網站上架 更新與心得
 descr: 紀錄一下新舊網站上架搬遷與更新過程。 大略介紹 JAMStack 、 NextJS 與 Svelte 的靜態網站生成器 (SSG)。
-summary: 大略介紹 JAMStack 和 NextJS 與 Svelte 的靜態網站生成器 和 新網站上架
+summary: 簡略介紹 JAMStack 和 NextJS 與 Svelte 的靜態網站生成器 和 新網站上架
 created: 2022-05-05
 published: 2022-05-05
 updated: 2022-05-05
@@ -23,13 +23,15 @@ tags:
 
 半年多前，我決定開始我的網誌寫作之旅。主要是為了記錄學習過的東西，並把學到的整理起來，並透過寫作的方式來強化自己的表達能力。
 
-當時我並不確定應該用甚麼來做，我懂一些基礎的 HTML、CSS、與 Javascript。唯一比較很明確知道的是，我不想用 [Wordpress](https://wordpress.com/zh-tw/), [Medium](https://medium.com/) 等等之類的發佈平台。我想要擁有一個屬於自己的空間，盡量能夠掌控所有能掌握的細節。除此之外我希望網站的讀取速度要夠快。對於我過去的實際體驗來看，上述兩家的發佈平台讀取速度我完全不能接受，而且版面設計大同小異。雖說 Wordpress 可以自己架設更改模板與插件，但那個效能真的是不忍直視。
+當時我並不確定應該用甚麼來做比較好。唯一比較很明確知道的是，我不想用 [Wordpress](https://wordpress.com/zh-tw/), [Medium](https://medium.com/) 等等之類的發佈平台。我想要擁有一個屬於自己的空間，盡量能夠掌控所有能掌握的細節。除此之外我希望網站的讀取速度要夠快。對於我過去的實際體驗來看，上述兩家的發佈平台讀取速度我完全不能接受，而且版面設計大同小異。雖說 Wordpress 可以自己架設更改模板與插件，但那個效能真的是不忍直視。
 
-再來，既然身為熱愛學習與嘗試新事物的技術宅，能夠自行架設與客製化自己的網站，難道不是一個很重要且快樂的事情嗎? 所以我決定研究看看夯了一陣子的 [JAMstack](https://jamstack.org/)。
+再來就是，既然身為熱愛學習的技術宅，能夠自行架設並且客製化自己的網站，我覺得這是一種付諸實踐的行動證明，也能在其中磨練自我的技術能力。如此美好與快樂的事情，何樂而不為呢?
+
+在最後，我決定研究看看夯了一陣子的 [JAMstack](https://jamstack.org/)。
 
 ## JAMStack
 
-容我大略介紹一下，[JAMStack](https://jamstack.org/) 是一個開發架構，核心概念就是 **提前生成 (Pre-render / Pre-generate)** 與 **去耦合 (Decoupling)**，標榜更快速地、更安全地、與更簡單地擴縮來提供服務。
+容我簡略介紹一下，[JAMStack](https://jamstack.org/) 是一個開發架構，核心概念就是 **提前生成 (Pre-render / Pre-generate)** 與 **去耦合 (Decoupling)**，標榜更快速地、更安全地、與更簡單地擴縮來提供服務。
 
 而 [JAMStack](https://jamstack.org/) 主要是由以下三個要素組成：
 
@@ -39,10 +41,9 @@ tags:
 
 ![jamstack01.avif](20220505/jamstack01.avif)
 
-**提前生成** 就是我們在 Build (建置) 階段，準備 Deploy (部署) 之前，就會把所有需要的網頁都生成好了。不會說等到已經上線才根據使用者的需求找從資料庫拉資料把網頁拼出來。換句話說，[JAMStack](https://jamstack.org/) 架構並不需要後端伺服器。
-你可能聽過的 SSG (Static Site Generator) - 靜態網站生成器。而 SSG 就是用來生成 [JAMStack](https://jamstack.org/) 網站的工具。幾個其中比較有名的幾個就是 [NextJS](https://nextjs.org/), [Hugo](https://gohugo.io/)，更多的清單可以參考 [Site Generators](https://jamstack.org/generators/)。
+**提前生成** 就是我們在 Build (建置) 階段，準備 Deploy (部署) 之前，就會把所有需要的網頁都生成好了。不會說等到已經上線才根據使用者的需求找從資料庫拉資料把網頁拼出來。換句話說，[JAMStack](https://jamstack.org/) 架構並不需要後端伺服器。你可能聽過的 SSG (Static Site Generator) - 靜態網站生成器。而 SSG 就是用來生成 [JAMStack](https://jamstack.org/) 網站的工具。幾個其中比較有名的幾個就是 [NextJS](https://nextjs.org/), [Hugo](https://gohugo.io/)，更多的清單可以參考 [Site Generators](https://jamstack.org/generators/)。
 
-**去耦合** 就是減低系統與系統之間依賴性。在這裡而言，具體來說就是要把 frontend (前端) 與 backend (後端) 分離開來，減少彼此的依賴性。也是因為有**前提生成**，讓我們可以去耦合。不管是讓後端可以分離成單獨的服務，或是完全拋棄後端只使用靜態的資料進行**前提生成**。
+**去耦合** 就是減低系統與系統之間依賴性。對於 [JAMStack](https://jamstack.org/) 而言，具體就是要把 frontend (前端) 與 backend (後端) 分離開來，減少彼此的依賴性。也是因為有**前提生成**，讓我們可以去耦合。不管是讓後端可以分離成單獨的服務，或是完全拋棄後端只使用靜態的資料進行**前提生成**。
 
 舉例來說，我們可以參考下圖：
 ![jamstack02.avif](20220505/jamstack02.avif)
