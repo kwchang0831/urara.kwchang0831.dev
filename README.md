@@ -23,7 +23,7 @@ asdf global nodejs latest
 - pnpm
 
 ```shell
-npm install -g pnpm@next-7
+npm install -g pnpm
 ```
 
 ## Local Run
@@ -46,17 +46,19 @@ eg.
 
 ```js
 # Change the following
-"dev:kit": "export NODE_OPTIONS=--max_old_space_size=8192 && svelte-kit dev --host",
+"dev:kit": "export NODE_OPTIONS=--max_old_space_size=7168 && svelte-kit dev --host",
 
 # To the following
-"dev:kit": "set NODE_OPTIONS=--max_old_space_size=8192 && svelte-kit dev --host",
+"dev:kit": "set NODE_OPTIONS=--max_old_space_size=7168 && svelte-kit dev --host",
 ```
 
 ## Powered by
 
-- urara: [https://github.com/importantimport/urara](https://github.com/importantimport/urara)
+- Urara: [https://github.com/importantimport/urara](https://github.com/importantimport/urara)
+- Vercel: [https://vercel.com/](https://vercel.com/)
+- CloudFlare: [https://cloudflare.com/](https://cloudflare.com/)
 
-## Package Used
+## Useful Links
 
 - Svelte-lightbox: [https://github.com/Hejtmus/svelte-lightbox](https://github.com/Hejtmus/svelte-lightbox)
 - svelte-magnifier: [https://github.com/ambarvm/svelte-magnifier](<[svelte-magnifier](https://github.com/ambarvm/svelte-magnifier)>)
