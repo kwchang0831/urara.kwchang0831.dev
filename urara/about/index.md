@@ -5,7 +5,7 @@ created: 2022-04-27
 published: 2022-04-27
 updated: 2022-05-01
 flags:
-  - hidden
+  - unlisted
 ---
 
 <script lang="ts">
