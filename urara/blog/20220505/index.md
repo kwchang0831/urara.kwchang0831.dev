@@ -1,6 +1,6 @@
 ---
 title: 網誌 - 新網站上架 更新與心得
-descr: 紀錄一下新舊網站上架搬遷與更新過程。 大略介紹 JAMStack 、 NextJS 與 Svelte 的靜態網站生成器 (SSG)。
+description: 紀錄一下新舊網站上架搬遷與更新過程。 大略介紹 JAMStack 、 NextJS 與 Svelte 的靜態網站生成器 (SSG)。
 summary: 簡略介紹 JAMStack 和 NextJS 與 Svelte 的靜態網站生成器 和 新網站上架
 created: 2022-05-05
 published: 2022-05-05

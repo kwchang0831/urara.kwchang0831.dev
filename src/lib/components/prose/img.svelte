@@ -2,9 +2,9 @@
   import { Lightbox } from 'svelte-lightbox'
   let className = undefined
   export { className as class }
-  export let src = undefined
-  export let alt = undefined
-  export let loading: 'lazy' | 'eager' = 'lazy'
+  export let src: string
+  export let alt: string
+  export let loading: 'eager' | 'lazy' = 'lazy'
   export let decoding: 'async' | 'sync' | 'auto' = 'async'
 </script>
 

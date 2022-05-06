@@ -5,7 +5,7 @@
   export let post: Urara.Post
   export let index: boolean = false
   export let photo: boolean = false
-  export let cover: boolean = false
+  export let featured: boolean = false
 
   const stringPublished = new Date(post.published ?? post.created).toLocaleString(
     date.toPublishedString.locales,
@@ -44,8 +44,8 @@
     class:ml-auto={!index}
     class="{photo
       ? 'text-neutral-content !bg-neutral/50 hover:!bg-neutral/80'
-      : 'text-base-content/[.9] px-0 hover:underline'} {cover
-      ? 'text-neutral-content/50'
+      : 'text-base-content/75 px-0 hover:underline'} {featured
+      ? 'text-neutral-content/75'
       : ''} badge badge-lg badge-ghost text-left bg-transparent border-none font-bold tooltip tooltip-bottom u-url u-uid"
     data-tip="Updated: {stringUpdated}">
     <CreatedAt class="inline-block w-5 h-5 align-top mr-1" />{stringPublished}

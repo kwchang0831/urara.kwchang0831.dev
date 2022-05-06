@@ -4,12 +4,12 @@ import { feed } from '$lib/config/general'
 import { icon } from '$lib/config/icon'
 import { genPosts } from '$lib/utils/posts'
 
-const render = async (posts = genPosts({ postHtml: true, postLimit: feed.limit, filterHidden: true })) => ({
+const render = async (posts = genPosts({ postHtml: true, postLimit: feed.limit, filterUnlisted: true })) => ({
   version: 'https://jsonfeed.org/version/1.1',
   title: site.title,
   home_page_url: site.protocol + site.domain,
   feed_url: site.protocol + site.domain + '/feed.json',
-  description: site.descr,
+  description: site.description,
   icon: icon.any192.src,
   favicon: icon.favicon.src,
   authors: [
@@ -29,7 +29,7 @@ const render = async (posts = genPosts({ postHtml: true, postLimit: feed.limit, 
     url: site.protocol + site.domain + post.path,
     title: post.title,
     content_html: post.html,
-    summary: post['descr'],
+    summary: post['summary'],
     image: post['cover'],
     date_published: post.published ?? post.created,
     date_modified: post.updated ?? post.published ?? post.created,

@@ -9,8 +9,8 @@ export type SiteConfig = {
   subtitle?: string
   /** site lang. `<html lang={site.lang}>` */
   lang?: string
-  /** site description. `<meta name="description" content={site.descr}>` */
-  descr?: string
+  /** site description. `<meta name="description" content={site.description}>` */
+  description?: string
   author: {
     name: string
     photo?: string

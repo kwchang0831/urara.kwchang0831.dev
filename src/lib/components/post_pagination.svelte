@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Cover from '$lib/components/post_cover.svelte'
+  import Image from '$lib/components/prose/img.svelte'
   import IconChevronLeft from '~icons/heroicons-outline/chevron-left'
   import IconChevronRight from '~icons/heroicons-outline/chevron-right'
   export let prev: Urara.Post = undefined
@@ -14,17 +14,18 @@
       class:md:rounded-r-box={next && !next['cover']}
       class="flex-1 card group rounded-none before:!rounded-none">
       {#if prev['cover']}
-        <Cover
-          figureClass="!block"
-          imgClass="object-center h-full w-full absolute group-hover:scale-110 transition-transform duration-500 ease-in-out"
-          cover={prev['cover']} />
+        <figure class="!block">
+          <Image
+            class="object-center h-full w-full absolute group-hover:scale-105 transition-transform duration-500 ease-in-out"
+            src={prev['cover']} />
+        </figure>
       {/if}
       <div class="card-body">
         <IconChevronLeft class="h-6 w-6 opacity-50 group-hover:opacity-100 mr-auto" />
         <a
           rel="prev"
           href={prev.path}
-          class="card-title block text-left mb-0 transition-all ease-in-out underline decoration-3 decoration-transparent group-hover:decoration-primary">
+          class="card-title block text-left mb-0 mr-auto bg-[length:100%_0%] bg-[position:0_88%] underline decoration-3 decoration-transparent group-hover:decoration-primary hover:bg-[length:100%_100%] hover:text-primary-content bg-gradient-to-t from-primary to-primary bg-no-repeat transition-all ease-in-out duration-300">
           {prev['title'] ?? prev.path.slice(1)}
         </a>
       </div>
@@ -40,16 +41,17 @@
       class:md:rounded-l-box={prev && !prev['cover']}
       class="flex-1 card group rounded-none before:!rounded-none">
       {#if next['cover']}
-        <Cover
-          figureClass="!block"
-          imgClass="object-center h-full w-full absolute group-hover:scale-110 transition-transform duration-500 ease-in-out"
-          cover={next['cover']} />
+        <figure class="!block">
+          <Image
+            class="object-center h-full w-full absolute group-hover:scale-105 transition-transform duration-500 ease-in-out"
+            src={next['cover']} />
+        </figure>
       {/if}
       <div class="card-body">
         <a
           rel="next"
           href={next.path}
-          class="card-title block text-right mb-0 transition-all ease-in-out underline decoration-3 decoration-transparent group-hover:decoration-primary">
+          class="card-title block text-right mb-0 ml-auto bg-[length:100%_0%] bg-[position:0_88%] underline decoration-3 decoration-transparent group-hover:decoration-primary hover:bg-[length:100%_100%] hover:text-primary-content bg-gradient-to-t from-primary to-primary bg-no-repeat transition-all ease-in-out duration-300">
           {next['title'] ?? next.path.slice(1)}
         </a>
         <IconChevronRight class="w-6 h-6 opacity-50 group-hover:opacity-100 ml-auto" />

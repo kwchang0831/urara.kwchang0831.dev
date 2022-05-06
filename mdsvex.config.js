@@ -33,9 +33,6 @@ const remarkUraraFm =
       })
       data.fm.toc = toc
     }
-    // Rename {date, lastmod} to {created, updated}
-    if (data.fm.date) data.fm.created = data.fm.date
-    if (data.fm.lastmod) data.fm.updated = data.fm.lastmod
     // Auto-read created & updated
     if (!data.fm.created || !data.fm.updated) {
       const { ctime, mtime } = statSync(new URL(`./urara${filepath}`, import.meta.url))

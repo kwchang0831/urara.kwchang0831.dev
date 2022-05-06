@@ -1,6 +1,6 @@
 ---
 title: about
-descr: 關於 kwchang0831 的頁面
+description: 關於 kwchang0831 的頁面
 created: 2022-04-27
 published: 2022-04-27
 updated: 2022-05-01
