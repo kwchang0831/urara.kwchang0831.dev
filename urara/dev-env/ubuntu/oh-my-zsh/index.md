@@ -2,9 +2,7 @@
 title: 美化 Ubuntu Terminal - Zsh + Oh My Zsh + 一些好用的插件
 description: 本篇文章紀錄如何美化 Ubuntu Terminal ，並安裝一些插件讓開發環境更高效。 包含安裝 Zsh 、 Oh My Zsh 與 Powerlevel 10k 主題。
 summary: Zsh, Oh My Zsh, Powerlevel 10k 與 一些好用插件的安裝流程
-created: 2021-09-09
 published: 2021-09-09
-updated: 2022-04-29
 cover: /dev-env/ubuntu/oh-my-zsh/cover.avif
 tags:
   - 中文
