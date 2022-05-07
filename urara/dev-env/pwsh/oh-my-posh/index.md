@@ -173,7 +173,7 @@ Set-PoshPrompt -Theme Agnoster
 . $Profile
 ```
 
-# (推薦) 安裝主題 pwsh10k
+## (推薦) 安裝主題 pwsh10k
 
 pwsh10k 是一個 Oh My Posh 的主題。  
 https://github.com/Kudostoy0u/pwsh10k
