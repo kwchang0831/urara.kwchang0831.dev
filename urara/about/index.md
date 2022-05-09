@@ -1,6 +1,6 @@
 ---
 title: 關於 kwchang0831
-description: 關於 kwchang0831.dev | 成功他媽．阿瑋 的頁面
+description: 關於 kwchang0831 | kwchang0831.dev | 成功他媽．阿瑋
 published: 2022-04-27
 flags:
   - unlisted
@@ -8,6 +8,7 @@ flags:
 
 <script lang="ts">
   import Profile from '$lib/components/extra/profile.svelte'
+  import Youtube from '$lib/components/extra/youtube.svelte'
 </script>
 
 <Profile subname="成功他媽．阿瑋" bio="{`🙈🙉🙊`}">
@@ -42,3 +43,37 @@ Having fun is all it matters. YOLO!
 
 Never seeking success.  
 That’s all a loser hope for; A successful loser.
+
+### A Little Story
+
+Some ignorantly arrogant people love to ask the following questions:
+
+> - What is your greatest failure, and what did you learn from it?
+> - Tell me about a time you were successful?
+
+Any person could split out the same questions pretending to be professional.
+However, those people have neither any related background knowledge nor sufficient experience to analysis the reactions from interviewees.
+They are just sitting there being ignorantly arrogant and acting superior only because they already have their butt on the position.
+
+What a waste of resource and time! What a shame!
+
+Just let those people judge all they want with their uneducated and flawed guesses.
+Do not let them intimidating you. What can you expect from a dog but a bark?
+
+Whatever they say, you do not prove a person wrong by cutting out his/her tongue.
+Moreover, you have nothing to prove to anyone.
+Your value shall never be judged by external validation.
+
+Just do your best all the time. Try to exceed yourself and be proud of yourself.
+
+Here is a motivational video for you:
+
+> Do it. Just do it!  
+> Don't let your dream be dream!  
+> -- Shia LaBeouf
+
+<Youtube id="ZXsQAXx_ao0"/>
+
+If you find it useful, pass it on and help others like us.
+
+Let's make the world a better place.

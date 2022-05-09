@@ -6,7 +6,7 @@ export const site: SiteConfig = {
   title: '成功他媽．阿瑋',
   subtitle: '成功最終會回來找他媽的',
   lang: 'zh-TW',
-  description: 'Love to learn new stuff. Master of none.  Having fun is all it matters. YOLO!',
+  description: '@kwchang0831 - Love to learn new stuff. Master of none. Having fun is all it matters. YOLO!',
   author: {
     name: 'kwchang0831',
     photo: '/assets/maskable@192.avif',
