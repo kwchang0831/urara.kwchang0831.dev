@@ -72,14 +72,15 @@ export const theme: ThemeConfig = [
 ]
 
 export const head: HeadConfig = {
-  custom: {
-    prod: [
-      // Preconnect
-      '<link href="https://umami.kwchang0831.dev" rel="preconnect" crossorigin>',
-      // Umami Analytics
-      '<script async defer data-website-id="e29bb16a-1e2e-48e6-8812-5d7bb04204b7" src="https://umami.kwchang0831.dev/umami.js"></script>'
-    ]
-  }
+  custom: ({ dev }) =>
+    dev
+      ? []
+      : [
+          // Preconnect
+          '<link href="https://umami.kwchang0831.dev" rel="preconnect" crossorigin>',
+          // Umami Analytics
+          '<script async defer data-website-id="e29bb16a-1e2e-48e6-8812-5d7bb04204b7" src="https://umami.kwchang0831.dev/umami.js"></script>'
+        ]
 }
 
 export const header: HeaderConfig = {
