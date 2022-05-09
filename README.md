@@ -6,15 +6,19 @@
 
 ## Requirements
 
-- Nodejs @latest
+- Install Nodejs @latest
 
 ```shell
 # Ubuntu
 sudo apt install nodejs
+```
 
+```shell
 # Windows
 sudo choco install nodejs
+```
 
+```shell
 # asdf
 asdf install nodejs latest
 asdf global nodejs latest
@@ -52,6 +56,16 @@ eg.
 "dev:kit": "set NODE_OPTIONS=--max_old_space_size=7168 && svelte-kit dev --host",
 ```
 
+## Local Build
+
+```shell
+pnpm build
+```
+
+```shell
+pnpm preview
+```
+
 ## Powered by
 
 - Urara: [https://github.com/importantimport/urara](https://github.com/importantimport/urara)
@@ -61,6 +75,6 @@ eg.
 ## Useful Links
 
 - Svelte-lightbox: [https://github.com/Hejtmus/svelte-lightbox](https://github.com/Hejtmus/svelte-lightbox)
-- svelte-magnifier: [https://github.com/ambarvm/svelte-magnifier](<[svelte-magnifier](https://github.com/ambarvm/svelte-magnifier)>)
+- svelte-magnifier: [https://github.com/ambarvm/svelte-magnifier](https://github.com/ambarvm/svelte-magnifier)
 - avif-cli: [https://github.com/lovell/avif-cli](https://github.com/lovell/avif-cli)
 - icons: [https://icones.js.org/](https://icones.js.org/)
