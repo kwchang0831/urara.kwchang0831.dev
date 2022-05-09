@@ -13,7 +13,8 @@ export const site: SiteConfig = {
     status: '❤️',
     bio: "Do it. Just do it!<br/>Don't let your dream be dream!<br/>",
     github: 'kwchang0831',
-    discord: '968756691392942090'
+    discord: '968756691392942090',
+    email: 'contact@kwchang0831.dev'
   },
   themeColor: '#3D4451'
 }

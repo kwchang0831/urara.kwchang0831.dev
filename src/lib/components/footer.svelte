@@ -37,11 +37,16 @@
       <br />
       Copyright © {footerConfig.since && footerConfig.since !== new Date().toJSON().substring(0, 4)
         ? `${footerConfig.since} - ${new Date().toJSON().substring(0, 4)}`
-        : new Date().toJSON().substring(0, 4)} <a href="https://github.com/{site.author.github}">{site.author.name}</a>
-      <br/>
+        : new Date().toJSON().substring(0, 4)}
+      <a href="https://github.com/{site.author.github}">{site.author.name}</a>
+      <br />
       <span xmlns:cc="https://creativecommons.org/ns#" xmlns:dct="https://purl.org/dc/terms/">
-        <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
-          CC BY-NC-SA 4.0        
+        <a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1"
+          target="_blank"
+          rel="license noopener noreferrer"
+          style="display:inline-block;">
+          CC BY-NC-SA 4.0
         </a>
       </span>
       {#if footerConfig.html}

@@ -26,33 +26,39 @@
     <h2 class="text-3xl font-bold mt-0 mb-2 p-name">{site.author.name}</h2>
     <p class="opacity-75 p-note">{@html site.author.bio}</p>
     <p class="pt-3 space-x-3">
-      <a
-        class="text-sm transition hover:text-gray-600 tooltip tooltip-secondary hover:text-secondary"
-        target="_blank"
-        rel="noopener noreferrer"
-        data-tip="Mail"
-        aria-label="Mail"
-        href="mailto:contact@kwchang0831.dev">
-        <Mailto class="fill-current hover:text-lime-500 inline-block w-8 h-8 mr-1" />
-      </a>
-      <a
-        class="text-sm transition hover:text-gray-600 tooltip tooltip-secondary hover:text-secondary"
-        target="_blank"
-        rel="noopener noreferrer"
-        data-tip="Discord"
-        aria-label="Discord"
-        href="https://discord.com/users/{site.author.discord}">
-        <Discord class="fill-current hover:text-blue-500 inline-block w-8 h-8 mr-1" />
-      </a>
-      <a
-        class="text-sm transition hover:text-gray-600 tooltip tooltip-secondary hover:text-secondary"
-        target="_blank"
-        rel="noopener noreferrer"
-        data-tip="Github"
-        aria-label="Github"
-        href="https://github.com/{site.author.github}">
-        <Github class="fill-current hover:text-violet-500 inline-block w-8 h-8 mr-1" />
-      </a>
+      {#if site.author.email}
+        <a
+          class="text-sm transition hover:text-gray-600 tooltip tooltip-secondary hover:text-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-tip="Mail"
+          aria-label="Mail"
+          href="mailto:{site.author.email}">
+          <Mailto class="fill-current hover:text-lime-500 inline-block w-8 h-8 mr-1" />
+        </a>
+      {/if}
+      {#if site.author.discord}
+        <a
+          class="text-sm transition hover:text-gray-600 tooltip tooltip-secondary hover:text-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-tip="Discord"
+          aria-label="Discord"
+          href="https://discord.com/users/{site.author.discord}">
+          <Discord class="fill-current hover:text-blue-500 inline-block w-8 h-8 mr-1" />
+        </a>
+      {/if}
+      {#if site.author.github}
+        <a
+          class="text-sm transition hover:text-gray-600 tooltip tooltip-secondary hover:text-secondary"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-tip="Github"
+          aria-label="Github"
+          href="https://github.com/{site.author.github}">
+          <Github class="fill-current hover:text-violet-500 inline-block w-8 h-8 mr-1" />
+        </a>
+      {/if}
     </p>
     {#if site.author.pgp}
       <a href={site.author.pgp.link} rel="pgpkey" class="btn btn-ghost btn-xs bg-base-300 font-mono rounded-full mt-4">
