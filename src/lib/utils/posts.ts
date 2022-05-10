@@ -49,6 +49,7 @@ export const genPosts: GenPostsFunction = ({
  * @param posts - posts list
  * @returns - tags list
  */
-export const genTags: GenTagsFunction = posts => [
-  ...new Set(posts.reduce((acc, posts) => (posts.tags ? [...acc, ...posts.tags] : acc), ['']).slice(1))
-]
+export const genTags: GenTagsFunction = posts =>
+  [...new Set(posts.reduce((acc, posts) => (posts.tags ? [...acc, ...posts.tags] : acc), ['']).slice(1))].sort((a, b) =>
+    String(a).localeCompare(String(b), 'zh-u-co-zhuyin')
+  )
