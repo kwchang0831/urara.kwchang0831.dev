@@ -10,6 +10,7 @@ tags:
   - Urara
   - Vercel
   - Netlify
+  - 2022
 ---
 
 <script lang="ts">

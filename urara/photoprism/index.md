@@ -7,6 +7,7 @@ cover: /photoprism/cover.avif
 tags:
   - 中文
   - Ubuntu
+  - 2021
 ---
 
 ## 開頭

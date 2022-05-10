@@ -11,6 +11,7 @@ tags:
   - NextJS
   - Vercel
   - CloudFlare
+  - 2022
 ---
 
 <script lang="ts">
