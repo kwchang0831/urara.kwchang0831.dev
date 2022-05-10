@@ -14,24 +14,12 @@ export const theme: ThemeConfig = [
     text: '🌑 Dark'
   },
   {
-    name: 'cupcake',
-    text: '🧁 Cupcake'
-  },
-  {
     name: 'bumblebee',
     text: '🐝 Bumblebee'
   },
   {
-    name: 'synthwave',
-    text: '🌃 Synthwave'
-  },
-  {
     name: 'halloween',
     text: '🎃 Halloween'
-  },
-  {
-    name: 'forest',
-    text: '🌲 Forest'
   },
   {
     name: 'aqua',
@@ -46,14 +34,6 @@ export const theme: ThemeConfig = [
     text: '📱 Wireframe'
   },
   {
-    name: 'black',
-    text: '🖤 Black'
-  },
-  {
-    name: 'business',
-    text: '🗄️ Business'
-  },
-  {
     name: 'luxury',
     text: '💰 Luxury'
   },
@@ -64,10 +44,6 @@ export const theme: ThemeConfig = [
   {
     name: 'night',
     text: '🌃 Night'
-  },
-  {
-    name: 'coffee',
-    text: '☕ Coffee'
   }
 ]
 
@@ -79,7 +55,7 @@ export const head: HeadConfig = {
           // Preconnect
           '<link href="https://umami.kwchang0831.dev" rel="preconnect" crossorigin>',
           // Umami Analytics
-          '<script async defer data-website-id="e29bb16a-1e2e-48e6-8812-5d7bb04204b7" src="https://umami.kwchang0831.dev/umami.js"></script>'
+          '<script async defer data-website-id="e29bb16a-1e2e-48e6-8812-5d7bb04204b7" src="https://umami.kwchang0831.dev/umami.js" data-cache="true" data-domains="kwchang0831.dev,www.kwchang0831.dev"></script>'
         ]
 }
 

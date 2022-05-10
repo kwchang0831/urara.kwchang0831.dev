@@ -1,5 +1,7 @@
 # [<img style="float:middle" width="auto" alt="HEADER" src="https://raw.githubusercontent.com/gist/kwchang0831/f8a0fbde08b5cd6204438a90e222743e/raw/metrics.repository.intro.svg">](#)
 
+[![Github Workflow](https://img.shields.io/github/workflow/status/kwchang0831/kwchang0831.dev/Metrics?style=plastic)](https://github.com/kwchang0831/kwchang0831.dev/actions/workflows/metrics.yml) [![https://img.shields.io/github/license/kwchang0831/kwchang0831.dev](https://img.shields.io/github/license/kwchang0831/kwchang0831.dev)](https://github.com/kwchang0831/kwchang0831.dev/blob/main/LICENSE) [![Netlify Status](https://api.netlify.com/api/v1/badges/afae98d7-2e01-49a8-ae4d-d4bac725d06e/deploy-status)](https://app.netlify.com/sites/kwchang0831-dev/deploys)
+
 ## PageSpeed Insight
 
 [<img style="float:middle" width="auto" alt="PAGESPEED" src="https://raw.githubusercontent.com/gist/kwchang0831/f8a0fbde08b5cd6204438a90e222743e/raw/metrics.pagespeed.svg">](#)
@@ -69,8 +71,10 @@ pnpm preview
 ## Powered by
 
 - Urara: [https://github.com/importantimport/urara](https://github.com/importantimport/urara)
-- Vercel: [https://vercel.com/](https://vercel.com/)
-- CloudFlare: [https://cloudflare.com/](https://cloudflare.com/)
+
+## Hosted on
+
+- Netlify: [https://www.netlify.com](https://www.netlify.com)
 
 ## Useful Links
 

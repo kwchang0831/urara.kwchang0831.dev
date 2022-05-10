@@ -39,7 +39,7 @@
         Math.round((scrollY / (document.documentElement.scrollHeight - document.documentElement.clientHeight)) * 10000) / 100
   }
 
-  if (browser) currentTheme = localStorage.getItem('theme') ?? 'business'
+  if (browser) currentTheme = localStorage.getItem('theme') ?? 'default'
   // localStorage.getItem('theme') ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
 </script>
 

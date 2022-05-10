@@ -29,23 +29,16 @@ export default /** @type {import('tailwindcss/tailwind-config').TailwindConfig} 
           error: '#AC3E31'
         }
       },
-      'business',
       'light',
       'dark',
-      'cupcake',
       'bumblebee',
-      'synthwave',
       'halloween',
-      'garden',
-      'forest',
       'aqua',
       'pastel',
       'wireframe',
-      'black',
       'luxury',
       'dracula',
-      'night',
-      'coffee'
+      'night'
     ]
   }
 }
