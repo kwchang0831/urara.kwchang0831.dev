@@ -1,6 +1,6 @@
 ---
-title: 網誌 - 新網站上架 更新與心得
-description: 紀錄一下新舊網站上架搬遷與更新過程。 大略介紹 JAMStack 、 NextJS 與 Svelte 的靜態網站生成器 (SSG)。
+title: 使用 Svelte + Urara 重新架設我的網站
+description: 使用 Svelte + Urara 重新架設我的網站。 紀錄新舊網站上架搬遷與更新過程。 大略介紹 JAMStack 、 NextJS 與 Svelte 的靜態網站生成器 (SSG)。
 summary: 簡略介紹 JAMStack 和 NextJS 與 Svelte 的靜態網站生成器 和 新網站上架
 published: 2022-05-05
 cover: /blog/20220505/cover.avif
@@ -20,7 +20,9 @@ tags:
 
 ## 開始
 
-半年多前，我決定開始我的網誌寫作之旅。主要是為了記錄學習過的東西，並把學到的整理起來，並透過寫作的方式來強化自己的表達能力。
+半年多前，我決定了要開始我的網誌寫作之旅。
+
+主要是為了記錄學習過程，並把學習到的知識整理起來，並透過寫作的方式來強化自己的表達能力。
 
 當時我並不確定應該用甚麼來做比較好。我唯一比較明確知道的是，我不想用 [Wordpress](https://wordpress.com/zh-tw/), [Medium](https://medium.com/) 等等之類的發佈平台。我想要擁有一個屬於自己的空間，盡量能夠掌控所有能掌握的細節。除此之外，我希望網站的讀取速度要夠快。根據我過去的實際體驗來看，上述兩家的發佈平台讀取速度我完全不能接受，而且版面設計大同小異。雖說 Wordpress 可以自己架設更改模板與插件，但那個效能真的是不忍直視。
 
@@ -63,7 +65,7 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 
 ## 之前的網站
 
-我第一個網站使用的是 NextJS 的 SSG 功能來建置的，當時我在 Github 上找到一個很不錯的模板：
+我最一開始架設網站使用的是 NextJS 的 SSG 功能來建置的，當時我在 Github 上找到一個很不錯的模板：
 
 <Github user="timlrx" repo="tailwind-nextjs-starter-blog"/>
 
@@ -77,7 +79,7 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 
 ![blog1-01.avif](20220505/blog1-01.avif)
 
-第一個網站我是架設在 [Vercel](https://vercel.com/) 上，網址是：
+我是架設在 [Vercel](https://vercel.com/) 上，網址是：
 
 - [blog.kwchang0831.dev](https://blog.kwchang0831.dev/)
 - [kwchang0831-blog.vercel.app](https://kwchang0831-blog.vercel.app)
@@ -89,6 +91,15 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 第二個網址，我會繼續保留。這樣我之後還可以回去進行效能對比。
 
 ## 現在這個網站
+
+先附上目前的成績，效能也還是一樣非常好。雖然 Lighthouse 在手機端的測試只能拿約 80 ~ 90 分之間，但我目前已經很滿足了。
+
+這是 PageSpeed Insights 的跑分：
+
+![https://raw.githubusercontent.com/gist/kwchang0831/f8a0fbde08b5cd6204438a90e222743e/raw/1daad5cd8b363649a06649a05b56b2d03c3e2aed/metrics.pagespeed.svg](https://raw.githubusercontent.com/gist/kwchang0831/f8a0fbde08b5cd6204438a90e222743e/raw/1daad5cd8b363649a06649a05b56b2d03c3e2aed/metrics.pagespeed.svg)
+
+[Web Page Test](https://www.webpagetest.org/) 的跑分：
+![blog2-01.avif](20220505/blog2-01.avif)
 
 去年研究的過程中，我曾經看到 Svelte 前端編譯器這酷東西。粗略瀏覽過，它的開發方式讓我耳目一新。我一直惦記在心裡，希望以後有時間要來玩看看。
 
@@ -105,16 +116,7 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 
 這邊附上作者的設計理念解說，有興趣的同學可以看看: [https://kwaa.dev/intro-urara](https://kwaa.dev/intro-urara)
 
-效能也還是一樣非常好。
-
-這是 PageSpeed Insights 的跑分：
-
-![https://raw.githubusercontent.com/gist/kwchang0831/f8a0fbde08b5cd6204438a90e222743e/raw/1daad5cd8b363649a06649a05b56b2d03c3e2aed/metrics.pagespeed.svg](https://raw.githubusercontent.com/gist/kwchang0831/f8a0fbde08b5cd6204438a90e222743e/raw/1daad5cd8b363649a06649a05b56b2d03c3e2aed/metrics.pagespeed.svg)
-
-[Web Page Test](https://www.webpagetest.org/) 的跑分：
-![blog2-01.avif](20220505/blog2-01.avif)
-
-如果有興趣的同學也想嘗試試試看，可以參考這篇安裝流程： [Urara - 用 Svelte 打造的靜態網站生成器；來架個跑超快的網誌](/svelte-urara)。
+如果想嘗試看看的話，同學們可以參考這篇安裝流程： [Urara - 用 Svelte 打造的靜態網站生成器；來架個跑超快的網誌](/svelte-urara)。
 
 ## 更新與變動
 
@@ -152,11 +154,13 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 
 現在改成自己架設 [Umami](https://umami.is/)。改成 [Umami](https://umami.is/) 之後就不用擔心被使用者的 ad-blockers 擋住，而且它的追蹤 script 非常小不會影響到用戶的使用體驗。最重要的當然還是隱私保護，所有的流量分析的資料都不會外流給第三方。
 
-### CloudFlare
+### CloudFlare DNS
 
 這次我把 DNS 改放到 [CloudFlare](https://www.cloudflare.com/) 下來管理，也順便把 DNSSEC (域名系統安全擴充) 打開了。除此之外，CloudFlare 有一些速度優化與 Cache 優化的功能，我也通通都給它開起來。
 
-最後就是我這次也嘗試了 [CloudFlare Workers](https://workers.cloudflare.com/)，用來轉址把舊的網誌轉移到新的網誌。 [CloudFlare Workers](https://workers.cloudflare.com/)是在介於從使用者到網站的最後一環節，如下圖：
+### CloudFlare Workers
+
+這次我也嘗試了 [CloudFlare Workers](https://workers.cloudflare.com/)，用來轉址把舊的網誌轉移到新的網誌。 [CloudFlare Workers](https://workers.cloudflare.com/)是在介於從使用者到網站的最後一環節，如下圖：
 
 ![fig01.avif](20220505/fig01.avif)
 
@@ -182,7 +186,7 @@ addEventListener('fetch', async event => {
 
 其實阿，前面的那些更新在第一個網站也都是可以實現的。畢竟 NextJS 是建立在 React 上，然後 React 生態系相對於 Svelte 大很多，有很多已經寫好的插件都可以直接拿來用。只要稍微改一下就可以了。
 
-但是，我還是毅然決然地換成了 Urara 。我說，是人就是需要一點衝動，一些火花，來嘗試學習新東西，同學你說對嗎？
+但是，我還是毅然決然地換成了 Urara 。我說，是人就是需要一點衝動，一些火花，來嘗試新東西，同學你說對嗎？
 
 後續搬家的過程很順利，就把圖片檔案與用 Markdown 語法撰寫的 `.md` 文章本體搬過來。稍微檢查一下文章的 metadata 寫法，然後移除沒有實作的 MDX 插件就完成了。
 
