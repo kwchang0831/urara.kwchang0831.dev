@@ -5,14 +5,16 @@ export const post: PostConfig = {
     use: ['Giscus'],
     style: 'boxed',
     giscus: {
-      src: 'https://giscus.app/client.js',
+      src: 'https://giscus.kwchang0831.dev/client.js',
       repo: 'kwchang0831/kwchang0831.dev',
       repoID: 'R_kgDOHPrjlQ',
       category: 'Comments',
       categoryID: 'DIC_kwDOHPrjlc4CO0AG',
-      mapping: 'pathname',
+      mapping: 'title',
+      inputPosition: 'top',
       reactionsEnabled: true,
       emitMetadata: false,
+      loading: 'lazy',
       lang: 'zh-TW',
       theme: 'dark'
     }

@@ -57,6 +57,8 @@ export type GiscusConfig = {
   theme?: string
   /** choose the language giscus will be displayed in. */
   lang?: string
+  loading?: string
+  inputPosition?: 'top' | 'bottom'
 }
 
 export type UtterancesConfig = {
