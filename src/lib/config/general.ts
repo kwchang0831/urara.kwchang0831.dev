@@ -55,7 +55,7 @@ export const head: HeadConfig = {
           // Preconnect
           '<link href="https://umami.kwchang0831.dev" rel="preconnect" crossorigin>',
           // Umami Analytics
-          '<script async defer data-website-id="e29bb16a-1e2e-48e6-8812-5d7bb04204b7" src="https://umami.kwchang0831.dev/umami.js" data-cache="true" data-domains="kwchang0831.dev,www.kwchang0831.dev"></script>'
+          '<script defer data-website-id="e29bb16a-1e2e-48e6-8812-5d7bb04204b7" src="https://umami.kwchang0831.dev/umami.js" data-cache="true" data-domains="kwchang0831.dev,www.kwchang0831.dev"></script>'
         ]
 }
 
