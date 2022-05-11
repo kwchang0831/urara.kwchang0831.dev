@@ -59,7 +59,7 @@ export default /** @type {import('@sveltejs/kit').Config} */ {
             navigateFallback: '/',
             dontCacheBustURLsMatching: /-[a-f0-9]{8}\./,
             globDirectory: './build/',
-            globPatterns: ['**/*.{js,css,html,ico,png,svg,webmanifest}'],
+            globPatterns: ['**/*.{js,json,css,html,ico,png,jpg,jpeg,gif,webp,avif,svg,webmanifest}'],
             globIgnores: ['**/sw*', '**/workbox-*'],
             runtimeCaching: [
               {
