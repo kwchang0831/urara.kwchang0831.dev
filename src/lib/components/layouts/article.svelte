@@ -9,7 +9,7 @@
   import Head from '$lib/components/head.svelte'
   import Post from '$lib/components/layouts/_post.svelte'
   import Toc from '$lib/components/post_toc.svelte'
-
+  import Cover from '$lib/components/post_cover.svelte'
   export let path = undefined
   export let created = undefined
   export let updated = undefined
@@ -34,9 +34,7 @@
   </div>
   <div slot="top">
     {#if cover}
-      <figure class="mx-4 md:mx-0 w-auto">
-        <Image class="u-featured rounded-box w-full shadow-xl" src={cover} />
-      </figure>
+      <Cover {cover} figureClass="mx-4 md:mx-0 w-auto" imgClass="u-featured rounded-box w-full shadow-xl" />
     {/if}
   </div>
   <div slot="middle-bottom">
