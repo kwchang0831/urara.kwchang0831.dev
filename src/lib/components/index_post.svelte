@@ -5,6 +5,17 @@
   export let post: Urara.Post
   export let loading: 'eager' | 'lazy' = 'lazy'
   export let decoding: 'async' | 'sync' | 'auto' = 'async'
+
+  import { onMount } from 'svelte'
+  import { fly } from 'svelte/transition'
+  import { page } from '$app/stores'
+  import { browser } from '$app/env'
+  import { posts as storedPosts, tags as storedTags } from '$lib/stores/posts'
+  import Head from '$lib/components/head.svelte'
+  import Footer from '$lib/components/footer.svelte'
+  import Post from '$lib/components/index_post.svelte'
+  import Profile from '$lib/components/index_profile.svelte'
+  import IconTrash from '~icons/heroicons-outline/trash'
 </script>
 
 {#if post.layout === 'photo'}
@@ -16,6 +27,7 @@
     <figure>
       <Image class="u-photo object-cover object-center h-full w-full" src={post.banner} {loading} {decoding} />
     </figure>
+
     <div class="card-body mt-auto">
       <Status {post} index={true} photo={true} />
     </div>
@@ -25,7 +37,7 @@
     itemscope
     itemtype="https://schema.org/BlogPosting"
     itemprop="blogPost"
-    class="h-entry card bg-base-100  rounded-none md:rounded-box group {post.layout === 'article' && post.banner
+    class="h-entry card bg-base-100 rounded-none md:rounded-box group {post.layout === 'article' && post.banner
       ? 'image-full before:!rounded-none'
       : ''}">
     {#if post.layout === 'article' && post.banner}
@@ -37,14 +49,31 @@
           {decoding} />
       </figure>
     {/if}
+
+    {#if post.series_title}
+      <div class="card-title mb-6 flex gap-0 items-stretch group-hover:decoration-primary">
+        <span class="md:rounded-tl-2xl bg-green-500 py-2">
+          <span class="pl-4 pr-3 font-bold text-sm text-black">{post.series_title}</span>
+        </span>
+        {#if post.series_name}
+          <span class="border-b border-green-800 flex-1 md:rounded-tr-2xl py-2">
+            <span class="px-3 text-sm font-semibold text-neutral-100 bg-neutral-800 align-middle tracking-wide">
+              {post.series_name}
+            </span>
+          </span>
+        {/if}
+      </div>
+    {:else}
+      <div class="card-title py-4" />
+    {/if}
+
     <div
-      class="card-body {post.layout === 'article' && post.banner
+      class="card-body py-0 {post.layout === 'article' && post.banner
         ? 'md:col-start-1 md:row-start-1 md:text-neutral-content md:z-20'
         : ''}">
       {#if post.layout === 'reply'}
         <Reply inReplyTo={post.inReplyTo} class="-mt-4 -mx-4 mb-4" />
       {/if}
-      <Status {post} index={true} featured={post.layout === 'article' && post.photo ? true : false} />
       {#if post.layout === 'article'}
         <h1
           itemprop="name headline"
@@ -56,6 +85,10 @@
         {/if}
       {/if}
       {@html post.html}
+    </div>
+
+    <div class="card-actions justify-end px-6 py-4">
+      <Status {post} index={true} featured={post.layout === 'article' && post.photo ? true : false} />
     </div>
   </article>
 {/if}

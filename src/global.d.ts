@@ -65,6 +65,9 @@ declare namespace Urara {
        * @property bridgy-{target} - add a link to Bridgy in the post. https://brid.gy/publish/{target}
        */
       flags?: string[]
+      series_title?: string
+      series_name?: string
+      series_color?: string
     }
     type Metadata = Common & (Article | Note | Photo | Reply)
     interface Module {

@@ -1,14 +1,16 @@
 ---
-title: 學習 Elixir - 01. 簡略介紹與安裝筆記
-description: 一起學習 Elixir 系列。 01. 簡略介紹與安裝筆記。 建議使用 Linux 或 macOS 來安裝。本篇文章主要紀錄使用 Ubuntu 與 asdf 來安裝 Elixir。
+title: 01. Elixir 簡略介紹與安裝筆記
+description: 讓我們一起學 Elixir 系列。 01. 簡略介紹與安裝筆記。 建議使用 Linux 或 macOS 來安裝。本篇文章主要紀錄使用 Ubuntu 與 asdf 來安裝 Elixir。
 summary: 簡略介紹 Elixir 與使用 asdf 來安裝 Elixir 的流程
 published: 2022-05-11
 cover: /elixir/install/cover.avif
+series_title: '#Learn-Elixir 系列'
+series_name: ⚡ 讓我們一起學 Elixir 🧪
 tags:
   - 中文
   - Ubuntu
   - Elixir
-  - Learning-Elixir
+  - Learn-Elixir
   - 2022
 ---
 
