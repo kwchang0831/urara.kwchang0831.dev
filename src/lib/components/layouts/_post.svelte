@@ -1,4 +1,7 @@
 <script lang="ts">
+  import { onMount } from 'svelte'
+  import mediumZoom from 'medium-zoom'
+
   import { fly } from 'svelte/transition'
   import { browser } from '$app/env'
   import { posts as storedPosts } from '$lib/stores/posts'
@@ -33,6 +36,13 @@
         .find(post => !post.flags?.includes('unlisted'))
       next = posts.slice(index + 1).find(post => !post.flags?.includes('unlisted'))
     })
+
+  onMount(() => {
+    mediumZoom('[data-zoomable]', {
+      scrollOffset: 0,
+      background: 'rgba(25, 18, 25, .9)'
+    })
+  })
 </script>
 
 <div class="flex flex-col flex-nowrap justify-center xl:flex-row xl:flex-wrap">

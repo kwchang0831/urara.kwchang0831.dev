@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Image from '$lib/components/prose/img.svelte'
+  import Image from '$lib/components/extra/zoom.svelte'
   export let cover: Urara.Post.Article['cover']
   export let figureClass: string
   export let imgClass: string
