@@ -9,7 +9,7 @@ export const site: SiteConfig = {
   description: '@kwchang0831 - Love to learn new stuff. Master of none. Having fun is all it matters. YOLO!',
   author: {
     name: 'kwchang0831',
-    photo: '/assets/maskable@192.avif',
+    photo: '/assets/maskable@512.webp',
     status: '❤️',
     bio: "Do it. Just do it!<br/>Don't let your dream be dream!<br/>",
     github: 'kwchang0831',
