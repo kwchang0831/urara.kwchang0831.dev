@@ -23,7 +23,7 @@
     </div>
   {/if}
   <div class="flex-1 text-right my-auto">
-    <h2 class="text-3xl font-bold mt-0 mb-2 p-name">{site.author.name}</h2>
+    <h1 class="text-3xl font-bold mt-0 mb-2 p-name">{site.author.name}</h1>
     <p class="opacity-75 p-note">{@html site.author.bio}</p>
     <p class="pt-3 space-x-3">
       {#if site.author.email}

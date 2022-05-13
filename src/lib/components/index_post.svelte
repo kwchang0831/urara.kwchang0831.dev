@@ -75,11 +75,11 @@
         <Reply inReplyTo={post.inReplyTo} class="-mt-4 -mx-4 mb-4" />
       {/if}
       {#if post.layout === 'article'}
-        <h1
+        <h2
           itemprop="name headline"
           class="card-title text-2xl mr-auto bg-[length:100%_0%] bg-[position:0_88%] underline decoration-4 decoration-transparent group-hover:decoration-primary hover:bg-[length:100%_100%] hover:text-primary-content bg-gradient-to-t from-primary to-primary bg-no-repeat transition-all ease-in-out duration-300">
           <a itemprop="url" class="u-url p-name" href={post.path}>{post.title ?? post.path.slice(1)}</a>
-        </h1>
+        </h2>
         {#if post.summary}
           <p itemprop="description" class="p-summary mb-auto">{post.summary}</p>
         {/if}
