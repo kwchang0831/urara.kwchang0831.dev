@@ -8,4 +8,3 @@
 </script>
 
 <img {src} {alt} class="u-photo {className ?? 'rounded-lg my-2'}" {loading} {decoding} />
-

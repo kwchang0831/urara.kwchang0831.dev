@@ -28,42 +28,6 @@
         headingsObserver.observe(element)
       )
       articleObserver.observe(document.getElementsByTagName('main')[0])
-
-      const post_toc = document.getElementById('post-toc')
-      post_toc.style.cursor = 'grab'
-      let pos = { top: 0, left: 0, x: 0, y: 0 }
-
-      const mouseDownHandler = function (e) {
-        post_toc.style.cursor = 'grabbing'
-        post_toc.style.userSelect = 'none'
-
-        pos = {
-          left: post_toc.scrollLeft,
-          top: post_toc.scrollTop,
-          x: e.clientX,
-          y: e.clientY
-        }
-
-        document.addEventListener('mousemove', mouseMoveHandler)
-        document.addEventListener('mouseup', mouseUpHandler)
-      }
-
-      const mouseMoveHandler = function (e) {
-        const dx = e.clientX - pos.x
-        const dy = e.clientY - pos.y
-        post_toc.scrollTop = pos.top + dy
-        post_toc.scrollLeft = pos.left - dx
-      }
-
-      const mouseUpHandler = function () {
-        post_toc.style.cursor = 'grab'
-        post_toc.style.removeProperty('user-select')
-
-        document.removeEventListener('mousemove', mouseMoveHandler)
-        document.removeEventListener('mouseup', mouseUpHandler)
-      }
-
-      post_toc.addEventListener('mousedown', mouseDownHandler)
     }
   })
 
@@ -82,6 +46,41 @@
         ? document.getElementById(`toc-link-${heading.slug}`)?.classList.add('!border-accent')
         : document.getElementById(`toc-link-${heading.slug}`)?.classList.remove('!border-accent')
     )
+
+  function mouseDownHandler(e) {
+    const post_toc = document.getElementById('post-toc')
+    post_toc.style.cursor = 'grabbing'
+    post_toc.style.userSelect = 'none'
+
+    pos = {
+      left: post_toc.scrollLeft,
+      top: post_toc.scrollTop,
+      x: e.clientX,
+      y: e.clientY
+    }
+
+    document.addEventListener('mousemove', mouseMoveHandler)
+    document.addEventListener('mouseup', mouseUpHandler)
+  }
+
+  function mouseMoveHandler(e) {
+    const post_toc = document.getElementById('post-toc')
+    const dx = e.clientX - pos.x
+    const dy = e.clientY - pos.y
+    post_toc.scrollTop = pos.top + dy
+    post_toc.scrollLeft = pos.left - dx
+  }
+
+  function mouseUpHandler() {
+    const post_toc = document.getElementById('post-toc')
+    post_toc.style.cursor = 'grab'
+    post_toc.style.removeProperty('user-select')
+
+    document.removeEventListener('mousemove', mouseMoveHandler)
+    document.removeEventListener('mouseup', mouseUpHandler)
+  }
+
+  // post_toc.addEventListener('mousedown', mouseDownHandler)
 </script>
 
 <aside class="sticky top-16 py-8">
@@ -89,7 +88,8 @@
     id="post-toc"
     aria-label="TableOfContent"
     dir="rtl"
-    class="no-scrollbar max-h-[calc(100vh-12rem)] overflow-y-hidden hover:overflow-y-auto">
+    class="no-scrollbar max-h-[calc(100vh-12rem)] overflow-y-auto"
+    on:mousedown={mouseDownHandler}>
     <Tree
       toc={toc.reduce(
         (acc, heading) => {
