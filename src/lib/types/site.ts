@@ -18,7 +18,8 @@ export type SiteConfig = {
     bio?: string
     github?: string
     twitter?: string
-    discord?: string
+    discordID?: string
+    discordTag?: string
     email?: string
     pgp?: {
       text: string

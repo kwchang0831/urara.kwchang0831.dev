@@ -44,7 +44,7 @@
           rel="noopener noreferrer"
           data-tip="Discord"
           aria-label="Discord"
-          href="https://discord.com/users/{site.author.discord}">
+          href="https://discordapp.com/users/{site.author.discordID}">
           <Discord class="fill-current hover:text-blue-500 inline-block w-8 h-8 mr-1" />
         </a>
       {/if}
