@@ -1,6 +1,6 @@
 <script lang="ts">
   export let text = ''
-  export let type: 'alert' | 'info' | 'warning' | 'error' = 'info'
+  export let type: 'alert' | 'info' | 'warning' | 'error' = 'alert'
 </script>
 
 {#if type == 'alert'}

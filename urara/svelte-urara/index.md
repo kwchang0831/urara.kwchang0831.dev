@@ -1,7 +1,7 @@
 ---
-title: Urara - 用 Svelte 打造的靜態網站生成器；來架個跑超快的網誌
+title: Urara - 用 Svelte 打造的靜態網站生成器 ; 來架個跑超快的網誌
 description: 用 Svelte 打造的靜態網站生成器 - Urara。 打造速度超快的網站，功能十足且簡潔美觀。 本篇文章主要紀錄 Urara 的架設流程。
-summary: 使用 Urara 生成並架設網誌於免費平台 Vercel 與 Netlify
+summary: 手把手教學使用 Urara 架設網誌於免費平台 Vercel 與 Netlify
 published: 2022-05-03
 cover: /svelte-urara/cover.avif
 tags:
@@ -22,7 +22,7 @@ tags:
 本網站是用 Urara 建置而成，PageSpeed 的評分如下：  
 ![fig01.svg](svelte-urara/fig01.svg)
 
-<Alertbox text="Performance 通常會在 90~100之間浮動。" type="sucess"/>
+<Alertbox text="Performance 通常會在 90~100之間浮動。"/>
 
 Urara 生成的網站不但速度跑很快，而且完全還可以免費架設。
 
@@ -45,11 +45,11 @@ Urara 生成的網站不但速度跑很快，而且完全還可以免費架設�
 ```shell
 urara
 +-- about
-    +-- index.svelte.md
+    +-- index.md
 +-- blog
-    +-- index.svelte.md
+    +-- index.md
     +-- 20220503
-        +-- index.svelte.md
+        +-- index.md
 ```
 
 那我們生成出來的網站路徑就會有以下：
@@ -71,27 +71,37 @@ Urara 的作者目前非常勤勞地開發新功能與優化系統，或許未�
 本文章會使用以下環境來操作：
 
 - Ubuntu 22.04 LTS
-- Nodejs v18.0.0
+- NodeJS 18.0.0
 - pnpm 7.0.0
 
 你可以使用 MacOS 或 Windows，流程一樣。
 
 ## 安裝 NodeJS
 
-檢查 Nodejs 版本。
+檢查 NodeJS 版本。
 
 ```shell
 node -v
 # v18.0.0
 ```
 
-### 選擇 1. 直接安裝 NodeJS
+### 選擇 1. Ubuntu 安裝 NodeJS
 
 ```shell
 sudo apt install node -y
 ```
 
-### 選擇 2. 使用 [asdf](https://asdf-vm.com/) 安裝 NodeJS
+### 選擇 2. Windows 下載安裝檔
+
+官網下載安裝檔案： [https://nodejs.org/en/](https://nodejs.org/en/)
+
+### 選擇 3. Windows 使用 Choco 安裝
+
+```shell
+sudo choco install nodejs
+```
+
+### 選擇 4. Ubuntu 使用 [asdf](https://asdf-vm.com/) 安裝 NodeJS
 
 新增 NodeJS。
 
@@ -122,16 +132,6 @@ asdf install nodejs latest
 
 ```shell
 asdf global nodejs latest
-```
-
-### 選擇 3. Windows 下載安裝檔
-
-官網下載安裝檔案： [https://nodejs.org/en/](https://nodejs.org/en/)
-
-### 選擇 4. Windows 使用 Choco 安裝
-
-```shell
-sudo choco install nodejs
 ```
 
 ## 安裝 [degit](https://github.com/Rich-Harris/degit)
@@ -184,7 +184,7 @@ pnpm dev
 
 ![fig01](svelte-urara/fig01.avif)
 
-若是你是用 remote 的方式，請修改 `package.json` 的 `dev:kit` 指令：增加 `--host` 參數，讓內網的其他電腦可以透過 `https://{IP}:3000/` 的方式看到網頁。
+若是你是用 remote 的方式，請修改 `package.json` 的 `dev:kit` 指令，最後添加 `--host` 參數，讓內網的其他電腦可以透過 `http://{IP}:3000/` 的方式看到網頁。
 
 ```js title="./package.json"
 ...
@@ -206,7 +206,7 @@ cd ./src/lib/config
 
 - title: 網站標題
 - subtitle: 網站副標題
-- descr: 網站介紹
+- description: 網站介紹
 - author: 作者
 
 `./src/lib/config/general.ts`
@@ -262,7 +262,10 @@ urara
 
 - http://localhost:3000/about
 
-那我們就會新增一個 about 的資料夾 與 `index.svelte.md`：
+那我們就會新增一個 about 的資料夾，然後在裡面新增一個  `index.md` 檔案。
+
+
+<Alertbox text="檔案名稱 <code>index.md</code> 與 <code>index.svelte.md</code> 其實都可以。根據作者表示，中間放入 `svelte` 是為了備註這個 MD 檔案裡有使用到 svelte。"/>
 
 ```shell
 urara
@@ -282,7 +285,7 @@ urara
 ```md title="./urara/about/index.svelte.md"
 ---
 title: 文章標題
-descripton: 文章描述
+description: 文章描述
 created: 新增日期 (選擇性: 若無提供，系統以檔案新增日期取代)
 published: 發布日期
 updated: 更新日期 (選擇性: 若無提供，系統以檔案更新日期取代)
@@ -310,20 +313,20 @@ tags:
 ```shell
 urara
 +-- about
-    +-- index.svelte.md
+    +-- index.md
     +-- cover.png
     +-- img1.png
 ```
 
 在我們文章屬性的部分，路徑會這樣寫：
 
-```md title="./urara/index.svelte.md"
+```md title="./urara/index.md"
 cover: /about/cover.png
 ```
 
 然後在文章內容中要嵌入的話，會這樣寫：
 
-```md title="./urara/index.svelte.md"
+```md title="./urara/index.md"
 ![img1](about/img1.png)
 ```
 
@@ -339,7 +342,7 @@ git add .
 git commit -m "first commit"
 git branch -M main
 # 請換上自己開新的Repo之後的 .git 位置
-git remote add origin git@github.com:your/repo.git
+git remote add origin [git@github.com:your/repo.git]
 git push -u origin main
 ```
 
@@ -372,6 +375,6 @@ git push -u origin main
 
 辛苦了，希望你已經順利地架設好網誌，開始隨意摸索 Urara 了。
 
-若文章哪裏有問題，還望不吝指教。
+若文章哪裏有問題，還望不吝指教。感恩。
 
 ## 完結
