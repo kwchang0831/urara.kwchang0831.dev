@@ -37,7 +37,7 @@
           <Mailto class="fill-current hover:text-lime-500 inline-block w-8 h-8 mr-1" />
         </a>
       {/if}
-      {#if site.author.discord}
+      {#if site.author.discordID}
         <a
           class="text-sm transition hover:text-gray-600 tooltip tooltip-secondary hover:text-secondary"
           target="_blank"

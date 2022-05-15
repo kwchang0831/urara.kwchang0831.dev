@@ -52,11 +52,11 @@
 
     {#if post.series_title}
       <div class="card-title mb-6 flex gap-0 items-stretch group-hover:decoration-primary">
-        <span class="md:rounded-tl-2xl bg-green-500 py-2">
+        <span class="rounded-r-2xl md:rounded-tr-none md:rounded-br-2xl bg-green-500 py-2">
           <span class="pl-4 pr-3 font-bold text-sm text-black">{post.series_title}</span>
         </span>
         {#if post.series_name}
-          <span class="border-b border-green-800 flex-1 md:rounded-tr-2xl py-2">
+          <span class="flex-1 md:rounded-tr-2xl py-2">
             <span class="px-3 text-sm font-semibold text-neutral-100 bg-neutral-800 align-middle tracking-wide">
               {post.series_name}
             </span>

@@ -2,10 +2,10 @@ import type { SiteConfig } from '$lib/types/site'
 
 export const site: SiteConfig = {
   protocol: 'https://',
-  domain: (import.meta.env.URARA_SITE_DOMAIN as string) ?? 'www.kwchang0831.dev',
+  domain: 'www.kwchang0831.dev',
   title: '成功他媽．阿瑋',
   subtitle: '成功最終會回來找他媽的',
-  lang: 'zh-TW',
+  lang: 'zh',
   description: '@kwchang0831 - Love to learn new stuff. Master of none. Having fun is all it matters. YOLO!',
   author: {
     name: 'kwchang0831',

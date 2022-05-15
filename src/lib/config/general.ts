@@ -12,38 +12,6 @@ export const theme: ThemeConfig = [
   {
     name: 'dark',
     text: '🌑 Dark'
-  },
-  {
-    name: 'bumblebee',
-    text: '🐝 Bumblebee'
-  },
-  {
-    name: 'halloween',
-    text: '🎃 Halloween'
-  },
-  {
-    name: 'aqua',
-    text: '💦 Aqua'
-  },
-  {
-    name: 'pastel',
-    text: '🌈 Pastel'
-  },
-  {
-    name: 'wirefream',
-    text: '📱 Wireframe'
-  },
-  {
-    name: 'luxury',
-    text: '💰 Luxury'
-  },
-  {
-    name: 'dracula',
-    text: '🧛 Dracula'
-  },
-  {
-    name: 'night',
-    text: '🌃 Night'
   }
 ]
 

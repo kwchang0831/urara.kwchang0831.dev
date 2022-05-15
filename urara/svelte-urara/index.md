@@ -14,7 +14,7 @@ tags:
 ---
 
 <script lang="ts">
-  import Alertbox from '$lib/components/extra/alertbox.svelte'
+  import Infobox from '$lib/components/extra/infobox.svelte'
 </script>
 
 ## 開頭
@@ -22,7 +22,7 @@ tags:
 本網站是用 Urara 建置而成，PageSpeed 的評分如下：  
 ![fig01.svg](svelte-urara/fig01.svg)
 
-<Alertbox text="Performance 通常會在 90~100之間浮動。"/>
+<Infobox message="Performance 通常會在 90~100之間浮動。" status="info"/>
 
 Urara 生成的網站不但速度跑很快，而且完全還可以免費架設。
 
@@ -264,7 +264,7 @@ urara
 
 那我們就會新增一個 about 的資料夾，然後在裡面新增一個 `index.md` 檔案。
 
-<Alertbox text="檔案名稱 <code>index.md</code> 與 <code>index.svelte.md</code> 其實都可以。根據作者表示，中間放入 `svelte` 是為了備註這個 MD 檔案裡有使用到 svelte。"/>
+<Infobox message="根據作者表示，檔案名稱 <code>index.md</code> 與 <code>index.svelte.md</code> 其實都可以。中間放入 <code>svelte</code> 是為了備註這個 MD 檔案裡有使用到 svelte。" status="info"/>
 
 ```shell
 urara
