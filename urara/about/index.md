@@ -1,6 +1,6 @@
 ---
-title: 關於 kwchang0831
-description: 關於 kwchang0831 | kwchang0831.dev | 成功他媽．阿瑋
+title: About Me - kwchang0831
+description: About me - kwchang0831 | kwchang0831.dev | 成功他媽．阿瑋
 published: 2022-04-27
 flags:
   - unlisted
@@ -40,25 +40,21 @@ That’s all a loser hope for; A successful loser.
 
 The above questions are frequently asked during interviews. These questions help interviewers analyze the behavior of interviewees.
 
-However, it only makes sense if the questions were asked from qualified individuals. If you have worked with qualified brilliant interviewers, you can totally tell the differences.
+However, it only makes sense if the questions were asked from qualified individuals. If you have worked with qualified and brilliant interviewers, you could probably tell the differences.
 
-Some incompetent interviewers have neither related background knowledge nor sufficient experience to analyze behavior from interviewees. The reason they asked those questions was only because other interviewers at top end companies have done it.
+||Some incompetent interviewers have neither related background knowledge nor sufficient experience to analyze behavior from interviewees. The reason they asked those questions was only because other interviewers at top end companies have done it.||
 
-You trusted their professionalism, but they judged your definition of success and failure. They looked at you with undisguised contempt and showed you no respect. Later, you find out that with their level of education background and experience, it is absurd that you were scorned.
+||You trusted their professionalism, but they judged your definition of success and failure. They looked at you with undisguised contempt and showed you no respect. Later, you find out that with their level of education background and experience, it is absurd that you were scorned.||
 
-The truth is that any person could split out the same questions pretending to be professional. One can just sit there being ignorantly arrogant and acting superior only because he/she already have his/her butt on that position.
+||The truth is that any person could split out the same questions pretending to be professional. One can just sit there being ignorantly arrogant and acting superior only because he/she already have his/her butt on that position.||
 
-What a waste of resource and time! What a shame!
+||What a waste of resource and time! What a shame!||
 
 So, I would say...
 
-Just let those incompetent people judge all they want with their uneducated and flawed guesses.
+||Just let those incompetent people judge all they want with their uneducated and flawed guesses. Do not let them intimidate you. What can you expect from a dog but a bark?||
 
-Do not let them intimidate you. What can you expect from a dog but a bark?
-
-Whatever they say, you do not prove a person wrong by cutting out his/her tongue. Moreover, you have nothing to prove to anyone.
-
-Your value shall never be judged by external validation.
+||Whatever they say, you do not prove a person wrong by cutting out his/her tongue. Moreover, you have nothing to prove to anyone. Your value shall never be judged by external validation.||
 
 Just do your best all the time and try to exceed yourself. Be proud of yourself and be humble to others.
 

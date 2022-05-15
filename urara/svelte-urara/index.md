@@ -262,8 +262,7 @@ urara
 
 - http://localhost:3000/about
 
-那我們就會新增一個 about 的資料夾，然後在裡面新增一個  `index.md` 檔案。
-
+那我們就會新增一個 about 的資料夾，然後在裡面新增一個 `index.md` 檔案。
 
 <Alertbox text="檔案名稱 <code>index.md</code> 與 <code>index.svelte.md</code> 其實都可以。根據作者表示，中間放入 `svelte` 是為了備註這個 MD 檔案裡有使用到 svelte。"/>
 
