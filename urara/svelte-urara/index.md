@@ -22,7 +22,11 @@ tags:
 本網站是用 Urara 建置而成，PageSpeed 的評分如下：  
 ![fig01.svg](svelte-urara/fig01.svg)
 
-<Infobox message="Performance 通常會在 90~100之間浮動。" status="info"/>
+<Infobox status="info" title="關於 PageSpeed 測量">
+
+上圖是在 Git Commit 完成之後，設定好的 Github Action 所進行的自動網站速度測量。Performance 通常會在 90~100。最新的測量狀況請查看 [Git Repo](https://github.com/kwchang0831/kwchang0831.dev)。
+
+</Infobox>
 
 Urara 生成的網站不但速度跑很快，而且完全還可以免費架設。
 
@@ -264,7 +268,11 @@ urara
 
 那我們就會新增一個 about 的資料夾，然後在裡面新增一個 `index.md` 檔案。
 
-<Infobox message="根據作者表示，檔案名稱 <code>index.md</code> 與 <code>index.svelte.md</code> 其實都可以。中間放入 <code>svelte</code> 是為了備註這個 MD 檔案裡有使用到 svelte。" status="info"/>
+<Infobox status="info" title="關於檔案命名 <code>index.svelte.md</code> vs  <code>index.md</code>">
+
+根據作者，檔案名稱 `index.md` 與 `index.svelte.md` 其實都可以。中間放入 `svelte` 是為了備註這個 MD 檔案裡有使用到 svelte。
+
+</Infobox>
 
 ```shell
 urara

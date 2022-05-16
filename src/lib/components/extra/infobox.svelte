@@ -3,7 +3,6 @@
   import IconCheckCircle from '~icons/heroicons-outline/check-circle'
   import IconExclamationCircle from '~icons/heroicons-outline/exclamation-circle'
   import IconXCircle from '~icons/heroicons-outline/x-circle'
-  export let message: string = undefined
   export let title: string = undefined
   export let description: string = undefined
   export let status: 'info' | 'success' | 'warning' | 'error' = undefined
@@ -14,8 +13,8 @@
   class:alert-success={status === 'success'}
   class:alert-warning={status === 'warning'}
   class:alert-error={status === 'error'}
-  class="alert shadow-inner my-4">
-  <div>
+  class="alert flex-col shadow-inner my-4">
+  <div class="mr-auto">
     {#if status === 'success'}
       <IconCheckCircle />
     {:else if status === 'warning'}
@@ -23,15 +22,18 @@
     {:else if status === 'error'}
       <IconXCircle />
     {:else}
-      <IconInformationCircle class={!status ? 'stroke-info h-6 w-6' : 'stroke-current h-6 w-6'} />
+      <IconInformationCircle />
     {/if}
-    {#if title}
-      <div>
-        <div class="font-bold">{@html title}</div>
+    <div>
+      <div class:font-bold={description}>{@html title}</div>
+      {#if description}
         <div class="text-xs">{@html description}</div>
-      </div>
-    {:else}
-      <span>{@html message}</span>
-    {/if}
+      {/if}
+    </div>
   </div>
+  {#if $$slots.default}
+    <div class="block w-full no-margin-p">
+      <slot />
+    </div>
+  {/if}
 </div>
