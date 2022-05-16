@@ -11,7 +11,7 @@ export const site: SiteConfig = {
     name: 'kwchang0831',
     photo: '/assets/maskable@512.webp',
     status: '❤️',
-    bio: "Do it. Just do it!<br/>Don't let your dream be dream!<br/>",
+    bio: "Do it. Just do it!<br/>Don't let your dreams be dreams!<br/>",
     github: 'kwchang0831',
     discordID: '968756691392942090',
     discordTag: 'kwchang0831#7799',
