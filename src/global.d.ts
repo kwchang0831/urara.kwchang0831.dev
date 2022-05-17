@@ -16,6 +16,7 @@ declare namespace Urara {
     interface Article {
       layout: 'article'
       cover?: string
+      coverText?: string
       banner?: string
       toc?: false | Article.Toc[]
     }

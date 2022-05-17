@@ -21,10 +21,11 @@
   export let description = undefined
   export let summary = undefined
   export let cover = undefined
+  export let coverText = undefined
   export let toc = undefined
 </script>
 
-<Head post={{ layout: 'article', created, updated, published, title, tags, description, summary, cover, path }} />
+<Head post={{ layout: 'article', created, updated, published, title, tags, description, summary, cover, coverText, path }} />
 
 <Post layout="article" {path} {flags} {tags} {created} {updated} {published}>
   <div slot="right" class="h-full hidden xl:block">
@@ -32,9 +33,9 @@
       <Toc {toc} />
     {/if}
   </div>
-  <div slot="top">
+  <div slot="top" class="urara-prose prose">
     {#if cover}
-      <Cover {cover} figureClass="mx-4 md:mx-0 w-auto" imgClass="u-featured rounded-box w-full shadow-xl" />
+      <Cover {cover} {coverText} imgClass="u-featured rounded-box w-full shadow-xl" />
     {/if}
   </div>
   <div slot="middle-bottom">
