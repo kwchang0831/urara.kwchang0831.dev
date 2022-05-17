@@ -1,5 +1,5 @@
 ---
-title: '[草稿] 02. Elixir 學習 - 跨出第一步'
+title: '02. Elixir 學習 - 跨出第一步'
 description: 讓我們一起學 Elixir 系列。 02. Elixir 學習 - 跨出第一步。 簡短介紹 Elixir 與 免費的學習資源。之後就開始動手來撰寫第一個 Elixir 程式。
 summary: 簡短介紹 Elixir 與 開始動手來撰寫第一個 Elixir 程式
 published: 2022-05-18
@@ -16,6 +16,7 @@ tags:
 
 <script lang="ts">
   import Img from '$lib/components/extra/zoom.svelte'
+  import Infobox from '$lib/components/extra/infobox.svelte'
 </script>
 
 ## 開頭
@@ -87,7 +88,7 @@ Elixir 可以用來做後端伺服器 (Back End) 或是全端的網頁 (Full Sta
 
   提供練習題目，直接動手寫碼來學習語言的平台。雖然沒有中文，但這平台可以讓你的學習速度倍增。
 
-除此之外，還可以透過 [Github](https://github.com/) 上別人的 Learn-By-Doing 專案來參考學習，例如：
+除此之外，還可以透過 [Github](https://github.com/search?q=learn+elixir) 上搜索別人的專案來參考學習，例如：
 
 - [seven1m/30-days-of-elixir](https://github.com/seven1m/30-days-of-elixir)
 
@@ -97,33 +98,320 @@ Elixir 可以用來做後端伺服器 (Back End) 或是全端的網頁 (Full Sta
 
   沒錯，這是我的學習紀錄。我也還正在用空閒的時間學習中。
 
-## 未完待續
+## IDE
 
-後續還在撰寫中...
+我主要使用的是 [Visual Studio Code](https://code.visualstudio.com/)，若你熟悉其他 IDE ，請隨意。
 
-## 玩玩看
+### VSCode 插件
 
-這邊就可以開始測試 Elixir 嚕。
+- [ElixirLS](https://marketplace.visualstudio.com/items?itemName=JakeBecker.elixir-ls)
 
-第一個動作我們就是讓程式輸出 `Hello World`。
+  稍微改一下 ElixirLS 的設定
+
+  <kbd>Ctrl + Shift + P</kbd>
+
+  打開 `Preferences: Open User Setting`
+
+  可以直接修改 `json` 或是使用 UI 的方式來更改以下設定。
+
+```json
+"elixirLS.suggestSpecs": false,
+"elixirLS.dialyzerEnabled": true,
+"elixirLS.signatureAfterComplete": false,
+"elixirLS.fetchDeps": false,
+```
+
+## 環境確認
+
+查看已安裝 Elixir 版本
 
 ```shell
-iex(1)> IO.puts("Hello World")
+elixir -v
+```
+
+結果
+
+```shell
+❯ elixir -v
+Erlang/OTP 24 [erts-12.3.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]
+
+Elixir 1.13.4 (compiled with Erlang/OTP 24)
+```
+
+## Hello World
+
+依造[慣例](https://zh.wikipedia.org/wiki/Hello_World)，我們第一件事情就是寫個程式來輸出 `Hello World` 到螢幕上。
+
+### 使用 iex
+
+iex 是 Elixir 的 [REPL](https://zh.wikipedia.org/zh-tw/%E8%AF%BB%E5%8F%96%EF%B9%A3%E6%B1%82%E5%80%BC%EF%B9%A3%E8%BE%93%E5%87%BA%E5%BE%AA%E7%8E%AF) interactive shell (互動式的 shell)
+
+打開 shell，啟動 iex
+
+```shell
+iex
+```
+
+結果
+
+```shell
+❯ iex
+Erlang/OTP 24 [erts-12.3.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]
+
+Interactive Elixir (1.13.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)>
+```
+
+查看幫助，輸入
+
+```shell
+iex(1)> h
+```
+
+輸出 `Hello World` 的程式碼
+
+```shell
+iex(2)> IO.puts "Hello World"
 Hello World
 :ok
+iex(3)>
+```
+
+`IO.puts "Hello World"` 這裡面的 `IO` 是一個內建 module。裡面有一個 function `puts` ，可以讓我們把輸入的字串印列到電腦螢幕上。
+
+若想了解更多有關 `IO` 這個 module，
+
+第一種方式，可以使用 iex 的 `h`
+
+```shell
+iex(3)> h IO
+```
+
+第二種方式，到 Elixir 的 [hexdocs](https://hexdocs.pm/) 上查看
+
+- [https://hexdocs.pm/elixir/IO.html](https://hexdocs.pm/elixir/IO.html)
+
+接下來我們來嘗試用其他方法來寫 Hello World 吧。
+
+結束 iex，目前我們直接 <kbd>Ctrl + C</kbd> 兩次就好了。
+
+### 使用 elixir 執行 `helloWorld.ex`
+
+接下來我們會創建一個 `.ex` 的文檔來寫 Hello World。
+
+<Infobox status="info" title="<code>.ex</code> 與 <code>.exs</code> 的差別。">
+
+`.ex` 與 `.exs` 都是 Elixir 所使用的副檔名。差別只是 `.ex` 會經過編譯，而 `.exs` 會像 script 檔案一樣不經過編譯直接執行。我們暫時不需要去深究。
+
+</Infobox>
+
+建立 `helloWorld.ex` ，輸入以下後存檔
+
+```elixir title="helloWorld.ex"
+IO.puts "Hello World"
+```
+
+在文檔的路徑打開 shell 輸入
+
+```shell
+elixir helloWorld.ex
+```
+
+結果
+
+```shell
+❯ elixir helloWorld.ex
+Hello World
+```
+
+### 使用 iex 執行 `helloWorld.ex`
+
+使用 iex 來跑剛剛建立的 `helloWorld.ex`
+
+```shell
+iex helloWorld.ex
+```
+
+結果
+
+```shell
+❯ iex helloWorld.ex
+Erlang/OTP 24 [erts-12.3.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]
+
+Hello World
+Interactive Elixir (1.13.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)>
+```
+
+先別結束 iex ，我們打開 `helloWorld.ex` 修改一下後存檔
+
+```elixir title="helloWorld.ex"
+IO.puts "Hello World 2"
+```
+
+回到 iex
+
+```shell
+iex> c "helloWorld.ex"
+```
+
+結果
+
+```shell
+iex(1)> c "helloWorld.ex"
+Hello World 2
+[]
 iex(2)>
 ```
+
+`c` 這個 function 可以讓我們重新編譯指定的檔案。
+
+若要查看更多說明：
+
+```shell
+iex> h c
+```
+
+<Infobox status="info" title="Optional parentheses">
+
+有些同學可能會疑問呼叫 function 的時候不用括號 `()` 嗎? 為甚麼不是 `c("helloWorld.ex")`? 答案是可加可不加，這邊最主要是為了讓各位同學少打幾個字元。更多細節，請參考: [#Optional parentheses](https://hexdocs.pm/elixir/syntax-reference.html#optional-parentheses)。
+
+</Infobox>
+
+### 使用 mix 創建 project
+
+接下來，我們來嘗試創建一個 Hello World 的專案
+
+```shell
+mix new helloworld
+```
+
+這樣會創建一個 `helloworld` 的資料夾，接下來我們到 `helloworld/lib`，可以在 `lib` 的資料夾中看到檔案 `helloworld.ex`。
+
+```elixir title="helloworld.ex"
+defmodule Helloworld do
+  @moduledoc """
+  Documentation for `Helloworld`.
+  """
+
+  @doc """
+  Hello world.
+
+  ## Examples
+
+      iex> Helloworld.hello()
+      :world
+
+  """
+  def hello do
+    :world
+  end
+end
+```
+
+預設已經幫我寫好了一個 `module` 與 `function`，在 `@doc` 裡面也有範例告訴我們如何使用，我們來試試看。
+
+在 `helloworld` 資料夾裡打開 shell ，輸入以下指令可以讓我們用 iex 來打開這個專案
+
+```shell
+iex -S mix
+```
+
+結果
+
+```shell
+❯ iex -S mix
+Erlang/OTP 24 [erts-12.3.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]
+
+Compiling 1 file (.ex)
+Interactive Elixir (1.13.4) - press Ctrl+C to exit (type h() ENTER for help)
+iex(1)>
+```
+
+我們來測試看看
+
+```shell
+iex> Helloworld.hello()
+```
+
+結果
+
+```shell
+iex(1)> Helloworld.hello()
+:world
+iex(2)>
+```
+
+如同 `@doc` 裡寫的一樣，這個 `hello()` function 會輸出 `:world`
+
+先不關閉 iex，我們來修改 `helloworld.ex`，在最後新增一行 `IO.puts "Hello World"`
+
+```elixir {19} title="helloworld.ex"
+defmodule Helloworld do
+  @moduledoc """
+  Documentation for `Helloworld`.
+  """
+
+  @doc """
+  Hello world.
+
+  ## Examples
+
+      iex> Helloworld.hello()
+      :world
+
+  """
+  def hello do
+    :world
+  end
+end
+IO.put "Hello World"
+```
+
+然後回到我們的 iex ，輸入以下指令重新編譯
+
+```shell
+iex> recompile
+```
+
+結果
+
+```shell
+iex(2)> recompile
+Compiling 1 file (.ex)
+Hello World
+:ok
+iex(3)>
+```
+
+我們又輸出了 `Hello World` 了。
+
+## 總結
+
+本篇文章最主要就是用 Elixir 來寫一個能在電腦螢幕上顯示 `Hello World` 字串的電腦程式。
+
+我們嘗試了 `IO` 這個 module 裡的 `puts` function 來做出我們的程式。
+
+也用了以下很多不同的方式來跑這個程式
+
+- iex
+- elixir
+- mix
 
 ## 最後
 
 我想說，還是自己動手學最棒了!
 
-||誰說一定要參加甚麼管它付費還是免費的課程才能學寫程式? 才能當軟體工程師呢?||
+<Img src="start/fig03.avif">
 
-||我們的熱情不是靠來自他人意義不名的審核來下定論的。||
+Figure 03. by [Zac Durant](https://unsplash.com/@zacdurant?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/_6HzPU9Hyfg)
+
+</Img>
+
+||誰說一定要參加甚麼管它付費還是免費的課程才能學寫程式? 才能當軟體工程師呢? 我們的熱情不是靠來自他人意義不名的審核來下定論的。||
 
 只有我們自己，才是對我們自己來說 最好 最棒 的導師。
 
-接下來，讓我們繼續一起學習下去吧。
+讓我們繼續一起學習下去吧。
 
 ## 完結

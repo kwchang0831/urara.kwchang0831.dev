@@ -80,6 +80,7 @@ autoload -Uz compinit && compinit
 ```shell
 brew install asdf
 ```
+
 #### ZSH & Homebrew
 
 若還沒有安裝 zsh ，可以參考 "[美化 macOS iTerm2 - Oh My Zsh + 一些好用的插件](/dev-env/macos/oh-my-zsh)"。
