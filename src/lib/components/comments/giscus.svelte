@@ -6,18 +6,13 @@
 
   onMount(() => {
     const giscus = document.createElement('script')
-    const observer = new MutationObserver(() => {
-      document.getElementById('giscus-loading').remove()
-      observer.disconnect()
-    })
-
     Object.entries({
       src: config.src ?? 'https://giscus.app/client.js',
       'data-repo': config.repo,
       'data-repo-id': config.repoID,
       'data-category': config.category ?? '',
       'data-category-id': config.categoryID,
-      'data-mapping': config.mapping ?? 'pathname',
+      'data-mapping': 'pathname',
       'data-reactions-enabled': config.reactionsEnabled === false ? '0' : '1',
       'data-input-position': config.inputPosition ?? 'bottom',
       'data-theme': config.theme ?? 'preferred_color_scheme',
@@ -26,11 +21,16 @@
       crossorigin: 'anonymous',
       async: ''
     }).forEach(([key, value]) => giscus.setAttribute(key, value))
-
-    document.getElementById('giscus-container').appendChild(giscus)
-    observer.observe(document.getElementById('giscus'), {
-      childList: true
-    })
+    setTimeout(() => {
+      const observer = new MutationObserver(() => {
+        document.getElementById('giscus-loading').remove()
+        observer.disconnect()
+      })
+      observer.observe(document.getElementById('giscus'), {
+        childList: true
+      })
+      document.getElementById('giscus-container').appendChild(giscus)
+    }, 1000)
   })
 </script>
 
