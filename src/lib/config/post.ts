@@ -2,7 +2,7 @@ import type { PostConfig } from '$lib/types/post'
 
 export const post: PostConfig = {
   comment: {
-    use: ['Giscus'],
+    use: ['Giscus', 'Webmention'],
     style: 'boxed',
     giscus: {
       src: 'https://giscus.kwchang0831.dev/client.js',
@@ -17,6 +17,13 @@ export const post: PostConfig = {
       loading: 'lazy',
       lang: 'zh-TW',
       theme: 'dark'
-    }
+    },
+    webmention: {
+      username: 'www.kwchang0831.dev',
+      sortBy: 'created',
+      sortDir: 'down',
+      form: true,
+      commentParade: true
+    },
   }
 }
