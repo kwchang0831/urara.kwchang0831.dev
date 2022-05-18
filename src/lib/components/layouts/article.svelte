@@ -33,11 +33,11 @@
       <Toc {toc} />
     {/if}
   </div>
-  <div slot="top" class="urara-prose prose">
+  <!-- <div slot="top" class="urara-prose prose">
     {#if cover}
       <Cover {cover} {coverText} imgClass="u-featured rounded-box w-full shadow-xl" />
     {/if}
-  </div>
+  </div> -->
   <div slot="middle-bottom">
     <h1 itemprop="name headline" class="card-title text-3xl mb-8 p-name">{title ?? path.slice(1)}</h1>
     {#if summary}
@@ -45,6 +45,9 @@
     {/if}
   </div>
   <main slot="content" itemprop="articleBody" class="urara-prose prose e-content">
+    {#if cover}
+      <Cover {cover} {coverText} imgClass="u-featured rounded-box w-full shadow-xl" />
+    {/if}
     <slot />
   </main>
 </Post>

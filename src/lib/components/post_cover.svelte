@@ -8,5 +8,7 @@
 </script>
 
 <Image class="margin-y-0 u-photo {imgClass}" src={cover} alt={cover} {loading} {decoding}>
-  {@html coverText}
+  {#if coverText}
+    {@html coverText}
+  {/if}
 </Image>

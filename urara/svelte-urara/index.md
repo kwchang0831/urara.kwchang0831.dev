@@ -14,6 +14,7 @@ tags:
 ---
 
 <script lang="ts">
+  import Img from '$lib/components/extra/zoom.svelte'
   import Infobox from '$lib/components/extra/infobox.svelte'
 </script>
 

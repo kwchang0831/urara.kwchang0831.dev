@@ -274,7 +274,7 @@ iex> h c
 
 <Infobox status="info" title="Optional parentheses">
 
-有些同學可能會疑問呼叫 function 的時候不用括號 `()` 嗎? 為甚麼不是 `c("helloWorld.ex")`? 答案是可加可不加，這邊最主要是為了讓各位同學少打幾個字元。更多細節，請參考: [#Optional parentheses](https://hexdocs.pm/elixir/syntax-reference.html#optional-parentheses)。
+有些同學可能會疑問，呼叫 function 的時候不用括號 `()` 嗎? 為甚麼不是 `c("helloWorld.ex")`? 答案是可加可不加，這邊最主要是為了讓各位同學少打幾個字元。更多細節，請參考: [#Optional parentheses](https://hexdocs.pm/elixir/syntax-reference.html#optional-parentheses)。
 
 </Infobox>
 
@@ -346,7 +346,7 @@ iex(2)>
 
 先不關閉 iex，我們來修改 `helloworld.ex`，在最後新增一行 `IO.puts "Hello World"`
 
-```elixir {19} title="helloworld.ex"
+```elixir {18} title="helloworld.ex"
 defmodule Helloworld do
   @moduledoc """
   Documentation for `Helloworld`.

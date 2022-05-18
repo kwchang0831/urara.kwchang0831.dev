@@ -24,7 +24,7 @@ PowerShell 是一個跨平台 (Windows, Linux, 與 macOS) 的 自動化工具 / 
 - Windows 10
 - Windows Termianl
 
-## -建議- 安裝 Windows Terminal
+## (建議) 安裝 Windows Terminal
 
 若還沒有安裝 Windows Terminal ，請參考 [Windows Terminal - 比 Cmder 更好用的終端機](/dev-env/windows-terminal)
 

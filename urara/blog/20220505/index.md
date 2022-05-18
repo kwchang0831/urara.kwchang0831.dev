@@ -3,7 +3,6 @@ title: 使用 Svelte + Urara 重新架設我的網站
 description: 使用 Svelte + Urara 重新架設我的網站。 紀錄新舊網站上架搬遷與更新過程。 大略介紹 JAMStack 、 NextJS 與 Svelte 的靜態網站生成器 (SSG)。
 summary: 簡略介紹 JAMStack 和 NextJS 與 Svelte 的靜態網站生成器 和 新網站上架
 published: 2022-05-05
-cover: /blog/20220505/cover.avif
 tags:
   - 中文
   - Blog
