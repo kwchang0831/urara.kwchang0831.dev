@@ -24,6 +24,6 @@ export const post: PostConfig = {
       sortDir: 'down',
       form: true,
       commentParade: true
-    },
+    }
   }
 }
