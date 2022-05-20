@@ -209,7 +209,7 @@ shell 輸入
 fisher install jorgebucaran/autopair.fish
 ```
 
-## 超神插件 fzf.fish
+## 安裝插件 fzf.fish
 
 這插件讓你的 Fish 互動性更強大。
 
