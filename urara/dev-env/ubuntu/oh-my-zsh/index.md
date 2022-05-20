@@ -1,7 +1,7 @@
 ---
-title: 美化 Ubuntu Terminal - Zsh + Oh My Zsh + 一些好用的插件
-description: 本篇文章紀錄如何美化 Ubuntu Terminal ，並安裝一些插件讓開發環境更高效。 包含安裝 Zsh 、 Oh My Zsh 與 Powerlevel 10k 主題。
-summary: Zsh, Oh My Zsh, Powerlevel 10k 與 一些好用插件的安裝流程
+title: Ubuntu 安裝 Zsh + Oh My Zsh + Powerlevel10k 主題與各種插件
+description: 本篇文章紀錄如何美化 Ubuntu Terminal ，並安裝一些插件讓開發環境更高效。 包含安裝 Zsh, Oh My Zsh, Powerlevel10k 主題, zsh-autosuggestions, zsh-syntax-highlighting, Zsh-z。
+summary: Zsh, Oh My Zsh, Powerlevel10k 與 一些好用插件的安裝流程
 published: 2021-09-09
 cover: /dev-env/ubuntu/oh-my-zsh/cover.avif
 tags:
@@ -17,22 +17,22 @@ tags:
 
 本篇文章會安裝以下套件：
 
-- Zsh
-- Oh My Zsh
-- Powerlevel 10k 主題
-- zsh-autosuggestions
-- zsh-syntax-highlighting
-- Zsh-z
+- [Zsh](https://www.zsh.org/)
+- [Oh My Zsh](https://ohmyz.sh/)
+- [Powerlevel10k 主題](https://github.com/romkatv/powerlevel10k)
+- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+- [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+- [Zsh-z](https://github.com/agkozak/zsh-z)
 
 ## 環境配置
 
 以下使用的環境配置為 Windows 10 搭配 WSL 的 Ubuntu ， 並使用 Windows Terminal 來進行操作。  
 直接使用 Ubuntu 的話，安裝流程也是大致相同可供參考。
 
-## 安裝 Zsh 與 其他必要的套件
+## 安裝 必要的套件
 
 ```shell
-sudo apt install wget git curl zsh vim -y
+sudo apt install wget git curl vim -y
 ```
 
 ## 安裝 Patched 字型
@@ -71,7 +71,15 @@ wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/Ne
 
 使用內建的 Terminal，字型安裝完畢之後，就可以直接正常顯示不需用修改任何參數。
 
-## 安裝 [Oh My Zsh](https://ohmyz.sh/)
+## 安裝 Zsh
+
+shell 輸入
+
+```shell
+sudo apt install zsh -y
+```
+
+## 安裝 Oh My Zsh
 
 輸入以下指令安裝 Oh My Zsh，安裝完畢後，按下 Enter 同意把預設 Shell 換成 Zsh。
 
@@ -79,7 +87,7 @@ wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/Ne
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-## (選用) 設定預設 Shell
+### 設定預設 Shell
 
 若之前並沒有成功設定修改預設 Shell，請執行以下指令:
 
@@ -116,7 +124,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-### (選用) 插件 [Zsh-z](https://github.com/agkozak/zsh-z)
+### 插件 [Zsh-z](https://github.com/agkozak/zsh-z)
 
 類似於 [autojump](https://github.com/wting/autojump) 的插件，比 `cd` 更快速地直接跳到想去的資料夾，且效能更好沒有一堆依賴包。
 
@@ -124,7 +132,7 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
 ```
 
-#### 使用方法
+![Zsh-z](https://github.com/agkozak/zsh-z/raw/master/img/demo.gif)
 
 查看已知的資料夾位置
 
