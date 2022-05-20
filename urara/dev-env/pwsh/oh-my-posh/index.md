@@ -1,9 +1,9 @@
 ---
-title: 美化 PowerShell 7 - Oh My Posh + 一些好用的插件
+title: 安裝新版 Oh My Posh 與 插件來美化 PowerShell
 description: 本篇文章紀錄 使用 Oh My Posh 來美化 PowerShell 7（pwsh）並安裝一些插件讓開發環境更高效。 插件可以安裝 Posh Git 讓使用 Git 指令的時候有自動完成的功能，或是安裝 ZLocation 讓我們可以更快速地跳到想去的資料夾，等等...
 summary: Oh My Posh 基本安裝與主題置換，並介紹一些好用的插件
 published: 2021-09-08
-cover: /dev-env/pwsh/oh-my-posh/cover.avif
+cover: /dev-env/pwsh/oh-my-posh/cover.webp
 tags:
   - 中文
   - 開發環境
@@ -22,7 +22,7 @@ tags:
 
 本篇文章會介紹以下套件的安裝：
 
-- Oh My Posh
+- [Oh My Posh](https://github.com/JanDeDobbeleer/oh-my-posh)
 - Git
 - pwsh10k 主題
 - Posh-Git
@@ -38,7 +38,7 @@ tags:
 - Windows Terminal
 - PowerShell 7
 
-## (建議) 安裝 gsudo
+## 安裝 gsudo
 
 推薦安裝 gsudo ，可以更方便地提升權限到系統管理員權限，  
 請參考： [gsudo - 讓 Windows 也有 sudo 功能](/dev-env/gsudo)
@@ -48,9 +48,12 @@ tags:
 若還沒有安裝最新版的 PowerShell 7 ，  
 請參考： [PowerShell 7 - 來安裝最新版的 PowerShell](/dev-env/pwsh)
 
-## 安裝 Git
+## 安裝 Windows Terminal
 
-### 安裝 1. 使用 chocolatey 安裝
+若還沒有安裝最新版的 Windows Terminal，  
+請參考： [改用 Windows Terminal - 比 Cmder 更好用的現代終端機](/dev-env/windows-terminal)
+
+## 安裝 Git
 
 若還沒有安裝 Git ，可以使用 [chocolatey](https://chocolatey.org/install) 來安裝。
 
@@ -66,11 +69,6 @@ choco install git -y
 sudo choco install git -y
 ```
 
-### 安裝 2. 手動安裝
-
-若還沒有安裝 Git ，可以從以下網址下載安裝檔：  
-https://gitforwindows.org/
-
 ## 安裝 Patched 字型
 
 為了 Oh My Posh 的主題可以正常顯示字型與圖示，下載以下四個字型並安裝:
@@ -80,15 +78,15 @@ https://gitforwindows.org/
 - [MesloLGS NF Italic.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf)
 - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf)
 
-## 更改字型
+### 更改字型
 
-### Windows Terminal
+#### Windows Terminal
 
 <kbd>Ctrl + ,</kbd> 打開設定，選擇 PowerShell 7 的設定檔 `外觀 > 字型`，將字型改成 `MesloLGS NF` 之後儲存。
 
 ![fig01](oh-my-posh/fig01.avif)
 
-### PowerShell 7
+#### PowerShell 7
 
 以系統管理員身分執行 PowerShell 7(x64)  
 更改字型為 `MesloLGS NF`
@@ -97,23 +95,13 @@ https://gitforwindows.org/
 
 ## 安裝 Oh My Posh
 
-1.安裝 Oh My Posh
+pwsh 輸入
 
 ```shell
-Install-Module oh-my-posh -Scope CurrentUser
+winget install oh-my-posh
 ```
 
-輸入 [A] Yes to All ，全部同意。
-
-2.更新 oh-my-posh
-
-```shell
-Update-Module oh-my-posh
-```
-
-### 新增/修改 PowerShell 用戶檔案
-
-用習慣的文字編輯器編輯`$Profile`
+用文字編輯器編輯 `$Profile`
 
 ```shell
 notepad $Profile
@@ -121,9 +109,8 @@ notepad $Profile
 
 添加以下，儲存後關閉。
 
-```shell
-Import-Module oh-my-posh
-Set-PoshPrompt -Theme jandedobbeleer
+```shell title="$Profile"
+oh-my-posh init pwsh | Invoke-Expression
 ```
 
 重新開啟 Windows Terminal 後生效，  
@@ -133,38 +120,24 @@ Set-PoshPrompt -Theme jandedobbeleer
 . $Profile
 ```
 
-## 更改 Oh My Posh 主題
+### 更改 Oh My Posh 主題
 
-Oh My Posh 內建很多不同的主題 (theme)。
+Oh My Posh 內建很多不同的主題 (theme)，請查看[官網](https://ohmyposh.dev/docs/themes)
 
-輸入以下指令查看內建的主題與預覽，
+或是輸入以下指令查看內建的主題與預覽，
 
 ```shell
 Get-PoshThemes
 ```
 
-輸入以下指令可以查看內建主題的安裝位置，
+確定好了主題，讓我們修改 `$Profile` 來設定預設要使用的主題，
 
-```shell
-Get-PoshThemes -list
-```
+把 `oh-my-posh init pwsh ...` 的部分後面加上 `--config "$env:POSH_THEMES_PATH\{主題名稱}.omp.json"`。
 
-我們可以直接輸入指令來更改主題嘗試看看，
+例如
 
-```shell
-Set-PoshPrompt -Theme Agnoster
-```
-
-如果確定好了，讓我們修改 `$Profile` 來設定預設要使用的主題，
-
-```shell
-notepad $Profile
-```
-
-`Set-PoshPrompt` 的部分改成想要的主題名稱
-
-```shell
-Set-PoshPrompt -Theme Agnoster
+```shell title="$Profile"
+oh-my-posh init pwsh --config "$env:POSH_THEMES_PATH\powerlevel10k_modern.omp.json" | Invoke-Expression
 ```
 
 重新開啟 Windows Terminal 後生效，  
@@ -174,73 +147,38 @@ Set-PoshPrompt -Theme Agnoster
 . $Profile
 ```
 
-## (推薦) 安裝主題 pwsh10k
+## 安裝 Scoop
 
-pwsh10k 是一個 Oh My Posh 的主題。  
-https://github.com/Kudostoy0u/pwsh10k
+[Scoop](https://scoop.sh/) 就像 Mac 的 [Homebrew](https://brew.sh/) 一樣讓可以我們更快速地用指令行安裝軟體。
 
-1.下載 pwsh10k
-
-```shell
-git clone https://github.com/Kudostoy0u/pwsh10k.git
-```
-
-2.安裝 pwsh10k
+pwsh 輸入
 
 ```shell
-cd pwsh10k
-./install.ps1
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+Invoke-WebRequest get.scoop.sh | Invoke-Expression
 ```
 
-3.編輯 `$Profile` 來修改預設要使用的主題，
+## 安裝插件 posh-git
+
+posh-git 讓 Git 的指令可已用 <kbd>Tab</kbd> 自動完成。
+
+安裝 posh-git
+
+pwsh 輸入
 
 ```shell
-notepad $Profile
+scoop bucket add extras
+scoop install posh-git
+Add-PoshGitToProfile
 ```
-
-`Set-PoshPrompt` 的部分改成
-
-```shell
-Set-PoshPrompt -Theme ~/pwsh10k.omp.json
-```
-
-重新開啟 Windows Terminal 後生效，  
-或是輸入以下指令應用修改，
-
-```shell
-. $Profile
-```
-
-## (選用) 安裝插件 [posh-git](https://github.com/dahlbyk/posh-git)
-
-[posh-git](https://github.com/dahlbyk/posh-git) 可以讓 Git 的指令可以自動完成 (auto completion)
-
-1.安裝 posh-git
-
-```shell
-Install-Module posh-git -Scope CurrentUser
-```
-
-輸入 [A] Yes to All ，全部同意。
-
-2.更新 oh-my-posh
-
-```shell
-Update-Module posh-git
-```
-
-3.更新 $Profile 檔案
 
 在 `$Profile` 檔案最後一行新增以下指令：
 
 ```shell
 Import-Module posh-git
-$env:POSH_GIT_ENABLED = $true
 ```
 
-根據 Oh My Posh 官方手冊，預設 Posh Git 的功能是關閉的，我們需要更改環境變數才能讓它開啟。
-
-## (選用) 安裝插件 [ZLocation](https://github.com/vors/ZLocation)
+## 安裝插件 [ZLocation](https://github.com/vors/ZLocation)
 
 [ZLocation](https://github.com/vors/ZLocation) 類似於 [autojump](https://github.com/wting/autojump) 或是 [Zsh-z](https://github.com/agkozak/zsh-z) 的插件，  
 可以用關鍵字直接跳到想去的資料夾，比使用 `cd` 更快速。
@@ -263,7 +201,7 @@ notepad $Profile
 
 在 `$Profile` 檔案最後一行新增以下指令，
 
-```shell
+```shell title="$Profile"
 Import-Module ZLocation
 ```
 
@@ -298,60 +236,68 @@ z -
 
 NeoFetch 用來顯示電腦配置。
 
-打開 `PowerShell` 輸入以下指令，
-
-1.設定 Policy
-
-```shell
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-```
-
-2.安裝 Scoop
-
-```shell
-iwr -useb get.scoop.sh | iex
-```
-
-[Scoop](https://scoop.sh/) 就像 Mac 的 [Homebrew](https://brew.sh/) 一樣讓可以我們更快速地用指令行安裝軟體。
-
-3.安裝 NeoFetch
-
 即使已經有安裝 git 了，這邊還是要安裝 git ，因為 neofetch 會直接使用 scoop 安裝的 git 。
+
+打開 pwsh 輸入以下指令，
 
 ```shell
 scoop install git
 scoop install neofetch
 ```
 
-4.執行 NeoFech
+執行 NeoFech
 
 ```shell
 neofetch
 ```
 
-## (選用) 安裝 WinFetch
+## (選用) 舊版錯誤訊息
 
-功能跟 NeoFetch 相似，也是用來顯示電腦配置。
-
-1.安裝 WinFetch
-
-以系統管理員身分打開 PowerShell 輸入以下指令：
+如果你看到以下錯誤訊息，
 
 ```shell
-choco install winfetch -y
+Hey friend
+
+In an effort to grow oh-my-posh, the decision was made to no
+
+longer support the PowerShell module. Over the past year, the
+
+added benefit of the module disappeared, while the burden of
+
+maintaining it increased.
+
+However, this doesn't mean oh-my-posh disappears from your
+
+terminal, it just means that you'll have to use a different
+
+tool to install it.
+
+All you need to do, is follow the migration guide here:
+
+https://ohmyposh.dev/docs/migrating
 ```
 
-如果有安裝 `gsudo` ，可以使用以下指令直接以系統管理員權限安裝
+表示你過去是用 `Install-Module` 的方式安裝 Oh My Posh，如以下：
 
 ```shell
-sudo choco install winfetch -y
+Install-Module oh-my-posh -Scope CurrentUser
 ```
 
-2.執行 WinFetch
+詳細情況請參考[官方網站](https://ohmyposh.dev/docs/migrating)。
+
+刪除過去的版本，打開 pwsh 輸入
 
 ```shell
-WinFetch
+Uninstall-Module oh-my-posh -AllVersions
 ```
+
+移除 `$Profile` 裡的 `Import-Module oh-my-posh`
+
+```shell
+notepad $Profile
+```
+
+然後回到[最上面的開始](#)的流程重新安裝。
 
 ## 參考資料
 

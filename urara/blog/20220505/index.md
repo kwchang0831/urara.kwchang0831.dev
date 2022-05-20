@@ -2,6 +2,7 @@
 title: 使用 Svelte + Urara 重新架設我的網站
 description: 使用 Svelte + Urara 重新架設我的網站。 紀錄新舊網站上架搬遷與更新過程。 大略介紹 JAMStack 、 NextJS 與 Svelte 的靜態網站生成器 (SSG)。
 summary: 簡略介紹 JAMStack 和 NextJS 與 Svelte 的靜態網站生成器 和 新網站上架
+cover: /blog/20220505/cover.webp
 published: 2022-05-05
 tags:
   - 中文
@@ -38,8 +39,6 @@ tags:
 - [ J ] JavaScript : 讓網頁具有更多的功能性
 - [ A ] APIs : 讓網頁具有可溝通的服務性
 - [ M ] Markup : 網頁的內容
-
-![jamstack01.avif](20220505/jamstack01.avif)
 
 **提前生成** 就是我們在 Build (建置) 階段，準備 Deploy (部署) 之前，就會把所有需要的網頁都生成好了。不會說等到已經上線才根據使用者的需求找從資料庫拉資料把網頁拼出來。換句話說，[JAMStack](https://jamstack.org/) 架構並不需要後端伺服器。同學你可能聽過的 SSG (Static Site Generator) - 靜態網站生成器。SSG 就是用來生成 [JAMStack](https://jamstack.org/) 網站的工具。幾個其中比較有名的幾個就是 [NextJS](https://nextjs.org/) 與 [Hugo](https://gohugo.io/)，更多的清單可以參考 [Site Generators](https://jamstack.org/generators/)。
 

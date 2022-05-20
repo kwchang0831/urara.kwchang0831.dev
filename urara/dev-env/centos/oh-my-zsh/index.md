@@ -1,9 +1,9 @@
 ---
-title: 美化 Centos 7 Terminal - Zsh + Oh My Zsh + 一些好用的插件
-description: 本篇文章紀錄如何美化 Centos Terminal ，並安裝一些插件讓開發環境更高效。 包含安裝 Zsh 、 Oh My Zsh 與 Powerlevel 10k 主題。
+title: Centos 7 安裝 Zsh + Oh My Zsh + Powerlevel10k 與好用插件
+description: 本篇文章紀錄如何美化 Centos Terminal ，並安裝一些插件讓開發環境更高效。 包含安裝 Zsh 、 Oh My Zsh 與 Powerlevel10k 主題。
 summary: Zsh, Oh My Zsh, Powerlevel 10k 與 一些好用插件的安裝流程
 published: 2021-09-12
-cover: /dev-env/centos/oh-my-zsh/cover.avif
+cover: /dev-env/centos/oh-my-zsh/cover.webp
 tags:
   - 中文
   - 開發環境

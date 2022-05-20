@@ -3,7 +3,7 @@ title: Urara - 用 Svelte 打造的靜態網站生成器 ; 來架個跑超快的
 description: 用 Svelte 打造的靜態網站生成器 - Urara。 打造速度超快的網站，功能十足且簡潔美觀。 本篇文章主要紀錄 Urara 的架設流程。
 summary: 手把手教學使用 Urara 架設網誌於免費平台 Vercel 與 Netlify
 published: 2022-05-03
-cover: /svelte-urara/cover.avif
+cover: /svelte-urara/cover.webp
 tags:
   - 中文
   - Svelte

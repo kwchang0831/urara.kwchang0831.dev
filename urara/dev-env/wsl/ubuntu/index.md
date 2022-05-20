@@ -3,7 +3,7 @@ title: Windows 10 上安裝 WSL + Ubuntu
 description: 本篇文章紀錄如何在 Windows 10 安裝 Linux 子系統 (WSL) 與 Ubuntu
 summary: WSL 與 Ubuntu 的安裝流程
 published: 2021-09-09
-cover: /dev-env/wsl/ubuntu/cover.avif
+cover: /dev-env/wsl/ubuntu/cover.webp
 tags:
   - 中文
   - 開發環境

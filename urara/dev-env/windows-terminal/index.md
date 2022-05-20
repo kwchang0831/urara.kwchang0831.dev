@@ -3,7 +3,7 @@ title: 改用 Windows Terminal - 比 Cmder 更好用的現代終端機
 description: 本篇文章記錄如何安裝 Windows Terminal。 用了 Windows Terminal 就回不去 Cmder 了。 Windows Terminal 是一款由微軟於 2019 年釋出的現代化終端機應用程式，可以執行各種不同的 Shell。
 summary: Windows Terminal 基本安裝與設置
 published: 2021-09-05
-cover: /dev-env/windows-terminal/cover.avif
+cover: /dev-env/windows-terminal/cover.webp
 tags:
   - 中文
   - 開發環境

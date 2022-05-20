@@ -3,7 +3,7 @@ title: Windows 10 上安裝 WSL + Centos
 description: 本篇文章紀錄如何在 Windows 10 安裝 Linux 子系統 (WSL) 與 Centos
 summary: WSL 與 Centos 的安裝流程
 published: 2021-09-11
-cover: /dev-env/wsl/centos/cover.avif
+cover: /dev-env/wsl/centos/cover.webp
 tags:
   - 中文
   - 開發環境

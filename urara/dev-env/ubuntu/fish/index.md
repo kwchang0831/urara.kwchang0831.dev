@@ -3,7 +3,7 @@ title: Ubuntu 安裝 Fish + Oh My Fish + Tide 與各種插件
 description: 本篇文章紀錄安裝 Fish Shell 與各種好用插件讓開發環境更高效的流程。 包含安裝 Fish, Oh My Fish, Fisher, Tide, Z, Sponge, autopair.fish, fzf.fish, fzf, fd, Bat, asdf 自動完成。
 summary: 簡單好上手的 Shell，自帶自動完成功能，bash 或 zsh 用膩了可以來試試看
 published: 2022-05-20
-cover: /dev-env/ubuntu/fish/cover.avif
+cover: /dev-env/ubuntu/fish/cover.webp
 tags:
   - 中文
   - 開發環境
@@ -16,7 +16,7 @@ tags:
   import Infobox from '$lib/components/extra/infobox.svelte'
 </script>
 
-Fish shell 根據 [Slant](https://www.slant.co/topics/513/~best-unix-shells) 上的 2022年票選是 第一推薦。那還不趕緊一起安裝看看，嘗試看看。
+[Slant](https://www.slant.co/topics/513/~best-unix-shells) 2022 年票選第一推薦的 Unix Shell 是 Fish shell。 如果你剛好 Zsh 也用膩了，不如一起來嘗試看看 Fish shell。
 
 ## 開頭
 
