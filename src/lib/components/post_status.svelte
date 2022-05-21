@@ -1,7 +1,6 @@
 <script lang="ts">
   import { date } from '$lib/config/general'
   import { site } from '$lib/config/site'
-  import CreatedAt from '~icons/mdi/pencil-outline'
   export let post: Urara.Post
   export let index: boolean = false
   export let photo: boolean = false
@@ -48,7 +47,8 @@
       ? 'text-neutral-content/75'
       : ''} badge badge-lg badge-ghost text-right bg-transparent border-none font-bold tooltip tooltip-top u-url u-uid"
     data-tip="Updated: {stringUpdated}">
-    <CreatedAt class="inline-block w-5 h-5 align-top mr-1" />{stringPublished}
+    <span class="i-mdi-pencil-outline !w-5 !h-5 align-top inline-block" />
+    {stringPublished}
     <time class="hidden dt-published" datetime={jsonPublished} itemprop="datePublished">
       {stringPublished}
     </time>

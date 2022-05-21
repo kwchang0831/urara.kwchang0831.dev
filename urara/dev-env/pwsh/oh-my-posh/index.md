@@ -297,7 +297,7 @@ Uninstall-Module oh-my-posh -AllVersions
 notepad $Profile
 ```
 
-然後回到[最上面的開始](#)的流程重新安裝。
+然後回到[最上面的開始]({'#'})的流程重新安裝。
 
 ## 參考資料
 

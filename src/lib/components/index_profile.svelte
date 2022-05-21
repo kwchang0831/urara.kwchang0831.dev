@@ -1,9 +1,5 @@
 <script lang="ts">
   import { site } from '$lib/config/site'
-  import IconKey from '~icons/heroicons-solid/key'
-  import Github from '~icons/uil/github'
-  import Discord from '~icons/ic/outline-discord'
-  import Mailto from '~icons/ic/baseline-mail'
 </script>
 
 <div class="flex flex-row xl:flex-col gap-4 sticky top-24 card card-body items-right h-card">
@@ -34,7 +30,7 @@
           data-tip="Mail"
           aria-label="Mail"
           href="mailto:{site.author.email}">
-          <Mailto class="fill-current hover:text-lime-500 inline-block w-8 h-8 mr-1" />
+          <span class="i-ic-baseline-mail !w-8 !h-8 mr-1 fill-current inline-block hover:text-lime-500" />
         </a>
       {/if}
       {#if site.author.discordID}
@@ -45,7 +41,7 @@
           data-tip="Discord"
           aria-label="Discord"
           href="https://discordapp.com/users/{site.author.discordID}">
-          <Discord class="fill-current hover:text-blue-500 inline-block w-8 h-8 mr-1" />
+          <span class="i-ic-outline-discord !w-8 !h-8 mr-1 fill-current inline-block hover:text-blue-500" />
         </a>
       {/if}
       {#if site.author.github}
@@ -56,13 +52,13 @@
           data-tip="Github"
           aria-label="Github"
           href="https://github.com/{site.author.github}">
-          <Github class="fill-current hover:text-violet-500 inline-block w-8 h-8 mr-1" />
+          <span class="i-uil-github !w-8 !h-8 mr-1 fill-current inline-block hover:text-violet-500" />
         </a>
       {/if}
     </p>
     {#if site.author.pgp}
       <a href={site.author.pgp.link} rel="pgpkey" class="btn btn-ghost btn-xs bg-base-300 font-mono rounded-full mt-4">
-        <IconKey class="inline-block w-4 h-4 mr-1" />
+        <span class="i-heroicons-solid-key !w-4 !h-4 mr-1" />
         {site.author.pgp.text}
       </a>
     {/if}

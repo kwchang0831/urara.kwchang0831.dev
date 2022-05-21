@@ -15,7 +15,6 @@
   import Footer from '$lib/components/footer.svelte'
   import Post from '$lib/components/index_post.svelte'
   import Profile from '$lib/components/index_profile.svelte'
-  import IconTrash from '~icons/heroicons-outline/trash'
 </script>
 
 {#if post.layout === 'photo'}

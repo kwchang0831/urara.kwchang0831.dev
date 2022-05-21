@@ -5,8 +5,6 @@
   export { className as class }
   export let sticky: boolean = false
   export let rounded: boolean = false
-  import Feed from '~icons/ic/baseline-rss-feed'
-  import Sitemap from '~icons/mdi/sitemap-outline'
 </script>
 
 <footer
@@ -26,12 +24,12 @@
         <br />
       {/if}
       <a href="/atom.xml" rel="noopener external" target="_blank">
-        <Feed class="align-middle inline-block w-5 h-5" />
+        <span class="i-ic-baseline-rss-feed !w-5 !h-5 align-middle inline-block" />
         Feed
       </a>
       <span class="mr-1">•</span>
       <a href="/sitemap.xml" rel="noopener external" target="_blank">
-        <Sitemap class="align-middle inline-block w-5 h-5" />
+        <span class="i-mdi-sitemap-outline !w-5 !h-5 align-middle inline-block" />
         Sitemap
       </a>
       <br />
