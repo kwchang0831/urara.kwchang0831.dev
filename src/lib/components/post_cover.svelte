@@ -3,7 +3,7 @@
   export let cover: Urara.Post.Article['cover']
   export let coverText: Urara.Post.Article['coverText']
   export let imgClass: string
-  export let loading: 'eager' | 'lazy' = 'lazy'
+  export let loading: 'eager' | 'lazy' = 'eager'
   export let decoding: 'async' | 'sync' | 'auto' = 'async'
 </script>
 

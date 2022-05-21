@@ -1,8 +1,8 @@
 ---
-title: 安裝新版 Oh My Posh 與 插件來美化 PowerShell
+title: 安裝新版 Oh My Posh 與插件來美化 PowerShell
 description: 本篇文章紀錄 使用 Oh My Posh 來美化 PowerShell 7（pwsh）並安裝一些插件讓開發環境更高效。 插件可以安裝 Posh Git 讓使用 Git 指令的時候有自動完成的功能，或是安裝 ZLocation 讓我們可以更快速地跳到想去的資料夾，等等...
 summary: Oh My Posh 基本安裝與主題置換，並介紹一些好用的插件
-published: 2021-09-08
+published: 2022-05-22
 cover: /dev-env/pwsh/oh-my-posh/cover.webp
 tags:
   - 中文
@@ -15,24 +15,19 @@ tags:
 
 ## 開頭
 
-[Oh My Posh](https://ohmyposh.dev/) 是一個主題引擎可以美化 PowerShell 7 ，可新增插件進一步地擴充功能性與提高使用效率。
-包含指令自動完成，快速切換資料夾等等。
+[Oh My Posh](https://ohmyposh.dev/) 是一個主題引擎可以美化 PowerShell 7 （pwsh）。
 
-本篇文章紀錄 Oh My Posh 的安裝與主題置換來美化你的 PowerShell 7（pwsh），並可更改主題 (theme)，讓工作環境更高效。
+本篇文章紀錄 Oh My Posh 的安裝與主題置換來美化你的 pwsh，並可更改主題 (theme)。除此之外，我們還會新增幾個插件來擴充 pwsh 的功能性，進一步提高使用效率。包含指令自動完成，快速切換資料夾等等。
 
 本篇文章會介紹以下套件的安裝：
 
-- [Oh My Posh](https://github.com/JanDeDobbeleer/oh-my-posh)
-- Git
-- pwsh10k 主題
-- Posh-Git
-- ZLocation
-- NeoFetch
-- WinFetch
+- [Oh My Posh](https://ohmyposh.dev/)
+- [Git](https://community.chocolatey.org/packages/git)
+- [Posh-Git](https://github.com/dahlbyk/posh-git)
+- [ZLocation](https://github.com/vors/ZLocation)
+- [NeoFetch](https://github.com/dylanaraps/neofetch)
 
 ## 環境配置
-
-本篇文章的環境配置如下：
 
 - Windows 10
 - Windows Terminal
@@ -285,7 +280,9 @@ Install-Module oh-my-posh -Scope CurrentUser
 
 詳細情況請參考[官方網站](https://ohmyposh.dev/docs/migrating)。
 
-刪除過去的版本，打開 pwsh 輸入
+### 解決辦法
+
+刪除過去的版本。打開 pwsh 輸入
 
 ```shell
 Uninstall-Module oh-my-posh -AllVersions
@@ -297,12 +294,6 @@ Uninstall-Module oh-my-posh -AllVersions
 notepad $Profile
 ```
 
-然後回到[最上面的開始]({'#'})的流程重新安裝。
-
-## 參考資料
-
-- https://github.com/PowerShell/PowerShell
-- https://ohmyposh.dev/
-- https://github.com/dahlbyk/posh-git
+然後回到[最上面的開始]({'#安裝-oh-my-posh'})的流程重新安裝。
 
 ## 完結
