@@ -9,7 +9,15 @@
 </script>
 
 <figure class="flex flex-col mx-4 md:mx-0 w-auto">
-  <img data-zoomable {src} {alt} class="z-50 u-photo {className ?? 'rounded-lg my-2'}" {loading} {decoding} />
+  <img
+    data-zoomable
+    {src}
+    {alt}
+    width="912"
+    height="684"
+    class="w-full h-auto z-50 u-photo {className ?? 'rounded-lg my-2'}"
+    {loading}
+    {decoding} />
   {#if $$slots.default}
     <figcaption class={figcaptionClass}>
       <slot />

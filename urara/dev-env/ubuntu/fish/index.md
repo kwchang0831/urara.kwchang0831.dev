@@ -12,6 +12,7 @@ tags:
 ---
 
 <script lang="ts">
+  import Webm from '$lib/components/extra/webm.svelte'
   import Img from '$lib/components/extra/zoom.svelte'
   import Infobox from '$lib/components/extra/infobox.svelte'
 </script>
@@ -155,7 +156,8 @@ PatrickF1/fzf.fish
 
 還記得 Zsh 的 [PowerLevel10k](https://github.com/romkatv/powerlevel10k) 嗎? Tide 基本上就很像 PowerLevel10k。
 
-![Tide #Configuration Wizard](https://github.com/IlanCosman/tide/raw/assets/animations/configuration_wizard.gif)
+<!-- https://github.com/IlanCosman/tide/raw/assets/animations/configuration_wizard.gif -->
+<Webm webm="fish/w1.webm" title="Tide #Configuration Wizard"/>
 
 安裝，shell 輸入
 
@@ -214,15 +216,21 @@ fisher install jorgebucaran/autopair.fish
 這插件讓你的 Fish 互動性更強大。
 
 找檔案 <kbd>Ctrl + Alt + F</kbd>
-![fzf.fish #File paths](https://github.com/PatrickF1/fzf.fish/raw/assets/directory.gif)
+
+<!-- https://github.com/PatrickF1/fzf.fish/raw/assets/directory.gif -->
+<Webm webm="fish/w2.webm" title="fzf.fish #File paths"/>
 
 找指令歷史紀錄 <kbd>Ctrl + R</kbd>
-![fzf.fish #A previously run command](https://github.com/PatrickF1/fzf.fish/raw/assets/command_history.gif)
+
+<!-- https://github.com/PatrickF1/fzf.fish/raw/assets/command_history.gif -->
+<Webm webm="fish/w3.webm" title="fzf.fish #A previously run command"/>
 
 找 PID <kbd>Ctrl + Alt + P</kbd>
-![fzf.fish #Process ids](https://github.com/PatrickF1/fzf.fish/raw/assets/processes.gif)
 
-還有很多功能呢... 請自行參考[fzf.fish 來源庫](https://github.com/PatrickF1/fzf.fish)
+<!-- https://github.com/PatrickF1/fzf.fish/raw/assets/processes.gif -->
+<Webm webm="fish/w4.webm" title="fzf.fish #Process ids"/>
+
+還有很多功能，請參考 [fzf.fish 來源庫](https://github.com/PatrickF1/fzf.fish)。
 
 ### 安裝前置套件 fzf
 
