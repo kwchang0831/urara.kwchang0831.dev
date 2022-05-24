@@ -12,9 +12,6 @@
 
 <div
   class="gradeient-animation relative w-auto min-h-48 rounded-box overflow-hidden bg-gradient-to-b from-primary to-secondary text-primary-content transition-shadow duration-200 shadow-xl hover:shadow-2xl p-4 md:p-8 my-4">
-  <!-- <div class="absolute -top-4 opacity-10 text-[12rem] text-neutral leading-tight rotate-[30deg]">
-    {name ?? site.author.name}
-  </div> -->
   <div class="avatar mb-4">
     <div class="rounded-full border-2 border-white shadow-xl w-16 h-16">
       <img
@@ -57,8 +54,7 @@
       href="https://discordapp.com/users/{site.author.discordID}"
       rel="noopener external"
       target="_blank"
-      class="group flex-1 relative overflow-hidden btn btn-block normal-case border-none no-underline bg-[#26a5e4] hover:bg-[#0088cc]"
-      onclick="">
+      class="group flex-1 relative overflow-hidden btn btn-block normal-case border-none no-underline bg-[#26a5e4] hover:bg-[#0088cc]">
       <svg
         class="absolute w-16 h-16 right-10 opacity-20 fill-white transform-gpu transition-transform ease-in-out duration-500 group-hover:scale-125"
         viewBox="0 0 24 24"
