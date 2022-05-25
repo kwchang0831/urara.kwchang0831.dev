@@ -8,7 +8,7 @@ tags:
   - 中文
   - 開發環境
   - Ubuntu
-  - 2021
+  - 2022
 ---
 
 <script lang="ts">

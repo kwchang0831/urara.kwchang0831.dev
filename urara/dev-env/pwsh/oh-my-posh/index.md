@@ -10,7 +10,7 @@ tags:
   - Windows
   - Windows Terminal
   - pwsh
-  - 2021
+  - 2022
 ---
 
 ## 開頭
