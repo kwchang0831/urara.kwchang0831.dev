@@ -133,9 +133,9 @@ elixir -v
 
 ```shell
 ❯ elixir -v
-Erlang/OTP 24 [erts-12.3.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]
+Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
 
-Elixir 1.13.4 (compiled with Erlang/OTP 24)
+Elixir 1.13.4 (compiled with Erlang/OTP 25)
 ```
 
 ## Hello World
@@ -156,7 +156,7 @@ iex
 
 ```shell
 ❯ iex
-Erlang/OTP 24 [erts-12.3.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]
+Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
 
 Interactive Elixir (1.13.4) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)>
@@ -236,7 +236,7 @@ iex helloWorld.ex
 
 ```shell
 ❯ iex helloWorld.ex
-Erlang/OTP 24 [erts-12.3.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]
+Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
 
 Hello World
 Interactive Elixir (1.13.4) - press Ctrl+C to exit (type h() ENTER for help)
@@ -321,7 +321,7 @@ iex -S mix
 
 ```shell
 ❯ iex -S mix
-Erlang/OTP 24 [erts-12.3.2] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit]
+Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
 
 Compiling 1 file (.ex)
 Interactive Elixir (1.13.4) - press Ctrl+C to exit (type h() ENTER for help)
