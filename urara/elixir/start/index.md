@@ -29,7 +29,7 @@ tags:
 
 當然，這不一定適合所有人。但，歡迎參考。
 
-<Img src="start/fig01.avif">
+<Img src="start/fig01.avif" w="1050" h="549">
 
 Figure 01. by [Aaron Davis](https://www.flickr.com/photos/aaron_davis/16453803047)
 
@@ -39,7 +39,7 @@ Figure 01. by [Aaron Davis](https://www.flickr.com/photos/aaron_davis/1645380304
 
 因為好玩。學習就是快樂的泉源。難道你已經忘了小時候那最純粹的快樂了嗎?
 
-<Img src="start/fig02.avif">
+<Img src="start/fig02.avif" w="833" h="477">
 
 Figure 02. by [Ben White](https://unsplash.com/@benwhitephotography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/4K2lIP0zc_k)
 
@@ -59,13 +59,13 @@ Elixir 擴充性很高，最好的證明就是 Elixir 本身有 90% 以上都是
 
 去看看 "[Elixir 原始碼庫](https://github.com/elixir-lang/elixir)"。
 
-![install/fig01.avif](install/fig01.avif)
+<Img src="start/fig03.avif" w="322" h="112"/>
 
 ## Elixir 可以用來幹嘛?
 
 Elixir 可以用來做後端伺服器 (Back End) 或是全端的網頁 (Full Stack Web) 甚至嵌入式系統 (Embedded) 與 IoT 相關的都有。若是不知道前面說的那些是甚麼東西，無所謂，反正學下去就知道可以幹甚麼了。
 
-這邊就給一個著名的例子，聊天軟體 [Discord]() 的後端伺服器是用 Elixir 打造的：
+這邊就給一個著名的例子，聊天軟體 Discord 的後端伺服器是用 Elixir 打造的：
 [Real time communication at scale with Elixir at Discord](https://elixir-lang.org/blog/2020/10/08/real-time-communication-at-scale-with-elixir-at-discord/) 。
 
 若想知道更多有哪些公司有在用 Elixir，請參考 [Elixir 案例](https://elixir-lang.org/cases.html)。
@@ -402,9 +402,9 @@ iex(3)>
 
 我想說，還是自己動手學最棒了!
 
-<Img src="start/fig03.avif">
+<Img src="start/fig04.avif" w="1920" h="1280">
 
-Figure 03. by [Zac Durant](https://unsplash.com/@zacdurant?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/_6HzPU9Hyfg)
+Figure 04. by [Zac Durant](https://unsplash.com/@zacdurant?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText) on [Unsplash](https://unsplash.com/photos/_6HzPU9Hyfg)
 
 </Img>
 

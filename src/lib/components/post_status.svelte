@@ -28,6 +28,8 @@
         class="inline-block w-6 h-6 rounded-badge u-photo mr-1"
         src={site.author.photo}
         alt={site.author.name}
+        width="192"
+        height="192"
         decoding="async"
         loading="lazy" />
       {#if post.layout === 'article' || 'note'}

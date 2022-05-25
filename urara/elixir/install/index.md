@@ -16,10 +16,6 @@ tags:
   - 2022
 ---
 
-<script lang="ts">
-  import Img from '$lib/components/extra/zoom.svelte'
-</script>
-
 ## Windows 安裝 Elixir
 
 建議使用 Linux 來當開發環境。Windows 用戶可以用 WSL 在 Windows 上安裝 Linux，建議參考 "[Windows 10 上安裝 WSL + Ubuntu](/dev-env/wsl/ubuntu)"，接續參考下面的 Ubuntu 安裝流程。

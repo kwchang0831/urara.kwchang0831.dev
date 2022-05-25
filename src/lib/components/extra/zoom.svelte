@@ -6,6 +6,8 @@
   export let loading: 'eager' | 'lazy' = 'lazy'
   export let decoding: 'async' | 'sync' | 'auto' = 'async'
   export let figcaptionClass: string = 'italic'
+  export let w = undefined
+  export let h = undefined
 </script>
 
 <figure class="flex flex-col mx-4 md:mx-0 w-auto">
@@ -13,9 +15,9 @@
     data-zoomable
     {src}
     {alt}
-    width="912"
-    height="684"
-    class="w-full h-auto z-50 u-photo {className ?? 'rounded-lg my-2'}"
+    width={w ?? '854'}
+    height={h ?? '480'}
+    class="{w ? '' : 'w-full h-auto'} z-50 u-photo {className ?? 'rounded-lg my-2'}"
     {loading}
     {decoding} />
   {#if $$slots.default}

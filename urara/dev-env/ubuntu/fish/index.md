@@ -38,13 +38,13 @@ tags:
 
 安裝完，你會得到一個簡單好上手的指令介面。
 
-<Img src="fish/fig01.avif"/>
+<Img src="fish/fig01.avif" w="1050" h="149"/>
 
 ## 環境配置
 
 我的使用環境為 Windows 10 的 Windows Terminal + pwsh 連進 Ubuntu 22.04 LTS 使用。
 
-<Img src="fish/fig02.avif"/>
+<Img src="fish/fig02.avif" w="833" h="477"/>
 
 ## 安裝 必要套件
 
@@ -157,7 +157,7 @@ PatrickF1/fzf.fish
 還記得 Zsh 的 [PowerLevel10k](https://github.com/romkatv/powerlevel10k) 嗎? Tide 基本上就很像 PowerLevel10k。
 
 <!-- https://github.com/IlanCosman/tide/raw/assets/animations/configuration_wizard.gif -->
-<Webm webm="fish/w1.webm" title="Tide #Configuration Wizard"/>
+<Webm webm="fish/w1.webm" title="Tide #Configuration Wizard"  w="1142" h="742"/>
 
 安裝，shell 輸入
 
@@ -218,17 +218,17 @@ fisher install jorgebucaran/autopair.fish
 找檔案 <kbd>Ctrl + Alt + F</kbd>
 
 <!-- https://github.com/PatrickF1/fzf.fish/raw/assets/directory.gif -->
-<Webm webm="fish/w2.webm" title="fzf.fish #File paths"/>
+<Webm webm="fish/w2.webm" title="fzf.fish #File paths" w="1472" h="779"/>
 
 找指令歷史紀錄 <kbd>Ctrl + R</kbd>
 
 <!-- https://github.com/PatrickF1/fzf.fish/raw/assets/command_history.gif -->
-<Webm webm="fish/w3.webm" title="fzf.fish #A previously run command"/>
+<Webm webm="fish/w3.webm" title="fzf.fish #A previously run command" w="1472" h="779"/>
 
 找 PID <kbd>Ctrl + Alt + P</kbd>
 
 <!-- https://github.com/PatrickF1/fzf.fish/raw/assets/processes.gif -->
-<Webm webm="fish/w4.webm" title="fzf.fish #Process ids"/>
+<Webm webm="fish/w4.webm" title="fzf.fish #Process ids" w="1472" h="779"/>
 
 還有很多功能，請參考 [fzf.fish 來源庫](https://github.com/PatrickF1/fzf.fish)。
 

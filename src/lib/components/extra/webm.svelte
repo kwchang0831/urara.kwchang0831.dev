@@ -9,6 +9,8 @@
   export let mp4 = undefined
   export let title = undefined
   export let seekTime = 2
+  export let w = undefined
+  export let h = undefined
 
   let players
   onMount(() => {
@@ -19,7 +21,7 @@
   })
 </script>
 
-<video {autoplay} {loop} class="webm-player my-0" controls data-poster={poster}>
+<video {autoplay} {loop} width={w} height={h} class="webm-player my-0" controls data-poster={poster}>
   {#if mp4}
     <source src={mp4} type="video/mp4" {title} />
   {/if}
