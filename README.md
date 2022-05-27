@@ -46,7 +46,7 @@ Run dev server @ `localhost:3000`
 pnpm dev
 ```
 
->! Windows users need to replace `export` in `package.json` to `set` before running `pnpm dev`.
+> ! Windows users need to replace `export` in `package.json` to `set` before running `pnpm dev`.
 
 eg.
 
