@@ -220,18 +220,19 @@ const cleanDir = files =>
 // console.log(files.sort((a, b) => b.type.localeCompare(a.type) || b.depth - a.depth))
 
 const handleFile = async ({ src, dest, ext }) => {
-  if (ext === '.avif') {
-    copyFile({ src, dest })
-    // sharp(file.src)
-    //   .resize(384)
-    //   .toFile(file.dest.slice(0, -5) + '_384.avif')
-    sharp(src)
-      .resize(768)
-      .toFile(dest.slice(0, -5) + '_768.avif', (err, info) => console.log(err ? err : info))
-    // log('green', 'generate file', dest.slice(0, -5) + '_768.avif')
-  } else {
-    copyFile({ src, dest })
-  }
+  copyFile({ src, dest })
+  // if (ext === '.avif') {
+  //   copyFile({ src, dest })
+  //   // sharp(file.src)
+  //   //   .resize(384)
+  //   //   .toFile(file.dest.slice(0, -5) + '_384.avif')
+  //   sharp(src)
+  //     .resize(768)
+  //     .toFile(dest.slice(0, -5) + '_768.avif', (err, info) => console.log(err ? err : info))
+  //   // log('green', 'generate file', dest.slice(0, -5) + '_768.avif')
+  // } else {
+  //   copyFile({ src, dest })
+  // }
 }
 
 const cleanDirExtra = files =>

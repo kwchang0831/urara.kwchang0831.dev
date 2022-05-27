@@ -11,6 +11,11 @@ tags:
   - 2021
 ---
 
+<script lang="ts">
+  import Img from '$lib/components/extra/zoom.svelte'
+  import Webm from '$lib/components/extra/webm.svelte'
+</script>
+
 ## 開頭
 
 本篇文章紀錄如何美化 Ubuntu 的 Terminal ，讓平常工作起來更高效。
@@ -131,8 +136,8 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 ```shell
 git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
 ```
-
-![Zsh-z](https://github.com/agkozak/zsh-z/raw/master/img/demo.gif)
+<!-- https://github.com/agkozak/zsh-z/raw/master/img/demo.gif -->
+<Webm webm="oh-my-zsh/zsh-demo.webm" title="ZSH Demo"/>
 
 查看已知的資料夾位置
 

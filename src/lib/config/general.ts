@@ -20,11 +20,13 @@ export const head: HeadConfig = {
     dev
       ? []
       : [
-          // Preconnect
-          '<link href="https://umami.kwchang0831.dev" rel="preconnect" crossorigin>',
+          // IndieAuth
+          '<link rel="authorization_endpoint" href="https://indieauth.com/auth">',
+          '<link rel="token_endpoint" href="https://tokens.indieauth.com/token">',
           // Umami Analytics
           '<script defer data-website-id="e29bb16a-1e2e-48e6-8812-5d7bb04204b7" src="https://umami.kwchang0831.dev/umami.js" data-cache="true" data-domains="kwchang0831.dev,www.kwchang0831.dev"></script>'
-        ]
+        ],
+  relMe: ['https://github.com/kwchang0831']
 }
 
 export const header: HeaderConfig = {

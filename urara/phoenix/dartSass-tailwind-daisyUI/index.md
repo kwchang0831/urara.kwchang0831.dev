@@ -192,6 +192,7 @@ mix tailwind.install
 <Info status="info" title="更新 tailwind / dartSass 版本">
 
 若要更新 tailwind / dartSass 的版本，修改 `version` 的參數，然後再執行一次 `mix sass.instal` 或 `mix tailwind.install`。
+
 </Info>
 
 ## 修改 Assets 的 CSS

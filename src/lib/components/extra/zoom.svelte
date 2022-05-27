@@ -11,15 +11,19 @@
 </script>
 
 <figure class="flex flex-col mx-4 md:mx-0 w-auto">
-  <img
-    data-zoomable
-    {src}
-    {alt}
-    width={w ?? '854'}
-    height={h ?? '480'}
-    class="{w ? '' : 'w-full h-auto'} z-50 u-photo {className ?? 'rounded-lg my-2'}"
-    {loading}
-    {decoding} />
+  <picture>
+    <img
+      data-zoomable
+      {src}
+      {alt}
+      itemprop="image"
+      class="{w ? '' : 'w-full h-auto'} z-50 u-photo {className ?? 'rounded-lg my-2'}"
+      width={w}
+      height={h}
+      {loading}
+      {decoding} />
+  </picture>
+
   {#if $$slots.default}
     <figcaption class={figcaptionClass}>
       <slot />
