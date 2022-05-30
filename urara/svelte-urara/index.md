@@ -29,7 +29,7 @@ tags:
 
 </Infobox>
 
-Urara 生成的網站不但速度跑很快，而且完全還可以免費架設。
+Urara 生成的網站不但速度跑很快，而且完全還可以免費架設於 [Vercel](https://vercel.com/) 、 [Netlify](https://www.netlify.com/) 等等平台。
 
 那，就讓我們繼續看下去吧。
 
@@ -65,7 +65,7 @@ urara
 
 本篇文章主要會紀錄建置 Urara 於 Vercel 與 Netlify 平台的流程。
 
-Urara 的作者目前非常勤勞地開發新功能與優化系統，或許未來會有些許變動，想知道更多 Urara 的細節介紹，請參考 Urara 的 [Git Repo](https://github.com/importantimport/urara)。
+Urara 的作者目前非常勤勞地開發新功能與優化系統，或許未來會有些許變動。想知道更多 Urara 的細節介紹，請參考 Urara 的 [Git Repo](https://github.com/importantimport/urara)。
 
 ## 平台帳號需求
 
