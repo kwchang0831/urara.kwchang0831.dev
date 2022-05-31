@@ -1,7 +1,7 @@
 ---
-title: 'Phoenix 1.6+ (ESbuild) 搭配 DartSass + TailWind + DaisyUI'
-description: 本篇文章示範如何在新建立的 Phoenix 1.6+ (ESbuild) 的 Project 裡整合 DartSass + TailWind + DaisyUI。透過 DartSass 整合所有 CSS/SCSS 輸出後，再讓 tailwind 做最後處理輸出。
-summary: 透過 DartSass 整合所有 CSS/SCSS 輸出後，再讓 tailwind 做最後處理輸出
+title: 'Phoenix 1.6+ 搭配 DartSass + Tailwind + DaisyUI (ESbuild)'
+description: 本篇文章示範如何在新建立的 Phoenix 1.6+ (ESbuild) 的 Project 裡整合 DartSass + TailWind + DaisyUI。透過 DartSass 整合所有 CSS/SCSS 輸出後，再讓 Tailwind 做最後處理輸出。
+summary: 透過 DartSass 整合所有 CSS/SCSS 輸出後，再讓 Tailwind 做最後處理輸出
 published: 2022-05-26
 cover: /phoenix/dartSass-tailwind-daisyUI/cover.webp
 tags:
@@ -22,14 +22,14 @@ tags:
 
 ## 開頭
 
-本篇文章示範如何在新建立的 Phoenix 的 Project 裡整合 DartSass + TailWind + DaisyUI。
+本篇文章示範如何在新建立的 Phoenix 的 Project 裡整合 DartSass + Tailwind + DaisyUI。
 
-主要是透過 DartSass 整合所有 CSS 與 SCSS 檔案之後輸出給 TailWind ，讓 TailWind 做最後的處理輸出。
+主要是透過 DartSass 整合所有 CSS 與 SCSS 檔案之後輸出給 Tailwind ，讓 Tailwind 做最後的處理輸出。
 
 我們會安裝以下
 
 - [Mix Task for DartSass](https://github.com/CargoSense/dart_sass)
-- [Mix Task for TailWind](https://github.com/phoenixframework/tailwind)
+- [Mix Task for Tailwind](https://github.com/phoenixframework/tailwind)
 - [DaisyUI](https://www.npmjs.com/package/daisyui)
 
 ## 環境配置
