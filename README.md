@@ -46,18 +46,6 @@ Run dev server @ `localhost:3000`
 pnpm dev
 ```
 
-> ! Windows users need to replace `export` in `package.json` to `set` before running `pnpm dev`.
-
-eg.
-
-```js
-# Change the following
-"dev:kit": "export NODE_OPTIONS=--max_old_space_size=7168 && svelte-kit dev --host",
-
-# To the following
-"dev:kit": "set NODE_OPTIONS=--max_old_space_size=7168 && svelte-kit dev --host",
-```
-
 ## Local Build
 
 ```shell
@@ -66,6 +54,12 @@ pnpm build
 
 ```shell
 pnpm preview
+```
+
+## Clean
+
+```shell
+pnpm clean
 ```
 
 ## Powered by
@@ -78,7 +72,6 @@ pnpm preview
 
 ## Useful Links
 
-- Svelte-lightbox: [https://github.com/Hejtmus/svelte-lightbox](https://github.com/Hejtmus/svelte-lightbox)
 - svelte-magnifier: [https://github.com/ambarvm/svelte-magnifier](https://github.com/ambarvm/svelte-magnifier)
 - avif-cli: [https://github.com/lovell/avif-cli](https://github.com/lovell/avif-cli)
 - icons: [https://icones.js.org/](https://icones.js.org/)

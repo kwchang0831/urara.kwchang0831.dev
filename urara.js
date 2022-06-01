@@ -7,7 +7,6 @@ import { promises as fs } from 'fs'
 import * as path from 'path'
 import chokidar from 'chokidar'
 import chalk from 'chalk'
-import sharp from 'sharp'
 
 const config = {
   extensions: ['svelte', 'md', 'js', 'ts'],
@@ -86,7 +85,7 @@ const build = async () => {
 
 const clean = async () => {
   cleanDir(cleanDirExtra((await scanDir('urara')).flat()))
-  removeDir({ dest: ['static'] })
+  // removeDir({ dest: ['static'] })
 }
 
 // TODO: LATEST VERSION
@@ -219,7 +218,7 @@ const cleanDir = files =>
 // .forEach(file => (file.type === 'dir' ? console.log(file.dest) : removeFile({ dest: file.dest })))
 // console.log(files.sort((a, b) => b.type.localeCompare(a.type) || b.depth - a.depth))
 
-const handleFile = async ({ src, dest, ext }) => {
+const handleFile = async ({ src, dest }) => {
   copyFile({ src, dest })
   // if (ext === '.avif') {
   //   copyFile({ src, dest })
