@@ -88,8 +88,6 @@ const clean = async () => {
   // removeDir({ dest: ['static'] })
 }
 
-// TODO: LATEST VERSION
-
 const copyFile = ({ src, stat = 'copy', dest = path.join(check(path.parse(src).ext.slice(1)), src.slice(6)) } = {}) =>
   fs
     .copyFile(src, dest)
