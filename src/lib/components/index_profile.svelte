@@ -24,7 +24,7 @@
     <p class="pt-3 space-x-3">
       {#if site.author.email}
         <a
-          class="text-sm transition hover:text-gray-600 tooltip tooltip-secondary hover:text-secondary"
+          class="text-sm transition tooltip tooltip-secondary hover:text-secondary"
           target="_blank"
           rel="noopener noreferrer"
           data-tip="Mail"
@@ -33,20 +33,9 @@
           <span class="i-ic-baseline-mail !w-8 !h-8 mr-1 fill-current inline-block hover:text-lime-500" />
         </a>
       {/if}
-      {#if site.author.discordID}
-        <a
-          class="text-sm transition hover:text-gray-600 tooltip tooltip-secondary hover:text-secondary"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-tip="Discord"
-          aria-label="Discord"
-          href="https://discordapp.com/users/{site.author.discordID}">
-          <span class="i-ic-outline-discord !w-8 !h-8 mr-1 fill-current inline-block hover:text-blue-500" />
-        </a>
-      {/if}
       {#if site.author.github}
         <a
-          class="text-sm transition hover:text-gray-600 tooltip tooltip-secondary hover:text-secondary"
+          class="text-sm transition tooltip tooltip-secondary hover:text-secondary"
           target="_blank"
           rel="noopener noreferrer"
           data-tip="Github"
