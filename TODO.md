@@ -2,8 +2,7 @@
 
 ## Backlog
 
-- [ ] Update Dependencies
-- [ ] Update PWA Related
+N/A
 
 ## In Progress
 

@@ -20,6 +20,7 @@ export const head: HeadConfig = {
     dev
       ? []
       : [
+          '<link rel="preconnect" href="https://umami.kwchang0831.dev" />',
           // IndieAuth
           '<link rel="authorization_endpoint" href="https://indieauth.com/auth">',
           '<link rel="token_endpoint" href="https://tokens.indieauth.com/token">',

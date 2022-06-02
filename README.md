@@ -56,10 +56,15 @@ pnpm build
 pnpm preview
 ```
 
-## Clean
+## Build & Deploy onto Netlify
 
 ```shell
-pnpm clean
+netlify build
+```
+
+```shell
+netlify deploy
+netlify deploy --prod
 ```
 
 ## Powered by

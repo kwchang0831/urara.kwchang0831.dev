@@ -1,23 +1,21 @@
 import preprocess from 'svelte-preprocess'
-import adapterAuto from '@sveltejs/adapter-auto'
 import adapterNode from '@sveltejs/adapter-node'
 import adapterStatic from '@sveltejs/adapter-static'
-import { VitePWA } from 'vite-plugin-pwa'
+import adapterNetlify from '@sveltejs/adapter-netlify'
 import mdsvexConfig from './mdsvex.config.js'
 import postcss from './postcss.config.js'
 import UnoCSS from 'unocss/vite'
 import { extractorSvelte } from '@unocss/core'
 import { presetIcons } from 'unocss'
+import { VitePWA } from 'vite-plugin-pwa'
 import { mdsvex } from 'mdsvex'
 
 export default /** @type {import('@sveltejs/kit').Config} */ {
   extensions: ['.svelte', ...mdsvexConfig.extensions],
-  // Consult https://github.com/sveltejs/svelte-preprocess
-  // for more information about preprocessors
   preprocess: [mdsvex(mdsvexConfig), preprocess()],
   kit: {
     adapter: Object.keys(process.env).some(key => ['VERCEL', 'CF_PAGES', 'NETLIFY'].includes(key))
-      ? adapterAuto()
+      ? adapterNetlify({ edge: true })
       : process.env.ADAPTER === 'node'
       ? adapterNode({ out: 'build' })
       : adapterStatic({
@@ -25,22 +23,9 @@ export default /** @type {import('@sveltejs/kit').Config} */ {
           assets: 'build',
           fallback: null
         }),
-    // csp: {
-    // mode: 'auto'
-    // directives: {
-    // 'style-src': ['self', 'unsafe-inline'],
-    // 'script-src': ['self', 'https://*.kwaa.dev']
-    // }
-    // },
+    csp: { mode: 'auto' },
     prerender: { default: true },
     vite: {
-      // build: {
-      //   rollupOptions: {
-      //     output: {
-      //       manualChunks: undefined
-      //     }
-      //   }
-      // },
       mode: process.env.MODE || 'production',
       envPrefix: 'URARA_',
       css: { postcss },

@@ -20,7 +20,7 @@
 
   $: storedTags.subscribe(storedTags => (allTags = storedTags as string[]))
 
-  $: if (posts.length > 1) years = [new Date(posts[0].published ?? posts[0].created).toJSON().substring(0, 4)]
+  $: if (posts.length > 1) years = [new Date(posts[0].published ?? posts[0].created).getFullYear()]
 
   $: if (tags) {
     posts = !tags ? allPosts : allPosts.filter(post => tags.every(tag => post.tags?.includes(tag)))
@@ -92,7 +92,7 @@
         itemscope
         itemtype="https://schema.org/Blog">
         {#each posts as post, index}
-          {@const year = (post.published ?? post.created).substring(0, 4)}
+          {@const year = new Date(post.published ?? post.created).getFullYear()}
           {#if !years.includes(year)}
             <div
               in:fly={{ x: index % 2 ? 100 : -100, duration: 300, delay: 500 }}
