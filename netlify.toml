@@ -1,10 +1,26 @@
 [build]
 command = "npx pnpm i --store=node_modules/.pnpm-store && npx pnpm build"
 publish = "build"
+
 [build.environment]
 NPM_FLAGS = "--version"
+
 [functions]
 node_bundler = "esbuild"
+
+[[headers]]
+  for = "/manifest.webmanifest"
+  [headers.values]
+    Content-Type = "application/manifest+json"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    cache-control = '''
+    max-age=31536000,
+    immutable
+    '''
+
 [[headers]]
   for = "/*"
   [headers.values]
