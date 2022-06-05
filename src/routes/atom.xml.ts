@@ -7,7 +7,7 @@ import { genPosts, genTags } from '$lib/utils/posts'
 const render = async (
   posts = genPosts({ postHtml: true, postLimit: feed.limit, filterUnlisted: true })
 ): Promise<string> => `<?xml version='1.0' encoding='utf-8'?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh">
   <id>${site.protocol + site.domain}/</id>
   <title><![CDATA[${site.title}]]></title>${site.subtitle ? `\n  <subtitle><![CDATA[${site.subtitle}]]></subtitle>` : ''}${
   icon.favicon ? `\n  <icon>${icon.favicon.src}</icon>` : ''
@@ -25,6 +25,7 @@ const render = async (
   .map(
     post => `\n  <entry>
     <title type="html"><![CDATA[${post.title}]]></title>
+    <author><name><![CDATA[${site.author.name}]]></name></author>
     <link href="${site.protocol + site.domain + post.path}" />
     <id>${site.protocol + site.domain + post.path}</id>
     <published>${new Date(post.published ?? post.created).toJSON()}</published>
