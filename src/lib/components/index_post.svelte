@@ -24,10 +24,10 @@
     itemprop="blogPost"
     class="h-entry card image-full before:!bg-transparent bg-base-100 rounded-none md:rounded-box">
     <figure>
-      <Image class="u-photo object-cover object-center h-full w-full" src={post.banner} {loading} {decoding} />
+      <Image class="object-cover object-center w-full h-full u-photo" src={post.banner} {loading} {decoding} />
     </figure>
 
-    <div class="card-body mt-auto">
+    <div class="mt-auto card-body">
       <Status {post} index={true} photo={true} />
     </div>
   </article>
@@ -42,7 +42,7 @@
     {#if post.layout === 'article' && post.banner}
       <figure class="!block">
         <Image
-          class="u-featured object-center h-full w-full absolute group-hover:scale-110 transition-transform duration-500 ease-in-out"
+          class="absolute object-center w-full h-full transition-transform duration-500 ease-in-out u-featured group-hover:scale-110"
           src={post.banner}
           {loading}
           {decoding} />
@@ -50,20 +50,20 @@
     {/if}
 
     {#if post.series_title}
-      <div class="card-title mb-6 flex gap-0 items-stretch group-hover:decoration-primary">
-        <span class="rounded-r-2xl md:rounded-tr-none md:rounded-br-2xl bg-green-500 py-2">
-          <span class="pl-4 pr-3 font-bold text-sm text-black">{post.series_title}</span>
+      <div class="flex items-stretch gap-0 mb-6 card-title group-hover:decoration-primary">
+        <span class="py-2 bg-green-500 rounded-r-2xl md:rounded-tr-none md:rounded-br-2xl">
+          <span class="pl-4 pr-3 text-sm font-bold text-black">{post.series_title}</span>
         </span>
         {#if post.series_name}
-          <span class="flex-1 md:rounded-tr-2xl py-2">
-            <span class="px-3 text-sm font-semibold text-neutral-100 bg-neutral-800 align-middle tracking-wide">
+          <span class="flex-1 py-2 md:rounded-tr-2xl">
+            <span class="px-3 text-sm font-semibold tracking-wide align-middle text-neutral-100 bg-neutral-800">
               {post.series_name}
             </span>
           </span>
         {/if}
       </div>
     {:else}
-      <div class="card-title py-4" />
+      <div class="py-4 card-title" />
     {/if}
 
     <div
@@ -71,7 +71,7 @@
         ? 'md:col-start-1 md:row-start-1 md:text-neutral-content md:z-20'
         : ''}">
       {#if post.layout === 'reply'}
-        <Reply inReplyTo={post.inReplyTo} class="-mt-4 -mx-4 mb-4" />
+        <Reply inReplyTo={post.inReplyTo} class="mb-4 -mx-4 -mt-4" />
       {/if}
       {#if post.layout === 'article'}
         <h2
@@ -80,13 +80,13 @@
           <a itemprop="url" class="u-url p-name" href={post.path}>{post.title ?? post.path.slice(1)}</a>
         </h2>
         {#if post.summary}
-          <p itemprop="description" class="p-summary mb-auto">{post.summary}</p>
+          <p itemprop="description" class="mb-auto p-summary">{post.summary}</p>
         {/if}
       {/if}
       {@html post.html}
     </div>
 
-    <div class="card-actions justify-end px-6 py-4">
+    <div class="justify-end px-6 py-4 card-actions">
       <Status {post} index={true} featured={post.layout === 'article' && post.photo ? true : false} />
     </div>
   </article>

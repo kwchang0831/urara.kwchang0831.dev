@@ -23,9 +23,9 @@
   class:mb-4={!index}
   class="flex flex-wrap justify-between gap-2">
   {#if !index && !post.flags?.includes('hidden-author')}
-    <div class="badge badge-lg badge-ghost shrink-0 text-base-content/75 font-bold gap-1 pl-0 h-card p-author">
+    <div class="gap-1 pl-0 font-bold badge badge-lg badge-ghost shrink-0 text-base-content/75 h-card p-author">
       <img
-        class="inline-block w-6 h-6 rounded-badge u-photo mr-1"
+        class="inline-block w-6 h-6 mr-1 rounded-badge u-photo"
         src={site.author.photo}
         alt={site.author.name}
         width="192"

@@ -14,12 +14,12 @@
       {#if prev['cover']}
         <figure class="!block">
           <Image
-            class="object-center h-full w-full absolute group-hover:scale-105 transition-transform duration-500 ease-in-out"
+            class="absolute object-center w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105"
             src={prev['cover']} />
         </figure>
       {/if}
       <div class="card-body">
-        <span class="i-heroicons-outline-chevron-left opacity-50 group-hover:opacity-100 mr-auto" />
+        <span class="mr-auto opacity-50 i-heroicons-outline-chevron-left group-hover:opacity-100" />
         <a
           rel="prev"
           href={prev.path}
@@ -29,7 +29,7 @@
       </div>
     </div>
     {#if next && !next['cover'] && !prev['cover']}
-      <div class="flex-0 divider mx-4 md:divider-horizontal md:mx-0 md:my-4" />
+      <div class="mx-4 flex-0 divider md:divider-horizontal md:mx-0 md:my-4" />
     {/if}
   {/if}
   {#if next}
@@ -41,7 +41,7 @@
       {#if next['cover']}
         <figure class="!block">
           <Image
-            class="object-center h-full w-full absolute group-hover:scale-105 transition-transform duration-500 ease-in-out"
+            class="absolute object-center w-full h-full transition-transform duration-500 ease-in-out group-hover:scale-105"
             src={next['cover']} />
         </figure>
       {/if}
@@ -52,7 +52,7 @@
           class="card-title block text-right mb-0 ml-auto bg-[length:100%_0%] bg-[position:0_88%] underline decoration-3 decoration-transparent group-hover:decoration-primary hover:bg-[length:100%_100%] hover:text-primary-content bg-gradient-to-t from-primary to-primary bg-no-repeat transition-all ease-in-out duration-300">
           {next['title'] ?? next.path.slice(1)}
         </a>
-        <span class="i-heroicons-outline-chevron-right opacity-50 group-hover:opacity-100 ml-auto" />
+        <span class="ml-auto opacity-50 i-heroicons-outline-chevron-right group-hover:opacity-100" />
       </div>
     </div>
   {/if}

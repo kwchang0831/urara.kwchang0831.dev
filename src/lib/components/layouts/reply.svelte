@@ -23,8 +23,8 @@
 <Head post={{ layout: 'reply', created, updated, published, tags, path }} />
 
 <Post layout="reply" {path} {flags} {tags} {created} {updated} {published}>
-  <Reply {inReplyTo} slot="top" class="mt-4 mx-4" />
-  <main slot="content" itemprop="articleBody" class="urara-prose prose p-name p-content">
+  <Reply {inReplyTo} slot="top" class="mx-4 mt-4" />
+  <main slot="content" itemprop="articleBody" class="prose urara-prose p-name p-content">
     <slot />
   </main>
 </Post>

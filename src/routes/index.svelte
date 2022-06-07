@@ -38,27 +38,27 @@
 
 <Head />
 
-<div class="flex flex-col flex-nowrap justify-center xl:flex-row xl:flex-wrap h-feed">
+<div class="flex flex-col justify-center flex-nowrap xl:flex-row xl:flex-wrap h-feed">
   <div
     in:fly={{ x: 25, duration: 300, delay: 500 }}
     out:fly={{ x: 25, duration: 300 }}
-    class="flex-1 w-full max-w-screen-md order-first mx-auto xl:mr-0 xl:max-w-sm">
+    class="flex-1 order-first w-full max-w-screen-md mx-auto xl:mr-0 xl:max-w-sm">
     <Profile />
   </div>
   <div
     in:fly={{ x: -25, duration: 300, delay: 500 }}
     out:fly={{ x: -25, duration: 300 }}
-    class="flex-1 w-full max-w-screen-md xl:order-last mx-auto xl:ml-0 xl:max-w-sm">
+    class="flex-1 w-full max-w-screen-md mx-auto xl:order-last xl:ml-0 xl:max-w-sm">
     {#if allTags && Object.keys(allTags).length > 0}
       <div
-        class="collapse-content flex md:block overflow-x-auto md:overflow-x-hidden overflow-y-hidden max-h-24 my-auto md:max-h-fit max-w-fit md:max-w-full md:mb-4">
+        class="flex my-auto overflow-x-auto overflow-y-hidden collapse-content md:block md:overflow-x-hidden max-h-24 md:max-h-fit max-w-fit md:max-w-full md:mb-4">
         {#each allTags as tag}
           <button
             id={tag}
             on:click={() => (tags.includes(tag) ? (tags = tags.filter(tagName => tagName != tag)) : (tags = [...tags, tag]))}
             class:!btn-secondary={tags.includes(tag)}
             class:shadow-lg={tags.includes(tag)}
-            class="btn btn-sm btn-ghost normal-case border-dotted border-base-content/20 border-2 my-8 md:my-1 mx-1">
+            class="mx-1 my-8 normal-case border-2 border-dotted btn btn-sm btn-ghost border-base-content/20 md:my-1">
             #{tag}
           </button>
         {/each}
@@ -72,22 +72,22 @@
         <div
           in:fly={{ x: 100, duration: 300, delay: 500 }}
           out:fly={{ x: -100, duration: 300 }}
-          class="bg-base-300 text-base-content shadow-inner text-center md:rounded-box p-10 -mb-2 md:mb-0 relative z-10">
-          <div class="prose items-center">
+          class="relative z-10 p-10 -mb-2 text-center shadow-inner bg-base-300 text-base-content md:rounded-box md:mb-0">
+          <div class="items-center prose">
             <h2>
               Not found: [{#each tags as tag, i}
                 '{tag}'{#if i + 1 < tags.length},{/if}
               {/each}]
             </h2>
             <button on:click={() => (tags = [])} class="btn btn-secondary">
-              <span class="i-heroicons-outline-trash mr-2" />
+              <span class="mr-2 i-heroicons-outline-trash" />
               tags = []
             </button>
           </div>
         </div>
       {/if}
       <main
-        class="flex flex-col relative bg-base-100 md:bg-transparent md:gap-8 z-10"
+        class="relative z-10 flex flex-col bg-base-100 md:bg-transparent md:gap-8"
         itemprop="mainEntityOfPage"
         itemscope
         itemtype="https://schema.org/Blog">
@@ -97,7 +97,7 @@
             <div
               in:fly={{ x: index % 2 ? 100 : -100, duration: 300, delay: 500 }}
               out:fly={{ x: index % 2 ? -100 : 100, duration: 300 }}
-              class="divider my-4 md:my-0">
+              class="my-4 divider md:my-0">
               {years.push(year) && year}
             </div>
           {/if}
@@ -114,7 +114,7 @@
         class="sticky bottom-0 md:static md:mt-8"
         in:fly={{ x: posts.length + (1 % 2) ? 100 : -100, duration: 300, delay: 500 }}
         out:fly={{ x: posts.length + (1 % 2) ? -100 : 100, duration: 300 }}>
-        <div class="divider mt-0 mb-8 hidden lg:flex" />
+        <div class="hidden mt-0 mb-8 divider lg:flex" />
         <Footer />
       </div>
     {/key}

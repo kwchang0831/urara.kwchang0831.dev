@@ -12,7 +12,7 @@
     id="navbar-dropdown"
     tabindex="0"
     class:hidden={!pin}
-    class="menu menu-compact dropdown-content bg-base-100 text-base-content shadow-lg rounded-box max-w-52 p-2">
+    class="p-2 shadow-lg menu menu-compact dropdown-content bg-base-100 text-base-content rounded-box max-w-52">
     {#each nav as { text, link, children }}
       {#if link && !children}
         <li>
@@ -22,9 +22,9 @@
         <li tabindex="0">
           <span class:font-bold={children.some(({ link }) => link === path)} class="justify-between gap-1 max-w-[13rem]">
             {text}
-            <span class="i-heroicons-solid-chevron-right mr-2" />
+            <span class="mr-2 i-heroicons-solid-chevron-right" />
           </span>
-          <ul class="bg-base-100 text-base-content shadow-lg p-2">
+          <ul class="p-2 shadow-lg bg-base-100 text-base-content">
             {#each children as { text, link }}
               <li>
                 <a sveltekit:prefetch class:font-bold={link === path} href={link}>{text}</a>
@@ -36,7 +36,7 @@
     {/each}
   </ul>
 </div>
-<ul class="menu menu-horizontal p-0 hidden lg:flex order-last">
+<ul class="order-last hidden p-0 menu menu-horizontal lg:flex">
   {#each nav as { text, link, datatip, children }}
     {#if link && !children}
       <li>
@@ -53,9 +53,9 @@
       <li tabindex="0">
         <span class:font-bold={children.some(({ link }) => link === path)} class="gap-1">
           {text}
-          <span class="i-heroicons-solid-chevron-down -mr-1" />
+          <span class="-mr-1 i-heroicons-solid-chevron-down" />
         </span>
-        <ul class="bg-base-100 text-base-content shadow-lg p-2">
+        <ul class="p-2 shadow-lg bg-base-100 text-base-content">
           {#each children as { text, link }}
             <li>
               <a sveltekit:prefetch class:font-bold={link === path} href={link}>{text}</a>

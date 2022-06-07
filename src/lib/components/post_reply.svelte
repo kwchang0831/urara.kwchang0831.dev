@@ -12,7 +12,7 @@
         href={reply}
         rel="noopener external"
         target="_blank"
-        class="flex-none flex rounded-badge bg-base-200 hover:bg-base-300 transition-all gap-2 px-4 u-in-reply-to">
+        class="flex flex-none gap-2 px-4 transition-all rounded-badge bg-base-200 hover:bg-base-300 u-in-reply-to">
         <span class="i-heroicons-outline-reply my-auto !w-4 !h-4" />
         {reply}
       </a>
@@ -22,7 +22,7 @@
       href={inReplyTo}
       rel="noopener external"
       target="_blank"
-      class="ml-auto flex-none flex rounded-badge bg-base-200 hover:bg-base-300 transition-all gap-2 px-4 u-in-reply-to">
+      class="flex flex-none gap-2 px-4 ml-auto transition-all rounded-badge bg-base-200 hover:bg-base-300 u-in-reply-to">
       <span class="i-heroicons-outline-reply my-auto !w-4 !h-4" />
       {inReplyTo}
     </a>

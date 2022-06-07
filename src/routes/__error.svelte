@@ -13,20 +13,20 @@
 
 <Head page={{ title: status ?? '404', path: pathname ?? '/404' }} />
 
-<div class="flex flex-col flex-nowrap justify-center xl:flex-row xl:flex-wrap">
+<div class="flex flex-col justify-center flex-nowrap xl:flex-row xl:flex-wrap">
   <div class="flex-none w-full max-w-screen-md mx-auto xl:mx-0">
     <article
       itemscope
       itemtype="https://schema.org/BlogPosting"
-      class="card bg-base-100 rounded-none md:rounded-box shadow-xl md:mb-8 z-10">
-      <main itemprop="articleBody" class="card-body prose urara-prose">
+      class="z-10 rounded-none shadow-xl card bg-base-100 md:rounded-box md:mb-8">
+      <main itemprop="articleBody" class="prose card-body urara-prose">
         <h1 class="opacity-20 text-6xl md:text-[12rem] -mt-2 mb-0">
           {status ?? '404'}
         </h1>
         <h2 class="-mt-12 md:-mt-24">{message ?? 'Not found'}</h2>
         <div class="card-actions">
-          <a href="/" class="btn btn-neutral no-underline shadow-xl hover:shadow-2xl mt-8">
-            <span class="i-heroicons-outline-home -ml-1 mr-2" />
+          <a href="/" class="mt-8 no-underline shadow-xl btn btn-neutral hover:shadow-2xl">
+            <span class="mr-2 -ml-1 i-heroicons-outline-home" />
             Back to Home
           </a>
         </div>

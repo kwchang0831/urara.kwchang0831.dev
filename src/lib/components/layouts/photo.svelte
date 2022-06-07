@@ -21,10 +21,10 @@
 <Head post={{ layout: 'photo', created, updated, published, cover, tags, path }} />
 
 <Post layout="photo" {path} {flags} {tags} {created} {updated} {published}>
-  <figure slot="top" class="mx-4 md:mx-0 w-auto">
-    <Image src={cover} class="rounded-box w-full shadow-xl" />
+  <figure slot="top" class="w-auto mx-4 md:mx-0">
+    <Image src={cover} class="w-full shadow-xl rounded-box" />
   </figure>
-  <main slot="content" itemprop="articleBody" class="urara-prose prose p-name p-content">
+  <main slot="content" itemprop="articleBody" class="prose urara-prose p-name p-content">
     <slot />
   </main>
 </Post>

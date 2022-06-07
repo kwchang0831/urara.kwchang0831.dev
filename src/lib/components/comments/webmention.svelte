@@ -72,7 +72,7 @@
       {`sort-by=${config?.sortBy ?? 'created'}&sort-dir=${sortDirUp ? 'up' : 'down'}`}
     </p>
     <button
-      class="btn btn-ghost btn-sm float-right"
+      class="float-right btn btn-ghost btn-sm"
       on:click={() => {
         sortDirUp = !sortDirUp
         reset()
@@ -111,7 +111,7 @@
           <div class="flex bg-base-200 rounded-btn">
             {#if mention?.author?.photo}
               <img
-                class="w-12 h-12 flex-none rounded-btn"
+                class="flex-none w-12 h-12 rounded-btn"
                 src={mention.author.photo}
                 alt={mention.author?.name ?? new URL(mention.url).host}
                 loading="lazy"
@@ -139,7 +139,7 @@
             </div>
           </div>
           {#if mention.content}
-            <div class="prose max-w-none break-words mt-4">
+            <div class="mt-4 prose break-words max-w-none">
               <p>{@html mention.content?.html ?? mention.content?.text}</p>
             </div>
           {/if}
@@ -158,18 +158,18 @@
         LOAD
       </button>
     {:else if config?.form !== true}
-      <div class="divider mt-0 -mb-2">END</div>
+      <div class="mt-0 -mb-2 divider">END</div>
     {/if}
   {:else}
-    <button id="webmention-loading" class="btn btn-lg btn-block flex btn-ghost loading" />
+    <button id="webmention-loading" class="flex btn btn-lg btn-block btn-ghost loading" />
   {/if}
   {#if config?.form === true}
     <form id="webmention-form" method="post" action="https://webmention.io/{config.username}/webmention">
       <input type="hidden" name="target" value={site.protocol + site.domain + post.path} />
-      <div class="label gap-4">
+      <div class="gap-4 label">
         <span class="label-text">send webmentions here:</span>
         {#if config?.commentParade === true}
-          <span class="label-text-alt text-right">
+          <span class="text-right label-text-alt">
             or <a
               class="hover:!text-primary"
               href="https://quill.p3k.io/?dontask=1&me=https://commentpara.de/&reply={encodeURI(
@@ -183,13 +183,13 @@
       <div class="flex gap-2">
         <div class="flex-1">
           <input
-            class="input input-bordered focus:input-primary w-full"
+            class="w-full input input-bordered focus:input-primary"
             type="text"
             id="reply-url"
             name="source"
             placeholder="https://example.com/my-post" />
         </div>
-        <button class="btn btn-primary flex-none mt-auto" type="submit" id="webmention-submit">Send</button>
+        <button class="flex-none mt-auto btn btn-primary" type="submit" id="webmention-submit">Send</button>
       </div>
     </form>
   {/if}

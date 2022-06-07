@@ -45,21 +45,21 @@
   })
 </script>
 
-<div class="flex flex-col flex-nowrap justify-center xl:flex-row xl:flex-wrap">
+<div class="flex flex-col justify-center flex-nowrap xl:flex-row xl:flex-wrap">
   <div
     in:fly={{ x: 25, duration: 300, delay: 500 }}
     out:fly={{ x: 25, duration: 300 }}
-    class="flex-1 w-full max-w-screen-md order-first ease-out transform mx-auto xl:mr-0">
+    class="flex-1 order-first w-full max-w-screen-md mx-auto ease-out transform xl:mr-0">
     <slot name="left" />
   </div>
   <div
     in:fly={{ x: -25, duration: 300, delay: 500 }}
     out:fly={{ x: -25, duration: 300 }}
-    class="flex-1 w-full max-w-screen-md xl:order-last ease-out transform mx-auto xl:mr-0">
+    class="flex-1 w-full max-w-screen-md mx-auto ease-out transform xl:order-last xl:mr-0">
     <slot name="right" />
   </div>
   <div class="flex-none w-full max-w-screen-md mx-auto xl:mx-0">
-    <div class="card bg-base-100 rounded-none md:rounded-box md:shadow-xl md:mb-8 lg:mb-16 z-10">
+    <div class="z-10 rounded-none card bg-base-100 md:rounded-box md:shadow-xl md:mb-8 lg:mb-16">
       <article itemscope itemtype="https://schema.org/BlogPosting" class="h-entry">
         {#if postConfig.bridgy}
           <div id="bridgy" class="hidden">
@@ -73,16 +73,16 @@
           </div>
         {/if}
         <slot name="top" />
-        <div class="card-body gap-0">
+        <div class="gap-0 card-body">
           <slot name="middle-top" />
           <Status post={{ layout, created, updated, published, path, flags }} />
           <slot name="middle-bottom" />
           <slot name="content" />
           {#if tags}
-            <div class="divider mt-4 mb-0" />
+            <div class="mt-4 mb-0 divider" />
             <div>
               {#each tags as tag}
-                <a href="/?tags={tag}" class="btn btn-sm btn-ghost normal-case mt-2 mr-2 p-category">
+                <a href="/?tags={tag}" class="mt-2 mr-2 normal-case btn btn-sm btn-ghost p-category">
                   #{tag}
                 </a>
               {/each}

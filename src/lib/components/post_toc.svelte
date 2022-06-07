@@ -83,7 +83,7 @@
   // post_toc.addEventListener('mousedown', mouseDownHandler)
 </script>
 
-<aside class="sticky top-16 py-8">
+<aside class="sticky py-8 top-16">
   <nav
     id="post-toc"
     aria-label="TableOfContent"

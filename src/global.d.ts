@@ -17,7 +17,6 @@ declare namespace Urara {
       layout: 'article'
       cover?: string
       coverText?: string
-      banner?: string
       toc?: false | Article.Toc[]
     }
     namespace Article {
@@ -69,6 +68,7 @@ declare namespace Urara {
       series_title?: string
       series_name?: string
       series_color?: string
+      banner?: string
     }
     type Metadata = Common & (Article | Note | Photo | Reply)
     interface Module {

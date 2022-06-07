@@ -11,9 +11,9 @@
 </script>
 
 <div
-  class="gradeient-animation relative w-auto min-h-48 rounded-box overflow-hidden bg-gradient-to-b from-primary to-secondary text-primary-content transition-shadow duration-200 shadow-xl hover:shadow-2xl p-4 md:p-8 my-4">
-  <div class="avatar mb-4">
-    <div class="rounded-full border-2 border-white shadow-xl w-16 h-16">
+  class="relative w-auto p-4 my-4 overflow-hidden transition-shadow duration-200 shadow-xl gradeient-animation min-h-48 rounded-box bg-gradient-to-b from-primary to-secondary text-primary-content hover:shadow-2xl md:p-8">
+  <div class="mb-4 avatar">
+    <div class="w-16 h-16 border-2 border-white rounded-full shadow-xl">
       <img
         class="hover:rotate-[360deg] transition-transform duration-1000 ease-in-out m-0"
         src={avatar ?? site.author.photo}
@@ -25,12 +25,12 @@
   {#if subname}
     <div class="opacity-75">{subname}</div>
   {/if}
-  <div class="text-2xl mb-2">{name ?? site.author.name}</div>
+  <div class="mb-2 text-2xl">{name ?? site.author.name}</div>
   {#if bio || site.author.bio}
     <div>{@html bio ?? site.author.bio}</div>
   {/if}
   <slot />
-  <div class="flex flex-col md:flex-row gap-4 mt-4">
+  <div class="flex flex-col gap-4 mt-4 md:flex-row">
     <a
       href="https://github.com/{site.author.github}"
       rel="noopener external"
@@ -41,7 +41,7 @@
         xmlns:xlink="http://www.w3.org/1999/xlink"
         aria-hidden="true"
         role="img"
-        class="iconify iconify--mdi absolute w-16 h-16 right-10 opacity-20 fill-white transform-gpu transition-transform ease-in-out duration-500 group-hover:scale-125"
+        class="absolute w-16 h-16 transition-transform duration-500 ease-in-out iconify iconify--mdi right-10 opacity-20 fill-white transform-gpu group-hover:scale-125"
         preserveAspectRatio="xMidYMid meet"
         viewBox="0 0 24 24">
         <path
@@ -56,7 +56,7 @@
       target="_blank"
       class="group flex-1 relative overflow-hidden btn btn-block normal-case border-none no-underline bg-[#26a5e4] hover:bg-[#0088cc]">
       <svg
-        class="absolute w-16 h-16 right-10 opacity-20 fill-white transform-gpu transition-transform ease-in-out duration-500 group-hover:scale-125"
+        class="absolute w-16 h-16 transition-transform duration-500 ease-in-out right-10 opacity-20 fill-white transform-gpu group-hover:scale-125"
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg">
         <path

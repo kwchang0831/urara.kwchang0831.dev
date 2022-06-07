@@ -4,7 +4,7 @@
 
 <div>
   {#each tags as tag}
-    <a href="/?tags={tag}" class="btn btn-sm btn-ghost normal-case mt-2 mr-2 p-category">
+    <a href="/?tags={tag}" class="mt-2 mr-2 normal-case btn btn-sm btn-ghost p-category">
       #{tag}
     </a>
   {/each}

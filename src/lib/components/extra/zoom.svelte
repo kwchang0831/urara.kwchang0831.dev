@@ -10,7 +10,7 @@
   export let h = undefined
 </script>
 
-<figure class="flex flex-col mx-4 md:mx-0 w-auto">
+<figure class="flex flex-col w-auto mx-4 md:mx-0">
   <picture>
     <img
       data-zoomable

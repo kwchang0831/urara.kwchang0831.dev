@@ -38,9 +38,9 @@
               <a rel="noopener noreferrer external" target="_blank" href={info.homepage}>{info.homepage}</a>
             </p>
           </div>
-          <img class="w-20 h-20 ml-auto rounded-xl flex-initial" alt="owner_avatar" src={info.owner.avatar_url} />
+          <img class="flex-initial w-20 h-20 ml-auto rounded-xl" alt="owner_avatar" src={info.owner.avatar_url} />
         </div>
-        <div class="card-actions -ml-2">
+        <div class="-ml-2 card-actions">
           <button class="btn btn-sm btn-ghost">
             <svg
               aria-hidden="true"
@@ -69,7 +69,7 @@
               {info.license.key}
             </a>
           {/if}
-          <button class="btn btn-sm btn-circle btn-ghost ml-auto">
+          <button class="ml-auto btn btn-sm btn-circle btn-ghost">
             <svg aria-hidden="true" viewBox="0 0 16 16" version="1.1" data-view-component="true" class="w-6 h-6 fill-current">
               <path
                 fill-rule="evenodd"

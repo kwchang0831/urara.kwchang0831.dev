@@ -28,23 +28,23 @@
 <Head post={{ layout: 'article', created, updated, published, title, tags, description, summary, cover, coverText, path }} />
 
 <Post layout="article" {path} {flags} {tags} {created} {updated} {published}>
-  <div slot="right" class="h-full hidden xl:block">
+  <div slot="right" class="hidden h-full xl:block">
     {#if browser && toc?.length > 1}
       <Toc {toc} />
     {/if}
   </div>
-  <!-- <div slot="top" class="urara-prose prose">
+  <!-- <div slot="top" class="prose urara-prose">
     {#if cover}
       <Cover {cover} {coverText} imgClass="u-featured rounded-box w-full shadow-xl" />
     {/if}
   </div> -->
   <div slot="middle-bottom">
-    <h1 itemprop="name headline" class="card-title text-3xl mb-8 p-name">{title ?? path.slice(1)}</h1>
+    <h1 itemprop="name headline" class="mb-8 text-3xl card-title p-name">{title ?? path.slice(1)}</h1>
     {#if summary}
       <p class="hidden p-summary">{summary}</p>
     {/if}
   </div>
-  <main slot="content" itemprop="articleBody" class="urara-prose prose e-content">
+  <main slot="content" itemprop="articleBody" class="prose urara-prose e-content">
     {#if cover}
       <Cover {cover} {coverText} imgClass="u-featured rounded-box w-full shadow-xl" />
     {/if}

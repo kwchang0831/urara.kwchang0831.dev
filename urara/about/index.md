@@ -1,6 +1,6 @@
 ---
 title: About Me - kwchang0831
-description: About me - kwchang0831 | kwchang0831.dev | 成功他媽．阿瑋
+description: 我是一個失敗的人。 熱愛學習各種新事物，但什麼都不專精。 人生不會重來，活得開心最重要! 從來沒想過要成功。 因為只有魯蛇才會天天想要成功; 為了當一個成功的魯蛇。
 published: 2022-04-27
 flags:
   - unlisted

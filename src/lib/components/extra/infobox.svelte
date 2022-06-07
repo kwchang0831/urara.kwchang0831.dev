@@ -9,7 +9,7 @@
   class:alert-success={status === 'success'}
   class:alert-warning={status === 'warning'}
   class:alert-error={status === 'error'}
-  class="alert flex-col shadow-inner my-4">
+  class="flex-col my-4 shadow-inner alert">
   <div class="mr-auto">
     {#if status === 'success'}
       <span class="i-heroicons-outline-check-circle" />

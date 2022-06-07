@@ -6,9 +6,9 @@
   export let alt = undefined
   export let height = 'auto'
   export let width = '100%'
-  export let zoomFactor = '1.0'
-  export let mgWidth = '240'
-  export let mgHeight = '240'
+  export let zoomFactor = 1.0
+  export let mgWidth = 240
+  export let mgHeight = 240
   export let mgShape: 'circle' | 'square' = 'circle'
   export let mgShowOverflow = false
   export let mgMouseOffsetX = 0

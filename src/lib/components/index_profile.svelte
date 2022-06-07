@@ -2,11 +2,11 @@
   import { site } from '$lib/config/site'
 </script>
 
-<div class="flex flex-row xl:flex-col gap-4 sticky top-24 card card-body items-right h-card">
+<div class="sticky flex flex-row gap-4 xl:flex-col top-24 card card-body items-right h-card">
   <a href={site.protocol + site.domain} class="hidden u-url" rel="me">{site.title}</a>
   {#if site.author.photo}
     <img class="hidden u-photo" src={site.author.photo} alt={site.author.name} decoding="async" loading="lazy" />
-    <div class="flex-none avatar w-32 h-32 ml-auto my-auto justify-end">
+    <div class="justify-end flex-none w-32 h-32 my-auto ml-auto avatar">
       <img
         class="rounded-full shadow-xl w-32 h-32 hover:rotate-[360deg] transition-transform duration-1000 ease-in-out"
         src={site.author.photo}
@@ -18,8 +18,8 @@
       {/if}
     </div>
   {/if}
-  <div class="flex-1 text-right my-auto">
-    <h1 class="text-3xl font-bold mt-0 mb-2 p-name">{site.author.name}</h1>
+  <div class="flex-1 my-auto text-right">
+    <h1 class="mt-0 mb-2 text-3xl font-bold p-name">{site.author.name}</h1>
     <p class="opacity-75 p-note">{@html site.author.bio}</p>
     <p class="pt-3 space-x-3">
       {#if site.author.email}
@@ -46,7 +46,7 @@
       {/if}
     </p>
     {#if site.author.pgp}
-      <a href={site.author.pgp.link} rel="pgpkey" class="btn btn-ghost btn-xs bg-base-300 font-mono rounded-full mt-4">
+      <a href={site.author.pgp.link} rel="pgpkey" class="mt-4 font-mono rounded-full btn btn-ghost btn-xs bg-base-300">
         <span class="i-heroicons-solid-key !w-4 !h-4 mr-1" />
         {site.author.pgp.text}
       </a>

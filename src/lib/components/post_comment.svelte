@@ -11,14 +11,14 @@
 {#if config?.use.length > 0}
   <div id="post-comment" class="card card-body">
     {#if config.use.length > 1}
-      <div class="tabs w-full mb-8" class:tabs-boxed={config?.['style'] === 'boxed'}>
+      <div class="w-full mb-8 tabs" class:tabs-boxed={config?.['style'] === 'boxed'}>
         {#each config.use as name}
           <span
             on:click={() => {
               currentComment = toSnake(name)
               localStorage.setItem('comment', toSnake(name))
             }}
-            class="flex-1 tab transition-all"
+            class="flex-1 transition-all tab"
             class:tab-bordered={config?.['style'] === 'bordered'}
             class:tab-lifted={config?.['style'] === 'lifted'}
             class:tab-active={currentComment === toSnake(name)}>

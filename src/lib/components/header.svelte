@@ -57,7 +57,7 @@
         {#if headerConfig.nav}
           <Nav {path} {pin} nav={headerConfig.nav} />
         {/if}
-        <a href="/" sveltekit:prefetch class="btn btn-ghost normal-case text-lg">{site.title}</a>
+        <a href="/" sveltekit:prefetch class="text-lg normal-case btn btn-ghost">{site.title}</a>
       </div>
       <div class="navbar-end">
         {#if headerConfig.search}
@@ -71,7 +71,7 @@
           </div>
           <ul
             tabindex="0"
-            class="flex shadow-2xl menu dropdown-content bg-base-100 text-base-content rounded-box w-52 p-2 gap-2 overflow-y-auto"
+            class="flex gap-2 p-2 overflow-y-auto shadow-2xl menu dropdown-content bg-base-100 text-base-content rounded-box w-52"
             class:hidden={!pin}>
             {#each theme as { name, text }}
               <button
@@ -82,15 +82,15 @@
                 }}
                 class:border-2={currentTheme === name}
                 class:border-primary={currentTheme === name}
-                class="btn btn-ghost hover:bg-primary group rounded-lg flex bg-base-100 p-2 transition-all">
+                class="flex p-2 transition-all rounded-lg btn btn-ghost hover:bg-primary group bg-base-100">
                 <p class="flex-1 text-left text-base-content group-hover:text-primary-content transition-color">
                   {text ?? name}
                 </p>
-                <div class="flex-none m-auto flex gap-1">
-                  <div class="bg-primary w-2 h-4 rounded" />
-                  <div class="bg-secondary w-2 h-4 rounded" />
-                  <div class="bg-accent w-2 h-4 rounded" />
-                  <div class="bg-neutral w-2 h-4 rounded" />
+                <div class="flex flex-none gap-1 m-auto">
+                  <div class="w-2 h-4 rounded bg-primary" />
+                  <div class="w-2 h-4 rounded bg-secondary" />
+                  <div class="w-2 h-4 rounded bg-accent" />
+                  <div class="w-2 h-4 rounded bg-neutral" />
                 </div>
               </button>
             {/each}
@@ -115,12 +115,12 @@
 
 <div
   class:translate-y-24={!pin || scrollY === 0}
-  class="fixed grid z-50 w-16 h-16 bottom-6 right-6 rounded-full bg-neutral/50 backdrop-blur shadow-lg transition-all">
+  class="fixed z-50 grid w-16 h-16 transition-all rounded-full shadow-lg bottom-6 right-6 bg-neutral/50 backdrop-blur">
   <button
     id="totop"
     on:click={() => window.scrollTo(0, 0)}
     aria-label="scroll to top"
-    class="btn btn-circle btn-lg btn-ghost border-none col-start-1 row-start-1 z-50"
+    class="z-50 col-start-1 row-start-1 border-none btn btn-circle btn-lg btn-ghost"
     class:opacity-100={scrollY}>
     <span
       class="i-heroicons-solid-chevron-up transition-all duration-1000 {percent > 97
@@ -128,6 +128,6 @@
         : 'text-neutral-content'}" />
   </button>
   <div
-    class="radial-progress text-accent col-start-1	row-start-1"
+    class="col-start-1 row-start-1 radial-progress text-accent"
     style={`--size:4rem; --thickness: 0.25rem; --value:${percent};"`} />
 </div>

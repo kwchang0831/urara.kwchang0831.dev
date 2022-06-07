@@ -21,7 +21,7 @@
   })
 </script>
 
-<video {autoplay} {loop} width={w} height={h} class="webm-player my-0" controls data-poster={poster}>
+<video {autoplay} {loop} width={w} height={h} class="my-0 webm-player" controls data-poster={poster}>
   {#if mp4}
     <source src={mp4} type="video/mp4" {title} />
   {/if}
