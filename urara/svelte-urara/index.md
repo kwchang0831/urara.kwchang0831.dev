@@ -1,7 +1,7 @@
 ---
-title: Urara - 用 Svelte 打造的靜態網站生成器 ; 來架個跑超快的網誌
-description: 用 Svelte 打造的靜態網站生成器 - Urara。 打造速度超快的網站，功能十足且簡潔美觀。 本篇文章主要紀錄 Urara 的架設流程。
-summary: 手把手教學使用 Urara 架設網誌於免費平台 Vercel 與 Netlify
+title: Urara - 用 Svelte 打造的靜態網站生成器 ; 來架個超快的網誌
+description: 自架速度超快的網誌，簡潔美觀且功能十足。 包含完整 SEO 優化, 自動生成 Sitemap 與 Atom Feeds。 免費架設於 Vercel 或 Netlify 上。 The Best and Fastest Svelte Blog Template - Urara。
+summary: 手把手教學使用 Urara 架設網誌於免費平台 Vercel 與 Netlify 上
 published: 2022-05-03
 cover: /svelte-urara/cover.webp
 tags:
@@ -20,18 +20,18 @@ tags:
 
 ## 開頭
 
-本網站是用 Urara 建置而成，PageSpeed 的評分如下：  
+Urara 是使用 [Svelte](https://svelte.dev/) + [SvelteKit](https://kit.svelte.dev/) 打造而成的靜態網站生成器，又稱為 SSG (Static Site Generator)。
+
+Urara 生成的網站速度很快，簡潔美觀且功能十足。最主要是可以免費架設於 [Vercel](https://vercel.com/) 、 [Netlify](https://www.netlify.com/) 等等平台。拿來架設網誌絕對非常適合。Urara 還會自動生成 sitemap 與 atom feed ，完全不需要擔心是否還要安裝其他插件。
+
+除此之外，Urara 也有完整放入針對 SEO (Search Engine Optimization) 搜尋引擎最佳化 的 meta tags，加上本身網站速度很快並使用 Https，對 SEO 的優化非常友善。可以讓你的網站在搜尋引擎的排名上脫穎而出。
+
+以下是本網站使用 [PageSpeed Insights](https://web.dev/measure/?url=https%3A%2F%2Fwww.kwchang0831.dev%2F) 進行跑分的結果，四項評分都滿分。
 ![fig01.svg](svelte-urara/fig01.svg)
 
-<Infobox status="info" title="關於 PageSpeed 測量">
+第一個效能 (Performance) 分數在行動裝置上通常會在 80~100 之間徘迴。
 
-上圖是在 Git Commit 完成之後，設定好的 Github Action 所進行的自動網站速度測量。Performance 通常會在 90~100。最新的測量狀況請查看 [Git Repo](https://github.com/kwchang0831/kwchang0831.dev)。
-
-</Infobox>
-
-Urara 生成的網站不但速度跑很快，而且完全還可以免費架設於 [Vercel](https://vercel.com/) 、 [Netlify](https://www.netlify.com/) 等等平台。
-
-那，就讓我們繼續看下去吧。
+上圖是每次在 Git Commit 完成之後，我設定好的 Github Action 會自動進行網站速度的測量。最新的測量狀況請查看 [Git Repo](https://github.com/kwchang0831/kwchang0831.dev)。
 
 ## 簡介
 
@@ -40,6 +40,8 @@ Urara 生成的網站不但速度跑很快，而且完全還可以免費架設�
 - [TypeScript](https://www.typescriptlang.org/)
 - [Svelte](https://svelte.dev/) 前端編譯器
 - [SvelteKit](https://kit.svelte.dev/) 框架
+- [Tailwind](https://tailwindcss.com/) CSS
+- [daisyUI](https://daisyui.com/)
 
 而文章是用 [MarkDown](https://markdown.tw/) 語法來進行寫作。
 
@@ -69,15 +71,15 @@ Urara 的作者目前非常勤勞地開發新功能與優化系統，或許未�
 
 ## 平台帳號需求
 
-請註冊或準備好 [Github](https://github.com/) 帳號，然後選擇要使用 [Vercel](https://vercel.com/) 或 [Netlify](https://www.netlify.com/) 來建置網站。[Vercel](https://vercel.com/) 與 [Netlify](https://www.netlify.com/) 的帳號可以用 Github 帳號來註冊。
+請準備好 [Github](https://github.com/) 帳號，然後準備好 [Vercel](https://vercel.com/) 或 [Netlify](https://www.netlify.com/) 帳號來架設網站。[Vercel](https://vercel.com/) 與 [Netlify](https://www.netlify.com/) 的帳號可以用 Github 帳號來註冊。
 
 ## 環境配置
 
 本文章會使用以下環境來操作：
 
 - Ubuntu 22.04 LTS
-- NodeJS 18.0.0
-- pnpm 7.0.0
+- NodeJS 18.3.0
+- pnpm 7.1.9
 
 你可以使用 MacOS 或 Windows，流程一樣。
 
@@ -87,7 +89,7 @@ Urara 的作者目前非常勤勞地開發新功能與優化系統，或許未�
 
 ```shell
 node -v
-# v18.0.0
+# v18.3.0
 ```
 
 ### 選擇 1. Ubuntu 安裝 NodeJS
@@ -235,7 +237,7 @@ export const header: HeaderConfig = {
 
 ### 修改網站圖片
 
-`./svelte-uraraassets`
+`./svelte-urara/assets`
 
 依照喜好需求，自行替換圖片檔案。
 

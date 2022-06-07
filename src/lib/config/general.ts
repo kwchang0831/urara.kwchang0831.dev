@@ -20,7 +20,6 @@ export const head: HeadConfig = {
     dev
       ? []
       : [
-          '<link rel="alternate" type="application/atom+xml" href="https://granary.io/url?url=http://www.kwchang0831.dev/&input=html&output=atom&hub=https://bridgy-fed.superfeedr.com/" />',
           '<link rel="preconnect" href="https://umami.kwchang0831.dev" />',
           // IndieAuth
           '<link rel="authorization_endpoint" href="https://indieauth.com/auth">',
@@ -32,7 +31,7 @@ export const head: HeadConfig = {
 
 export const header: HeaderConfig = {
   search: {
-    provider: 'duckduckgo'
+    provider: 'google'
   },
   nav: [
     {
