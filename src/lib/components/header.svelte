@@ -133,7 +133,7 @@
 <button
   id="tobottom"
   on:click={() => window.scrollTo(0, document.body.scrollHeight)}
-  class:translate-x-24={pin || percent >= 98}
+  class:translate-x-24={pin || percent > 95}
   aria-label="scroll to bottom"
   class="fixed grid group btn btn-circle btn-lg border-none backdrop-blur bottom-6 right-6 z-50 duration-500 ease-in-out {percent >
   95
