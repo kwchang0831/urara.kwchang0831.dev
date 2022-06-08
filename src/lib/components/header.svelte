@@ -3,17 +3,21 @@
   import { fly } from 'svelte/transition'
   import { site } from '$lib/config/site'
   import { theme } from '$lib/config/general'
+  import { title as storedTitle } from '$lib/stores/title'
   import { header as headerConfig } from '$lib/config/general'
   import { hslToHex } from '$lib/utils/color'
   import Nav from '$lib/components/header_nav.svelte'
   import Search from '$lib/components/header_search.svelte'
   export let path: string
+  let title: string
   let currentTheme: string
   let currentThemeColor: string
   let search: boolean = false
   let pin: boolean = true
   let percent: number
   let [scrollY, lastY] = [0, 0]
+
+  storedTitle.subscribe(storedTitle => (title = storedTitle as string))
 
   $: if (browser && currentTheme) {
     document.documentElement.setAttribute('data-theme', currentTheme)
@@ -36,7 +40,6 @@
   }
 
   if (browser) currentTheme = localStorage.getItem('theme') ?? 'default'
-  // localStorage.getItem('theme') ?? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
 </script>
 
 <svelte:head>
@@ -45,17 +48,16 @@
 
 <svelte:window bind:scrollY />
 
-<header id="header" class:-translate-y-32={!pin && scrollY > 0} class="fixed z-50 w-screen p-2 transition-all">
+<!-- class:-translate-y-32={!pin && scrollY > 0} -->
+<header
+  id="header"
+  class="fixed z-50 w-screen bg-base-100/30 md:bg-base-200/30 transition-all duration-500 ease-in-out border-b-2 border-transparent max-h-[4.125rem] {scrollY >
+    32 && 'backdrop-blur border-base-content/10'}">
   {#if !search}
-    <div
-      in:fly={{ x: -50, duration: 300, delay: 300 }}
-      out:fly={{ x: -50, duration: 300 }}
-      class="navbar rounded-btn p-0 min-h-fit transition-all duration-300 ease-in-out {scrollY > 32
-        ? 'bg-neutral/50 text-neutral-content backdrop-blur shadow-lg xl:bg-transparent xl:text-base-content xl:backdrop-blur-none xl:shadow-none'
-        : ''}">
+    <div in:fly={{ x: -50, duration: 300, delay: 300 }} out:fly={{ x: -50, duration: 300 }} class="navbar">
       <div class="navbar-start">
         {#if headerConfig.nav}
-          <Nav {path} {pin} nav={headerConfig.nav} />
+          <Nav {path} {title} {pin} {scrollY} nav={headerConfig.nav} />
         {/if}
         <a href="/" sveltekit:prefetch class="text-lg normal-case btn btn-ghost">{site.title}</a>
       </div>
@@ -71,7 +73,7 @@
           </div>
           <ul
             tabindex="0"
-            class="flex gap-2 p-2 overflow-y-auto shadow-2xl menu dropdown-content bg-base-100 text-base-content rounded-box w-52"
+            class="flex shadow-2xl menu dropdown-content bg-base-100 text-base-content rounded-box w-52 p-2 gap-2 overflow-y-auto h-[21.5rem]"
             class:hidden={!pin}>
             {#each theme as { name, text }}
               <button
@@ -99,12 +101,7 @@
       </div>
     </div>
   {:else}
-    <div
-      in:fly={{ x: 50, duration: 300, delay: 300 }}
-      out:fly={{ x: 50, duration: 300 }}
-      class="navbar rounded-btn p-0 min-h-fit transition-all {scrollY > 32
-        ? 'bg-neutral/50 text-neutral-content backdrop-blur shadow-lg xl:bg-transparent xl:text-base-content xl:backdrop-blur-none xl:shadow-none'
-        : ''}">
+    <div in:fly={{ x: 50, duration: 300, delay: 300 }} out:fly={{ x: 50, duration: 300 }} class="navbar">
       <Search />
       <button on:click={() => (search = !search)} tabindex="0" class="btn btn-square btn-ghost">
         <span class="i-heroicons-outline-x" />
@@ -113,21 +110,42 @@
   {/if}
 </header>
 
-<div
-  class:translate-y-24={!pin || scrollY === 0}
-  class="fixed z-50 grid w-16 h-16 transition-all rounded-full shadow-lg bottom-6 right-6 bg-neutral/50 backdrop-blur">
-  <button
-    id="totop"
-    on:click={() => window.scrollTo(0, 0)}
-    aria-label="scroll to top"
-    class="z-50 col-start-1 row-start-1 border-none btn btn-circle btn-lg btn-ghost"
-    class:opacity-100={scrollY}>
-    <span
-      class="i-heroicons-solid-chevron-up transition-all duration-1000 {percent > 97
-        ? 'text-accent'
-        : 'text-neutral-content'}" />
-  </button>
+<button
+  id="totop"
+  on:click={() => window.scrollTo(0, 0)}
+  class:translate-x-24={!pin || scrollY === 0}
+  aria-label="scroll to top"
+  class="fixed grid group btn btn-circle btn-lg border-none backdrop-blur bottom-6 right-6 z-50 duration-500 ease-in-out {percent >
+  95
+    ? 'btn-accent shadow-lg'
+    : 'btn-ghost bg-base-100/30 md:bg-base-200/30'}"
+  class:opacity-100={scrollY}>
   <div
-    class="col-start-1 row-start-1 radial-progress text-accent"
+    class="col-start-1 row-start-1 transition-all duration-500 ease-in-out radial-progress text-accent group-hover:text-accent-focus"
     style={`--size:4rem; --thickness: 0.25rem; --value:${percent};"`} />
-</div>
+  <div
+    class:border-transparent={percent > 95}
+    class="grid w-full h-full col-start-1 row-start-1 p-4 duration-500 ease-in-out border-4 rounded-full border-base-content/10 group-hover:border-transparent ">
+    <span class="transition duration-300 ease-in-out i-heroicons-solid-chevron-up group-hover:scale-150" />
+  </div>
+</button>
+
+<button
+  id="tobottom"
+  on:click={() => window.scrollTo(0, document.body.scrollHeight)}
+  class:translate-x-24={pin || percent >= 98}
+  aria-label="scroll to bottom"
+  class="fixed grid group btn btn-circle btn-lg border-none backdrop-blur bottom-6 right-6 z-50 duration-500 ease-in-out {percent >
+  95
+    ? 'btn-accent shadow-lg'
+    : 'btn-ghost bg-base-100/30 md:bg-base-200/30'}"
+  class:opacity-100={scrollY}>
+  <div
+    class="col-start-1 row-start-1 transition-all duration-500 ease-in-out radial-progress text-accent group-hover:text-accent-focus"
+    style={`--size:4rem; --thickness: 0.25rem; --value:${percent};"`} />
+  <div
+    class:border-transparent={percent > 95}
+    class="grid w-full h-full col-start-1 row-start-1 p-4 duration-500 ease-in-out border-4 rounded-full border-base-content/10 group-hover:border-transparent">
+    <span class="transition duration-300 ease-in-out i-heroicons-solid-chevron-down group-hover:scale-150" />
+  </div>
+</button>
