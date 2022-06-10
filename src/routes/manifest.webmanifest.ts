@@ -17,6 +17,7 @@ export const get: RequestHandler = () => ({
       scope: '/',
       display: 'standalone',
       orientation: 'portrait',
+      categories: ['education', 'blog'],
       background_color: site.themeColor,
       theme_color: site.themeColor,
       icons: [

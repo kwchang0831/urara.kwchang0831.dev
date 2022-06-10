@@ -6,7 +6,6 @@ import mdsvexConfig from './mdsvex.config.js'
 import postcss from './postcss.config.js'
 import UnoCSS from 'unocss/vite'
 import { presetIcons, extractorSvelte } from 'unocss'
-import { VitePWA } from 'vite-plugin-pwa'
 import { mdsvex } from 'mdsvex'
 
 export default /** @type {import('@sveltejs/kit').Config} */ {
@@ -22,8 +21,8 @@ export default /** @type {import('@sveltejs/kit').Config} */ {
           assets: 'build',
           fallback: null
         }),
-    csp: { mode: 'auto' },
     prerender: { default: true },
+    serviceWorker: { register: false },
     vite: {
       mode: process.env.MODE || 'production',
       envPrefix: 'URARA_',
@@ -42,13 +41,6 @@ export default /** @type {import('@sveltejs/kit').Config} */ {
               }
             })
           ]
-        }),
-        VitePWA({
-          srcDir: './build',
-          outDir: './.svelte-kit/output/client',
-          registerType: 'autoUpdate',
-          scope: '/',
-          base: '/'
         })
       ]
     }

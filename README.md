@@ -82,6 +82,6 @@ netlify deploy --prod
 - avif-cli: [https://github.com/lovell/avif-cli](https://github.com/lovell/avif-cli)
 - icons: [https://icones.js.org/](https://icones.js.org/)
 
-
 ## License
+
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkwchang0831%2Fkwchang0831.dev.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkwchang0831%2Fkwchang0831.dev?ref=badge_large)
