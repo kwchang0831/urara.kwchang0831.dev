@@ -22,7 +22,6 @@ export default /** @type {import('@sveltejs/kit').Config} */ {
           fallback: null
         }),
     prerender: { default: true },
-    serviceWorker: { register: false },
     vite: {
       mode: process.env.MODE || 'production',
       envPrefix: 'URARA_',

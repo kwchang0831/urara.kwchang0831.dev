@@ -22,14 +22,6 @@
   export let path: string
   posts.set(res)
   tags.set(genTags(res))
-  onMount(() => {
-    if (!dev && browser && 'serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js').catch(error => {
-        console.warn('Error registering service worker:')
-        console.warn(error)
-      })
-    }
-  })
 </script>
 
 <Head />
