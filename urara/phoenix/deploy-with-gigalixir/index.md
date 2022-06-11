@@ -1,11 +1,12 @@
 ---
 title: '教學 免費部署 Elixir / Phoenix APP 在 Gigalixir 上'
-description: 快速且免費地在Gigalixr部署Elixir/Phoenix App，且包含Postgres的部署，只需要幾個指令，就可以讓你的APP上線了。
+description: 快速且免費地在Gigalixr部署Elixir/Phoenix App，且包含免費Postgres的部署，只需要幾個指令，就可以讓你的APP上線了。
 summary: Gigalixir 讓你只需要幾個指令，就可以快速且免費地讓你的APP上線
 published: 2022-06-11
 cover: /phoenix/deploy-with-gigalixir/cover.webp
 tags:
   - 中文
+  - Elixir
   - Phoenix
   - Gigalixir
   - 2022
