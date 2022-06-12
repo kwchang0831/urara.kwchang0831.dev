@@ -15,6 +15,7 @@ tags:
 ---
 
 <script lang="ts">
+  import Codecopy from '$lib/components/extra/codecopy.svelte'
   import Github from '$lib/components/extra/github.svelte'
 </script>
 
@@ -166,6 +167,8 @@ Cloud Function 的部分我這邊就略過介紹，因為我並沒有碰得很�
 
 大致上邏輯是這樣的，僅供參考。
 
+<Codecopy>
+
 ```js twoslash
 async function handleRequest(request) {
   const requestURL = new URL(request.url)
@@ -179,6 +182,8 @@ addEventListener('fetch', async event => {
   event.respondWith(handleRequest(event.request))
 })
 ```
+
+</Codecopy>
 
 ## 心得
 

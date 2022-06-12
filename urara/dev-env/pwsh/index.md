@@ -13,6 +13,10 @@ tags:
   - 2021
 ---
 
+<script lang="ts">
+  import Codecopy from '$lib/components/extra/codecopy.svelte'
+</script>
+
 ## 開頭
 
 PowerShell 是一個跨平台 (Windows, Linux, 與 macOS) 的 自動化工具 / 框架 與 Shell。
@@ -54,8 +58,12 @@ https://aka.ms/powershell-release?tag=stable
 
 以系統管理員身分打開 `cmd` 後輸入，
 
+<Codecopy>
+
 ```shell
 choco install -y powershell-core
 ```
+
+</Codecopy>
 
 ## 完結

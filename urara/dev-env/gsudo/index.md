@@ -13,6 +13,10 @@ tags:
   - 2021
 ---
 
+<script lang="ts">
+  import Codecopy from '$lib/components/extra/codecopy.svelte'
+</script>
+
 ## 開頭
 
 gsudo 能在 Windows 上提供類似於 Linux 上的 sudo 功能，  
@@ -25,27 +29,43 @@ gsudo 能在 Windows 上提供類似於 Linux 上的 sudo 功能，
 
 ## 安裝方式 1. PowerShell
 
+<Codecopy>
+
 ```shell
 PowerShell -Command "Set-ExecutionPolicy RemoteSigned -scope Process; iwr -useb https://raw.githubusercontent.com/gerardog/gsudo/master/installgsudo.ps1 | iex"
 ```
 
+</Codecopy>
+
 ## 安裝方式 2. [Chocolatey](https://chocolatey.org/install)
+
+<Codecopy>
 
 ```shell
 choco install gsudo -y
 ```
 
+</Codecopy>
+
 ## 安裝方式 3. [Scoop](https://scoop.sh/)
+
+<Codecopy>
 
 ```shell
 scoop install gsudo
 ```
 
+</Codecopy>
+
 ## 安裝方式 4. [WinGet](https://github.com/microsoft/winget-cli/releases)
+
+<Codecopy>
 
 ```shell
 winget install gsudo
 ```
+
+</Codecopy>
 
 ## 安裝完成
 
@@ -63,9 +83,13 @@ winget install gsudo
 
 修改命令列的指令，添加 `gsudo.exe` 於前方
 
+<Codecopy>
+
 ```shell
 gsudo.exe "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
 ```
+
+</Codecopy>
 
 ![fig02](gsudo/fig02.avif)
 
@@ -80,23 +104,35 @@ gsudo.exe "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
 
 ### 取得系統管理員權限
 
+<Codecopy>
+
 ```shell
 sudo
 ```
 
+</Codecopy>
+
 ### 開啟具有系統管理員權限的 Shell
+
+<Codecopy>
 
 ```shell
 sudo -n
 ```
 
+</Codecopy>
+
 在 Windows Terminal 上，並不會開啟新的 Shell Tab。而會開啟新的 PowerShell 視窗。
 
 ### 離開系統管理員權限
 
+<Codecopy>
+
 ```shell
 exit
 ```
+
+</Codecopy>
 
 若目前有系統管理員權限會取消管理員權限；若沒有則會關閉該 Shell Tab。
 

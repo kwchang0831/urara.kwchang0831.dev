@@ -11,6 +11,10 @@ tags:
   - 2021
 ---
 
+<script lang="ts">
+  import Codecopy from '$lib/components/extra/codecopy.svelte'
+</script>
+
 ## 開頭
 
 本篇文章紀錄如何美化 Centos 的 Terminal ，讓平常工作起來更高效。
@@ -43,12 +47,16 @@ tags:
 - [MesloLGS NF Italic.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf)
 - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf)
 
+<Codecopy>
+
 ```shell
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf
 ```
+
+</Codecopy>
 
 下載完成後在檔案點擊右鍵並選擇 **安裝** 或 **為所有使用者安裝**。
 
@@ -58,35 +66,55 @@ wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/Ne
 
 ## 安裝 DNF
 
+<Codecopy>
+
 ```shell
 yum install dnf -y
 ```
 
+</Codecopy>
+
 ## 更新 Centos
+
+<Codecopy>
 
 ```shell
 dnf update -y && dnf upgrade -y
 ```
 
+</Codecopy>
+
 ## 移除舊版 Zsh
+
+<Codecopy>
 
 ```shell
 dnf remove zsh
 ```
 
+</Codecopy>
+
 ## 安裝最新版 Zsh
 
 1.安裝必要套件
+
+<Codecopy>
 
 ```shell
 dnf install curl git make ncurses-devel gcc autoconf man -y
 ```
 
+</Codecopy>
+
 2.下載 最新版 Zsh
+
+<Codecopy>
 
 ```shell
 git clone -b zsh-5.8.1 https://github.com/zsh-users/zsh.git /tmp/zsh
 ```
+
+</Codecopy>
 
 文章截稿時的最新版是 5.8.1。
 
@@ -95,6 +123,8 @@ git clone -b zsh-5.8.1 https://github.com/zsh-users/zsh.git /tmp/zsh
 
 3.編譯安裝 Zsh
 
+<Codecopy>
+
 ```shell
 cd /tmp/zsh
 ./Util/preconfig
@@ -102,45 +132,71 @@ cd /tmp/zsh
 make -j 20 install.bin install.modules install.fns
 ```
 
+</Codecopy>
+
 4.刪除剛下載的 Zsh Repo
+
+<Codecopy>
 
 ```shell
 rm -rf /tmp/zsh
 ```
 
+</Codecopy>
+
 5.新增 Zsh
+
+<Codecopy>
 
 ```shell
 command -v zsh | sudo tee -a /etc/shells
 ```
 
+</Codecopy>
+
 6.更改預設 Shell 為 Zsh
+
+<Codecopy>
 
 ```shell
 sudo chsh -s $(which zsh)
 ```
 
+</Codecopy>
+
 ## 安裝 [Oh My Zsh](https://ohmyz.sh/)
 
 輸入以下指令安裝 Oh My Zsh，安裝完畢後，按下 Enter 同意把預設 Shell 換成 Zsh。
+
+<Codecopy>
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
+</Codecopy>
+
 ## (選用) 設定預設 Shell
 
 若之前並沒有成功設定修改預設 Shell，請執行以下指令:
+
+<Codecopy>
 
 ```shell
 chsh -s $(which zsh)
 ```
 
+</Codecopy>
+
 執行 zsh 開始使用
+
+<Codecopy>
 
 ```shell
 zsh
 ```
+
+</Codecopy>
 
 ## 安裝插件
 
@@ -149,58 +205,90 @@ zsh
 
 ### 主題 [PowerLevel10k](https://github.com/romkatv/powerlevel10k)
 
+<Codecopy>
+
 ```shell
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
+
+</Codecopy>
 
 ### 插件 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
 輸入指令時，如果看到灰色字的自動完成顯示，可以按下<kbd>➔</kbd>來採用。
 
+<Codecopy>
+
 ```shell
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
+</Codecopy>
+
 ### 插件 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+<Codecopy>
 
 ```shell
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
+</Codecopy>
+
 ### (選用) 插件 [Zsh-z](https://github.com/agkozak/zsh-z)
 
 類似於 [autojump](https://github.com/wting/autojump) 的插件，比 `cd` 更快速地直接跳到想去的資料夾，且效能更好沒有一堆依賴包。
+
+<Codecopy>
 
 ```shell
 git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
 ```
 
+</Codecopy>
+
 #### 使用方法
 
 查看已知的資料夾位置
+
+<Codecopy>
 
 ```shell
 z
 ```
 
+</Codecopy>
+
 進入在子資料夾中包含此字串的資料夾，可以用 <kbd>Tab</kbd> 來選擇結果，如果有多個符合 et 的資料的話。
+
+<Codecopy>
 
 ```shell
 cd /
 z et
 ```
 
+</Codecopy>
+
 查看其他用法
+
+<Codecopy>
 
 ```shell
 z -h
 ```
 
+</Codecopy>
+
 ## 啟動插件
+
+<Codecopy>
 
 ```shell
 vi ~/.zshrc
 ```
+
+</Codecopy>
 
 點擊 <kbd>i</kbd>，進入編輯模式。
 
@@ -218,9 +306,13 @@ vi ~/.zshrc
 
 3.應用修改過的 zshrc
 
+<Codecopy>
+
 ```shell
 source ~/.zshrc
 ```
+
+</Codecopy>
 
 應用修改之後，因為第一次使用 Powerlevel10k，會自動啟動設定，按造需求完成設定即可。
 
@@ -230,9 +322,13 @@ source ~/.zshrc
 
 打開 Shell 輸入，
 
+<Codecopy>
+
 ```shell
 p10k configure
 ```
+
+</Codecopy>
 
 ## 參考資料
 

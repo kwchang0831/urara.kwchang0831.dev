@@ -12,6 +12,7 @@ tags:
 ---
 
 <script lang="ts">
+  import Codecopy from '$lib/components/extra/codecopy.svelte'
   import Img from '$lib/components/extra/zoom.svelte'
   import Webm from '$lib/components/extra/webm.svelte'
 </script>
@@ -36,9 +37,13 @@ tags:
 
 ## 安裝 必要的套件
 
+<Codecopy>
+
 ```shell
 sudo apt install wget git curl vim -y
 ```
+
+</Codecopy>
 
 ## 安裝 Patched 字型
 
@@ -51,12 +56,16 @@ sudo apt install wget git curl vim -y
 - [MesloLGS NF Italic.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf)
 - [MesloLGS NF Bold Italic.ttf](https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf)
 
+<Codecopy>
+
 ```shell
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf
 ```
+
+</Codecopy>
 
 - Windows
 
@@ -80,31 +89,47 @@ wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/Ne
 
 shell 輸入
 
+<Codecopy>
+
 ```shell
 sudo apt install zsh -y
 ```
+
+</Codecopy>
 
 ## 安裝 Oh My Zsh
 
 輸入以下指令安裝 Oh My Zsh，安裝完畢後，按下 Enter 同意把預設 Shell 換成 Zsh。
 
+<Codecopy>
+
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
+
+</Codecopy>
 
 ### 設定預設 Shell
 
 若之前並沒有成功設定修改預設 Shell，請執行以下指令:
 
+<Codecopy>
+
 ```shell
 chsh -s $(which zsh)
 ```
 
+</Codecopy>
+
 執行 zsh 開始使用
+
+<Codecopy>
 
 ```shell
 zsh
 ```
+
+</Codecopy>
 
 ## 安裝插件
 
@@ -113,56 +138,88 @@ zsh
 
 ### 主題 [PowerLevel10k](https://github.com/romkatv/powerlevel10k)
 
+<Codecopy>
+
 ```shell
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
 
+</Codecopy>
+
 ### 插件 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+
+<Codecopy>
 
 ```shell
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
+</Codecopy>
+
 ### 插件 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
+
+<Codecopy>
 
 ```shell
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
+</Codecopy>
+
 ### 插件 [Zsh-z](https://github.com/agkozak/zsh-z)
 
 類似於 [autojump](https://github.com/wting/autojump) 的插件，比 `cd` 更快速地直接跳到想去的資料夾，且效能更好沒有一堆依賴包。
 
+<Codecopy>
+
 ```shell
 git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
 ```
+
+</Codecopy>
 <!-- https://github.com/agkozak/zsh-z/raw/master/img/demo.gif -->
 <Webm webm="oh-my-zsh/zsh-demo.webm" title="ZSH Demo"/>
 
 查看已知的資料夾位置
 
+<Codecopy>
+
 ```shell
 z
 ```
 
+</Codecopy>
+
 進入在子資料夾中包含此字串的資料夾，可以用 <kbd>Tab</kbd> 來選擇結果，如果有多個符合 et 的資料的話。
+
+<Codecopy>
 
 ```shell
 cd /
 z et
 ```
 
+</Codecopy>
+
 查看其他用法
+
+<Codecopy>
 
 ```shell
 z -h
 ```
 
+</Codecopy>
+
 ## 啟動插件
+
+<Codecopy>
 
 ```shell
 vi ~/.zshrc
 ```
+
+</Codecopy>
 
 點擊 <kbd>i</kbd>，進入編輯模式。
 
@@ -180,9 +237,13 @@ vi ~/.zshrc
 
 3.應用修改過的 zshrc
 
+<Codecopy>
+
 ```shell
 source ~/.zshrc
 ```
+
+</Codecopy>
 
 應用修改之後，因為第一次使用 Powerlevel10k，會自動啟動設定，按造需求完成設定即可。
 
@@ -192,9 +253,13 @@ source ~/.zshrc
 
 打開 Shell 輸入，
 
+<Codecopy>
+
 ```shell
 p10k configure
 ```
+
+</Codecopy>
 
 ## 參考資料
 

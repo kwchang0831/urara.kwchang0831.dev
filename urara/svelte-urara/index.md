@@ -14,6 +14,7 @@ tags:
 ---
 
 <script lang="ts">
+  import Codecopy from '$lib/components/extra/codecopy.svelte'
   import Img from '$lib/components/extra/zoom.svelte'
   import Infobox from '$lib/components/extra/infobox.svelte'
 </script>
@@ -49,6 +50,8 @@ Urara 生成的網站速度很快，簡潔美觀且功能十足。最主要是�
 
 這種方式很直覺，假設我們的資料夾結構為以下：
 
+<Codecopy>
+
 ```shell
 urara
 +-- about
@@ -58,6 +61,8 @@ urara
     +-- 20220503
         +-- index.md
 ```
+
+</Codecopy>
 
 那我們生成出來的網站路徑就會有以下：
 
@@ -87,16 +92,24 @@ Urara 的作者目前非常勤勞地開發新功能與優化系統，或許未�
 
 檢查 NodeJS 版本。
 
+<Codecopy>
+
 ```shell
 node -v
 # v18.3.0
 ```
 
+</Codecopy>
+
 ### 選擇 1. Ubuntu 安裝 NodeJS
+
+<Codecopy>
 
 ```shell
 sudo apt install node -y
 ```
+
+</Codecopy>
 
 ### 選擇 2. Windows 下載安裝檔
 
@@ -104,23 +117,37 @@ sudo apt install node -y
 
 ### 選擇 3. Windows 使用 Choco 安裝
 
+<Codecopy>
+
 ```shell
 sudo choco install nodejs
 ```
+
+</Codecopy>
 
 ### 選擇 4. Ubuntu 使用 [asdf](https://asdf-vm.com/) 安裝 NodeJS
 
 新增 NodeJS。
 
+<Codecopy>
+
 ```shell
 asdf plugin add nodejs
 ```
 
+</Codecopy>
+
 設定預設 NodeJS 要安裝的全域包。
+
+<Codecopy>
 
 ```shell
 vi ~/.default-npm-packages
 ```
+
+</Codecopy>
+
+<Codecopy>
 
 ```shell title="~/.default-npm-packages"
 npm-check-updates
@@ -129,63 +156,97 @@ degit
 prettier
 ```
 
+</Codecopy>
+
 安裝 最新版 NodeJS。
+
+<Codecopy>
 
 ```shell
 asdf install nodejs latest
 ```
 
+</Codecopy>
+
 設定全域 NodeJS 版本。
+
+<Codecopy>
 
 ```shell
 asdf global nodejs latest
 ```
 
+</Codecopy>
+
 ## 安裝 [degit](https://github.com/Rich-Harris/degit)
 
 degit 可以幫我們從 Git 原始碼庫 建置專案鷹架。
+
+<Codecopy>
 
 ```shell
 npm install -g degit
 ```
 
+</Codecopy>
+
 ## 安裝 [pnpm](https://pnpm.io/)
 
 pnpm 是比 npm 更快更節省空間的套件管理器。
+
+<Codecopy>
 
 ```shell
 npm install -g pnpm
 ```
 
+</Codecopy>
+
 ## 下載並建立 Urara 專案
 
 在你想要建立專案的資料夾內，執行以下：
+
+<Codecopy>
 
 ```shell
 # 請自行改名 name
 npx degit importantimport/urara name
 ```
 
+</Codecopy>
+
 進入專案資料夾。
+
+<Codecopy>
 
 ```shell
 # 請自行改名 name
 cd name
 ```
 
+</Codecopy>
+
 下載專案所需的套件。
+
+<Codecopy>
 
 ```shell
 pnpm i
 ```
 
+</Codecopy>
+
 ## 啟動本地開發伺服
 
 在專案資料夾內，開啟本地開發模式。
 
+<Codecopy>
+
 ```shell
 pnpm dev
 ```
+
+</Codecopy>
 
 打開瀏覽器輸入 `http://localhost:3000/` 就可以看到了。
 
@@ -193,19 +254,27 @@ pnpm dev
 
 若是你是用 remote 的方式，請修改 `package.json` 的 `dev:kit` 指令，最後添加 `--host` 參數，讓內網的其他電腦可以透過 `http://{IP}:3000/` 的方式看到網頁。
 
+<Codecopy>
+
 ```js title="./package.json"
 ...
     "dev:kit": "export NODE_OPTIONS=--max_old_space_size=7168 && svelte-kit dev --host",
 ...
 ```
 
+</Codecopy>
+
 ## 修改網站參數
 
 進入 Config 資料夾的位置。
 
+<Codecopy>
+
 ```shell
 cd ./src/lib/config
 ```
+
+</Codecopy>
 
 最主要需要修改的是以下：
 
@@ -219,6 +288,8 @@ cd ./src/lib/config
 `./src/lib/config/general.ts`
 
 以下是 Navbar 上方連結按鈕的修改。
+
+<Codecopy>
 
 ```ts
 export const header: HeaderConfig = {
@@ -235,6 +306,8 @@ export const header: HeaderConfig = {
 }
 ```
 
+</Codecopy>
+
 ### 修改網站圖片
 
 `./svelte-urara/assets`
@@ -249,6 +322,8 @@ export const header: HeaderConfig = {
 
 按造 hello-world 資料夾的結構：
 
+<Codecopy>
+
 ```shell
 urara
 +-- hello-world
@@ -258,6 +333,8 @@ urara
     +-- toc-disabled
         +-- index.svelte.md
 ```
+
+</Codecopy>
 
 我們會有以下三個網頁路徑：
 
@@ -277,11 +354,15 @@ urara
 
 </Infobox>
 
+<Codecopy>
+
 ```shell
 urara
 +-- about
     +-- index.md
 ```
+
+</Codecopy>
 
 ### 頁面寫作格式
 
@@ -291,6 +372,8 @@ urara
 內文使用 [MarkDown](https://markdown.tw/) 語法來撰寫，快速上手請參考 [Markdown Cheat Sheet](https://www.markdownguide.org/cheat-sheet/)。
 
 以下為頁面範例 (若有更新，請以原始碼庫為準)：
+
+<Codecopy>
 
 ```md title="./urara/about/index.svelte.md"
 ---
@@ -314,11 +397,15 @@ tags:
 第一段第一節 內容
 ```
 
+</Codecopy>
+
 更多屬性參數細節，可自行參考 `./src/global.d.ts`。
 
 ### 嵌入圖片
 
 假如我們要幫 `about` 頁面新增 cover 與 其他嵌入圖片，我們可以把圖片放置於同一個資料夾，如以下：
+
+<Codecopy>
 
 ```shell
 urara
@@ -328,23 +415,35 @@ urara
     +-- img1.png
 ```
 
+</Codecopy>
+
 在我們文章屬性的部分，路徑會這樣寫：
+
+<Codecopy>
 
 ```md title="./urara/index.md"
 cover: /about/cover.png
 ```
 
+</Codecopy>
+
 然後在文章內容中要嵌入的話，會這樣寫：
+
+<Codecopy>
 
 ```md title="./urara/index.md"
 ![img1](about/img1.png)
 ```
+
+</Codecopy>
 
 ## 上傳到 Github
 
 在 Github 新增一個 Repo，不確定如何新增的請參考[Github 文件](https://docs.github.com/cn/get-started/quickstart/create-a-repo)。
 
 在專案資料夾內輸入以下，上傳專案到 Github。
+
+<Codecopy>
 
 ```shell
 git init
@@ -355,6 +454,8 @@ git branch -M main
 git remote add origin [git@github.com:your/repo.git]
 git push -u origin main
 ```
+
+</Codecopy>
 
 接下來就可以看到你的 Repo 包含了所有的原始碼。我們下一步會用這個 Repo 來架設到 Vercel 或 Netlify。
 

@@ -12,6 +12,10 @@ tags:
   - 2021
 ---
 
+<script lang="ts">
+  import Codecopy from '$lib/components/extra/codecopy.svelte'
+</script>
+
 ## 開頭
 
 本篇文章紀錄如何在 Windows 10 安裝 Linux 子系統 (WSL) 與 Ubuntu。
@@ -29,9 +33,13 @@ Windows Terminal 的介紹與安裝，請參考 [Windows Terminal - 比 Cmder �
 
 以系統管理員身分打開 PowerShell 輸入
 
+<Codecopy>
+
 ```shell
 wsl --install
 ```
+
+</Codecopy>
 
 過程中會安裝 **虛擬機器平台**、**Windows 子系統 Linux 版**、與 **WSL Kernel**，而 OS 預設會下載 Ubuntu。
 
@@ -49,15 +57,23 @@ wsl --install
 
 1.打開虛擬機器平台
 
+<Codecopy>
+
 ```shell
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 ```
 
+</Codecopy>
+
 2.打開 Windows 子系統 Linux 版
+
+<Codecopy>
 
 ```shell
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 ```
+
+</Codecopy>
 
 ### Error 0x80370102
 
@@ -73,9 +89,13 @@ dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux 
 
 以系統管理員身分打開 PowerShell 輸入
 
+<Codecopy>
+
 ```shell
 wsl --update
 ```
+
+</Codecopy>
 
 若無法更新的話，記得先打開 `Windows Update 設定` > `進階選項`，  
 打開第一個選項: `當您更新Windows時，收到其他Microsoft產品的更新`
@@ -92,15 +112,23 @@ wsl --update
 
 查詢可安裝的 Linux Distro
 
+<Codecopy>
+
 ```shell
 wsl -l -o
 ```
 
+</Codecopy>
+
 選擇安裝 Ubuntu
+
+<Codecopy>
 
 ```shell
 wsl --install -d Ubuntu
 ```
+
+</Codecopy>
 
 ## Ubuntu 初始設置
 
@@ -112,15 +140,23 @@ wsl --install -d Ubuntu
 
 在 PowerShell 裡輸入以下指令，這時可以看到有一個 Ubuntu 正在執行中。
 
+<Codecopy>
+
 ```shell
 wsl --list --verbose
 ```
 
+</Codecopy>
+
 ## 更新 Ubuntu
+
+<Codecopy>
 
 ```shell
 sudo apt update -y && sudo apt upgrade -y
 ```
+
+</Codecopy>
 
 ## (選用) 安裝 NeoFetch
 
@@ -128,15 +164,23 @@ NeoFetch 是一個顯示電腦配置的小工具。
 
 在 Ubuntu 裡輸入以下指令進行安裝：
 
+<Codecopy>
+
 ```shell
 sudo apt install neofetch -y
 ```
 
+</Codecopy>
+
 執行 neofetch
+
+<Codecopy>
 
 ```shell
 neofetch
 ```
+
+</Codecopy>
 
 ## 參考資料
 
