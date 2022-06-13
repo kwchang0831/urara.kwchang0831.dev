@@ -14,8 +14,7 @@ tags:
   - 2022
 ---
 
-<script lang="ts">
-  import Codecopy from '$lib/components/extra/codecopy.svelte'
+<script lang="ts">  
   import Img from '$lib/components/extra/zoom.svelte'
   import Info from '$lib/components/extra/infobox.svelte'
   import Github from '$lib/components/extra/github.svelte'
@@ -35,8 +34,6 @@ tags:
 
 ## 環境配置
 
-<Codecopy>
-
 ```shell
 ❯ elixir -v
 Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
@@ -44,46 +41,28 @@ Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-thr
 Elixir 1.13.4 (compiled with Erlang/OTP 25)
 ```
 
-</Codecopy>
-
-<Codecopy>
-
 ```shell
 ❯ mix phx -v
 Phoenix v1.6.9
 ```
-
-</Codecopy>
-
-<Codecopy>
 
 ```shell
 ❯ node -v
 v18.0.0
 ```
 
-</Codecopy>
-
-<Codecopy>
-
 ```shell
 ❯ pnpm -v
 7.1.5
 ```
 
-</Codecopy>
-
 ## 創建 Phoenix Project
 
 Shell 輸入以下，創建一個名叫 `pdtd` 的 Phoenix 專案。
 
-<Codecopy>
-
 ```shell
 mix phx.new --no-ecto --no-mailer pdtd
 ```
-
-</Codecopy>
 
 <kbd>Enter</kbd> 繼續安裝所有的 dependencies。
 
@@ -91,31 +70,21 @@ mix phx.new --no-ecto --no-mailer pdtd
 
 安裝 Hex
 
-<Codecopy>
-
 ```shell
 mix local.hex
 ```
 
-</Codecopy>
-
 安裝 Phoenix
-
-<Codecopy>
 
 ```shell
 mix archive.install hex phx_new
 ```
-
-</Codecopy>
 
 ## 新增 DartSass & Tailwind
 
 ### 修改 mix.exs
 
 進入 Project 裡。打開並修改 `mix.exs`。添加 `dart_sass` 與 `tailwind` 至 `deps`。
-
-<Codecopy>
 
 ```elixir {14,15} title="./mix.exs"
   defp deps do
@@ -138,11 +107,7 @@ mix archive.install hex phx_new
   end
 ```
 
-</Codecopy>
-
 修改 `aliases`。
-
-<Codecopy>
 
 ```elixir {2,3} title="./mix.exs"
   defp aliases do
@@ -153,13 +118,9 @@ mix archive.install hex phx_new
   end
 ```
 
-</Codecopy>
-
 ### 修改 config.exs
 
 新增 `dar_sass` 與 `tailwind` 的 config 到 `./config/config.exs`。
-
-<Codecopy>
 
 ```elixir {10-24} title="./config/config.exs"
 # Configure esbuild (the version is required)
@@ -190,13 +151,9 @@ config :tailwind, version: "3.0.24", default: [
 
 ```
 
-</Codecopy>
-
 ### 修改 dev.exs
 
 新增 `dar_sass` 與 `tailwind` 的 watchers 到 `./config/dev.exs`。
-
-<Codecopy>
 
 ```elixir {3-4} title="./config/dev.exs"
   watchers: [
@@ -207,11 +164,7 @@ config :tailwind, version: "3.0.24", default: [
   ]
 ```
 
-</Codecopy>
-
 若是要在 remote 主機上跑 dev 的話，記得順便修改 `http` 設定才能用 `http://{ip}:4000` 的方式查看。
-
-<Codecopy>
 
 ```elixir {3} title="./config/dev.exs"
 config :pdtd, PdtdWeb.Endpoint,
@@ -220,35 +173,21 @@ config :pdtd, PdtdWeb.Endpoint,
   http: [ip: {0, 0, 0, 0}, port: 4000],
 ```
 
-</Codecopy>
-
 ### 執行 deps 安裝
-
-<Codecopy>
 
 ```shell
 mix deps.get
 ```
 
-</Codecopy>
-
 ### 執行 dart_sass & tailwind 安裝
-
-<Codecopy>
 
 ```shell
 mix sass.install
 ```
 
-</Codecopy>
-
-<Codecopy>
-
 ```shell
 mix tailwind.install
 ```
-
-</Codecopy>
 
 <Info status="info" title="更新 tailwind / dartSass 版本">
 
@@ -260,8 +199,6 @@ mix tailwind.install
 
 到 `./assets/css`，重新命名 `app.css` 為 `main.css`，並**移除**裡面所有的 import tailwind。
 
-<Codecopy>
-
 ```css {0-2} title="./assets/css/main.css"
 - @import "tailwindcss/base";
 - @import "tailwindcss/components";
@@ -271,11 +208,7 @@ mix tailwind.install
 ...
 ```
 
-</Codecopy>
-
 新增 `./assets/css/app.scss` 檔案，並 import tailwind 的元件還有其他所需要的 css 檔案。
-
-<Codecopy>
 
 ```scss title="./assets/css/app.scss"
 @tailwind base;
@@ -286,37 +219,25 @@ mix tailwind.install
 @import 'phoenix';
 ```
 
-</Codecopy>
-
 ## 安裝 DaisyUI
 
 到 `./assets/` 目錄底下，輸入以下。
-
-<Codecopy>
 
 ```shell
 pnpm i --save-dev daisyui
 ```
 
-</Codecopy>
-
 如果有跑出 `missing peer` ，就把缺少的補安裝。
-
-<Codecopy>
 
 ```shell
 pnpm i --save-peer autoprefixer@^10.0.2 postcss@">=8.3.3 <9.0.0"
 ```
-
-</Codecopy>
 
 ## 設定 Tailwind 添加 DaisyUI
 
 打開 `./assets/tailwind.config.js`，新增 DaisyUI 到 `plugins` 裡。
 
 這邊有設定主題改用 `wireframe`，可自行更改。
-
-<Codecopy>
 
 ```js {11-15} title="./assets/tailwind.config.js"
 module.exports = {
@@ -331,41 +252,27 @@ module.exports = {
 }
 ```
 
-</Codecopy>
-
 ## 啟動 dev Server
 
 回到專案的目錄下 `../`。
 
 還記得我們稍早有修改過 mix setup 的 task？
 
-<Codecopy>
-
 ```elixir
 setup: ["deps.get", "cmd --cd './assets' pnpm i"],
 ```
 
-</Codecopy>
-
 現在執行來確認所有需要安裝的東西都安裝好了。
-
-<Codecopy>
 
 ```shell
 mix setup
 ```
 
-</Codecopy>
-
 確定都安裝沒問題之後，就可以開啟 dev Server 了。
-
-<Codecopy>
 
 ```shell
 mix phx.server
 ```
-
-</Codecopy>
 
 接下來，打開 `http://localhost:4000` 或是 `http://{IP}:4000` 就可以看到結果嚕。
 
@@ -374,8 +281,6 @@ mix phx.server
 為了證明我們已經成功完成整合，讓我們修改 `index.html.heex`。
 
 把內容都清除掉，新增以下 [Card component from DaisyUI](https://daisyui.com/components/card/)。
-
-<Codecopy>
 
 ```html title="./lib/pdtd_web/templates/page/index.html.heex"
 <section>
@@ -391,8 +296,6 @@ mix phx.server
   </div>
 </section>
 ```
-
-</Codecopy>
 
 如果 dev server 還開著的話，存檔後就可以看到頁面更新了。如同封面圖一樣。
 

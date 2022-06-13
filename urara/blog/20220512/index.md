@@ -14,7 +14,6 @@ tags:
 ---
 
 <script lang="ts">
-  import Codecopy from '$lib/components/extra/codecopy.svelte'
 </script>
 
 ## 開始
@@ -22,8 +21,6 @@ tags:
 ## 問題情況
 
 最近在 Deploy 本網站到 Vercel 的時候會碰到
-
-<Codecopy>
 
 ```shell {2,4}
 sh: line1: 1303 killed svelte-kit build
@@ -33,11 +30,7 @@ ELIFECYCLE command failed with exit code 1.
 Error: Command "pnpm run build" exited with 1
 ```
 
-</Codecopy>
-
 本地執行 build 的時候並不會發生
-
-<Codecopy>
 
 ```shell
 pnpm build
@@ -48,8 +41,6 @@ Run npm run preview to preview your production build locally.
   ✔ done
 ```
 
-</Codecopy>
-
 只有在 Vercel 上進行 build 的時候會發生這 `exit code 137` 的錯誤。
 
 ## 問題分析
@@ -58,17 +49,11 @@ Run npm run preview to preview your production build locally.
 
 目前 Urara 的 build script 中，有添加系統變數，來擴展內存記憶體至 7GB，才進行 build。
 
-<Codecopy>
-
 ```json title="package.json"
 "build:kit": "export NODE_OPTIONS=--max_old_space_size=7680 && svelte-kit build"
 ```
 
-</Codecopy>
-
 如果去除了這個`NODE_OPTIONS=--max_old_space_size=7680`這個系統變數之後來進行 build 的話，會遇到 `Javascript heap out of memory` 的錯誤。
-
-<Codecopy>
 
 ```shell {1,3}
 Aborted (core dumped)
@@ -77,11 +62,7 @@ ERROR: "build:kit" exited with 1.
 ELIFECYCLE  Command failed with exit code 1.
 ```
 
-</Codecopy>
-
 以下是我目前的執行環境：
-
-<Codecopy>
 
 ```shell
 ❯ neofetch
@@ -106,8 +87,6 @@ ossyNMMMNyMMhsssssssssssssshmmmhssssssso   GPU: 00:1d.0 Vendor fb5d Device 40fb
         `:+ssssssssssssssssss+:`
             .-/+oossssoo+/-.
 ```
-
-</Codecopy>
 
 根據 Vercel 官方手冊 [Build Step #Memory](https://vercel.com/docs/concepts/deployments/build-step#memory)：
 
@@ -139,85 +118,53 @@ ossyNMMMNyMMhsssssssssssssshmmmhssssssso   GPU: 00:1d.0 Vendor fb5d Device 40fb
 
 安裝 Netlify CLI
 
-<Codecopy>
-
 ```shell
 npm install netlify-cli -g
 ```
 
-</Codecopy>
-
 查看可用指令
-
-<Codecopy>
 
 ```shell
 netlify
 ```
 
-</Codecopy>
-
 登入 Netlify 帳號
-
-<Codecopy>
 
 ```shell
 netlify login
 ```
 
-</Codecopy>
-
 登入完成之後，查看狀態
-
-<Codecopy>
 
 ```shell
 netlify status
 ```
 
-</Codecopy>
-
 在 Netlify 創建一個新的網站
 這指令要在你專案的路徑裡執行，也就是包含 `package.json` 的這個層級。
-
-<Codecopy>
 
 ```shell
 netlify sites:create
 ```
 
-</Codecopy>
-
 創建完成之後，在你的專案資料夾裡面應該會看到新增了 `.netlify` 資料夾，裡面有一個 `state.json`。這個檔案會記錄你這個專案與 Netlify 上要 deploy 網站的 `siteId`。
 
 接下來，就可以進行本地 build 了
-
-<Codecopy>
 
 ```shell
 netlify build
 ```
 
-</Codecopy>
-
 Build 完成之後，你可以 deploy 一個來 preview 看看
-
-<Codecopy>
 
 ```shell
 netlify deploy
 ```
 
-</Codecopy>
-
 Preview 完成，確認都沒問題之後，就可以正式上線
-
-<Codecopy>
 
 ```shell
 netlify deploy --prod
 ```
-
-</Codecopy>
 
 ## 完結

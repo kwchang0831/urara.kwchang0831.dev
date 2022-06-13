@@ -7,7 +7,6 @@ flags:
 ---
 
 <script lang="ts">
-  import Codecopy from '$lib/components/extra/codecopy.svelte'
   import Profile from '$lib/components/extra/profile.svelte'
   import Youtube from '$lib/components/extra/youtube.svelte'
 </script>

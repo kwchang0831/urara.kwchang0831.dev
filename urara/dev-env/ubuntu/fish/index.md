@@ -11,8 +11,7 @@ tags:
   - 2022
 ---
 
-<script lang="ts">
-  import Codecopy from '$lib/components/extra/codecopy.svelte'
+<script lang="ts">  
   import Webm from '$lib/components/extra/webm.svelte'
   import Img from '$lib/components/extra/zoom.svelte'
   import Infobox from '$lib/components/extra/infobox.svelte'
@@ -51,13 +50,9 @@ tags:
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 sudo apt install wget git curl vim -y
 ```
-
-</Codecopy>
 
 ## 安裝 Patched 字型
 
@@ -72,16 +67,12 @@ sudo apt install wget git curl vim -y
 
 或是 shell 輸入
 
-<Codecopy>
-
 ```shell
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf
 ```
-
-</Codecopy>
 
 - Windows
 
@@ -107,27 +98,19 @@ wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/Ne
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 sudo apt-add-repository ppa:fish-shell/release-3
 sudo apt update
 sudo apt install fish
 ```
 
-</Codecopy>
-
 ### 設定預設 Shell
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 chsh -s $(which fish)
 ```
-
-</Codecopy>
 
 ## 安裝 Oh My Fish
 
@@ -135,13 +118,9 @@ Oh My Fish 是用來擴充 Fish Shell 的
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish
 ```
-
-</Codecopy>
 
 ## 安裝 Fisher
 
@@ -149,29 +128,19 @@ Fisher 是插件管理員
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher
 ```
-
-</Codecopy>
 
 ### 查看已安裝插件
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 fisher list
 ```
 
-</Codecopy>
-
 結果
-
-<Codecopy>
 
 ```shell
 ❯ fisher list
@@ -183,8 +152,6 @@ andreiborisov/sponge
 PatrickF1/fzf.fish
 ```
 
-</Codecopy>
-
 ## 安裝 Tide 主題
 
 還記得 Zsh 的 [PowerLevel10k](https://github.com/romkatv/powerlevel10k) 嗎? Tide 基本上就很像 PowerLevel10k。
@@ -194,25 +161,17 @@ PatrickF1/fzf.fish
 
 安裝，shell 輸入
 
-<Codecopy>
-
 ```shell
 fisher install IlanCosman/tide@v5
 ```
-
-</Codecopy>
 
 ### 設定 Tide 主題
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 tide configure
 ```
-
-</Codecopy>
 
 ## 安裝插件 Z
 
@@ -220,13 +179,9 @@ tide configure
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 fisher install jethrokuan/z
 ```
-
-</Codecopy>
 
 ## 安裝插件 Sponge
 
@@ -234,25 +189,17 @@ fisher install jethrokuan/z
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 fisher install andreiborisov/sponge
 ```
-
-</Codecopy>
 
 ### 清除指令歷史
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 history clear
 ```
-
-</Codecopy>
 
 ## 安裝插件 autopair
 
@@ -260,13 +207,9 @@ history clear
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 fisher install jorgebucaran/autopair.fish
 ```
-
-</Codecopy>
 
 ## 安裝插件 fzf.fish
 
@@ -293,62 +236,42 @@ fisher install jorgebucaran/autopair.fish
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
 
-</Codecopy>
-
 ### 安裝前置套件 fd
 
 shell 輸入
-
-<Codecopy>
 
 ```shell
 sudo apt install fd-find
 ```
 
-</Codecopy>
-
 因為已經有其他叫 fd 的套件，為了避免衝突，所以執行檔是叫 fdfind。我們這邊建立個連結在 `/usr/local/bin` 叫做 `fd` 讓我們可以使用 `fd` 這個指令。
 
 shell 輸入
-
-<Codecopy>
 
 ```shell
 sudo ln -s $(which fdfind) /usr/local/bin/fd
 ```
 
-</Codecopy>
-
 ### 安裝前置套件 bat
 
 shell 輸入
-
-<Codecopy>
 
 ```shell
 sudo apt install bat
 ```
 
-</Codecopy>
-
 因為已經有其他叫 bat 的套件，為了避免衝突，所以執行檔是叫 batcat。我們這邊建立個連結在 `/usr/local/bin` 叫做 `bat` 讓我們可以使用 `bat` 這個指令。
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 sudo ln -s $(which batcat) /usr/local/bin/bat
 ```
-
-</Codecopy>
 
 ## 設定 asdf 自動完成
 
@@ -356,33 +279,21 @@ sudo ln -s $(which batcat) /usr/local/bin/bat
 
 shell 輸入
 
-<Codecopy>
-
 ```shell
 vi ~/.config/fish/config.fish
 ```
 
-</Codecopy>
-
 在 `~/.config/fish/config.fish` 文件最後添加
-
-<Codecopy>
 
 ```shell title="~/.config/fish/config.fish"
 source ~/.asdf/asdf.fish
 ```
 
-</Codecopy>
-
 最後，shell 輸入以下指令，連結自動完成的功能
-
-<Codecopy>
 
 ```shell
 mkdir -p ~/.config/fish/completions; and ln -s ~/.asdf/completions/asdf.fish ~/.config/fish/completions
 ```
-
-</Codecopy>
 
 ## 最後
 

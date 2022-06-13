@@ -10,6 +10,8 @@
   import Post from '$lib/components/layouts/_post.svelte'
   import Toc from '$lib/components/post_toc.svelte'
   import Cover from '$lib/components/post_cover.svelte'
+  import copyblock from '$lib/components/extra/codecopy.svelte'
+
   export let path = undefined
   export let created = undefined
   export let updated = undefined
@@ -23,6 +25,17 @@
   export let cover = undefined
   export let coverText = undefined
   export let toc = undefined
+  import { onMount } from 'svelte'
+
+  onMount(async () => {
+    const urara_codeblocks = document.querySelectorAll('codecopy')
+    urara_codeblocks.forEach(block => {
+      new copyblock({
+        target: block
+      })
+      block.childNodes[1].appendChild(block.childNodes[0])
+    })
+  })
 </script>
 
 <Head post={{ layout: 'article', created, updated, published, title, tags, description, summary, cover, coverText, path }} />

@@ -76,7 +76,9 @@ export default /** @type {Parameters<typeof import("mdsvex").mdsvex>[0]} */ {
       }
       if (fence?.twoslash === true) twoslash = runTwoSlash(code, lang)
       return `{@html \`${escapeSvelte(
-        renderCodeToHTML(code, lang, fence ?? {}, {}, await createShikiHighlighter({ theme: 'github-dark' }), twoslash)
+        `<codecopy>` +
+          renderCodeToHTML(code, lang, fence ?? {}, {}, await createShikiHighlighter({ theme: 'github-dark' }), twoslash) +
+          `</codecopy>`
       )}\` }`
     }
   },

@@ -10,8 +10,7 @@ tags:
   - 2021
 ---
 
-<script lang="ts">
-  import Codecopy from '$lib/components/extra/codecopy.svelte'
+<script lang="ts">  
 </script>
 
 ## 開頭
@@ -203,13 +202,9 @@ Proxy 與 Mirror 的部分都不用更動。
 
 `ssh {使用者ID}@{主機IP位址}`
 
-<Codecopy>
-
 ```shell
 ssh kwchang0831@192.168.0.3
 ```
-
-</Codecopy>
 
 ![fig34](photoprism/fig34.avif)
 
@@ -223,49 +218,31 @@ ssh kwchang0831@192.168.0.3
 
 安裝所需套件
 
-<Codecopy>
-
 ```shell
 sudo apt update -y && sudo apt install samba
 ```
 
-</Codecopy>
-
 檢查安裝
-
-<Codecopy>
 
 ```shell
 whereis samba
 ```
 
-</Codecopy>
-
 建立分享資料夾
 (自行修改 username 與 sambashare 的資料夾名稱)
-
-<Codecopy>
 
 ```shell
 mkdir /home/<username>/<sambashare>/
 ```
 
-</Codecopy>
-
 修改 Samba 設定檔
-
-<Codecopy>
 
 ```shell
 sudo nano /etc/samba/smb.conf
 ```
 
-</Codecopy>
-
 新增以下內容至 Samba 設定檔
 (自行修改 sambashare 資料夾名稱 與 path 路徑)
-
-<Codecopy>
 
 ```shell
 [sambashare]
@@ -275,40 +252,26 @@ sudo nano /etc/samba/smb.conf
     browsable = yes
 ```
 
-</Codecopy>
-
 使用 <kbd>Ctrl + O</kbd> 存檔 ； <kbd>Ctrl + X</kbd> 離開。
 
 新增 Samba 使用者帳號，並依造指示設定
 (自行選擇 username 使用者名稱)
 
-<Codecopy>
-
 ```shell
 sudo smbpasswd -a username
 ```
 
-</Codecopy>
-
 重新啟動 Samba
-
-<Codecopy>
 
 ```shell
 sudo service smbd restart
 ```
 
-</Codecopy>
-
 如果有開過防火牆，記得打開
-
-<Codecopy>
 
 ```shell
 sudo ufw allow samba
 ```
-
-</Codecopy>
 
 設定都完成之後就可以透過
 `\\Ubuntu Server 的 IP\sambashare`
@@ -321,76 +284,48 @@ sudo ufw allow samba
 
 安裝所需套件
 
-<Codecopy>
-
 ```shell
 sudo apt install cifs-utils
 ```
 
-</Codecopy>
-
 設定開機自動掛載
-
-<Codecopy>
 
 ```shell
 sudo nano /etc/fstab
 ```
 
-</Codecopy>
-
 在文件最下面新增一行 (請換成我們自己的路徑)  
 `//server/share/ /mnt/localmountpoint cifs credentials=/home/user/.cifs 0 0`  
 `要掛載的遠端資料夾 掛載的位置 cifs 帳號密碼檔案 0 0`
-
-<Codecopy>
 
 ```shell
 //192.168.0.2/photo  /home/kwchang0831/photo  cifs  credentials=/home/kwchang0831/.cifs 0 0
 ```
 
-</Codecopy>
-
 新增一個`.cifs`檔案並放入 Samba 資料夾登入帳密
-
-<Codecopy>
 
 ```shell
 nano ~/.cifs
 ```
 
-</Codecopy>
-
 更改 `~/.cifs` 的內容 (請換成自己的帳號密碼)
-
-<Codecopy>
 
 ```shell
 username=kwchang0831
 password=kwchang0831
 ```
 
-</Codecopy>
-
 掛載的位置的資料夾要新增
-
-<Codecopy>
 
 ```shell
 mkdir ~/photo
 ```
 
-</Codecopy>
-
 應用掛載資料夾
-
-<Codecopy>
 
 ```shell
 sudo mount -a
 ```
-
-</Codecopy>
 
 ### (選用) 掛載資料夾的權限問題
 
@@ -398,46 +333,30 @@ sudo mount -a
 
 若沒問題，可以嘗試看看修改 `/etc/fstab`
 
-<Codecopy>
-
 ```shell
 sudo nano /etc/fstab
 ```
 
-</Codecopy>
-
 把之前的設定改成全開放看看 (請換成自己的路徑)
-
-<Codecopy>
 
 ```shell
 //192.168.0.2/photo  /home/kwchang0831/photo  cifs  credentials=/home/kwchang0831/.cifs,_netdev,x-systemd.automount,file_mode=0777,dir_mode=0777 0 0
 ```
 
-</Codecopy>
-
 ### (選用) 若重開機不會自動掛載
 
 設置開機啟動腳本
-
-<Codecopy>
 
 ```shell
 nano /etc/rc.local
 ```
 
-</Codecopy>
-
 新增以下內容 (請換成自己的路徑)
-
-<Codecopy>
 
 ```shell
 mount /home/kwchang0831/photo
 exit 0
 ```
-
-</Codecopy>
 
 ### (選用) Windows 上存取 Samba 分享資料夾
 
@@ -451,13 +370,9 @@ exit 0
 
 主機預設時區 UTC+0:00 可以輸入以下來更改為台北時區
 
-<Codecopy>
-
 ```shell
 sudo timedatectl set-timezone Asia/Taipei
 ```
-
-</Codecopy>
 
 安裝 PhotoPrism 會用 Docker 虛擬容器的方式來安裝與運行。
 
@@ -465,157 +380,99 @@ sudo timedatectl set-timezone Asia/Taipei
 
 刪除之前安裝的 Docker，之前若沒安裝過也還是可以跑一下確認沒關係。
 
-<Codecopy>
-
 ```shell
 sudo apt-get remove docker docker-engine docker.io containerd runc
 ```
 
-</Codecopy>
-
 更新 Ubuntu
-
-<Codecopy>
 
 ```shell
 sudo apt update -y && sudo apt upgrade -y
 ```
 
-</Codecopy>
-
 安裝所需的套件
-
-<Codecopy>
 
 ```shell
 sudo apt-get install apt-transport-https ca-certificates curl gnupg lsb-release
 ```
 
-</Codecopy>
-
 新增 GPG 金鑰
-
-<Codecopy>
 
 ```shell
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 ```
 
-</Codecopy>
-
 設置 Repo
-
-<Codecopy>
 
 ```shell
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 ```
 
-</Codecopy>
-
 安裝 Docker
-
-<Codecopy>
 
 ```shell
 sudo apt update -y && sudo apt-get install docker-ce docker-ce-cli containerd.io -y
 ```
 
-</Codecopy>
-
 查看 Docker 版本 確認安裝
-
-<Codecopy>
 
 ```shell
 docker -v
 ```
 
-</Codecopy>
-
 ### 安裝 Docker Compose
 
 下載 2.4.1 版本 Docker Compose (若有更新版本可自行修改下方的網址)
-
-<Codecopy>
 
 ```shell
 sudo curl -L "https://github.com/docker/compose/releases/download/v2.4.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 ```
 
-</Codecopy>
-
 這裡可以查看 Docker Compose 最新版本: [https://github.com/docker/compose/releases/](https://github.com/docker/compose/releases/)
 
 給予執行權限
-
-<Codecopy>
 
 ```shell
 sudo chmod +x /usr/local/bin/docker-compose
 ```
 
-</Codecopy>
-
 連結
-
-<Codecopy>
 
 ```shell
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 ```
 
-</Codecopy>
-
 查看版本 確認安裝
-
-<Codecopy>
 
 ```shell
 docker-compose --version
 ```
 
-</Codecopy>
-
 ### 安裝 PhotoPrism
 
 安裝所需套件
-
-<Codecopy>
 
 ```shell
 sudo apt install wget -y
 ```
 
-</Codecopy>
-
 創建一個資料夾並進入
-
-<Codecopy>
 
 ```shell
 mkdir ~/photoprism && cd ~/photoprism
 ```
 
-</Codecopy>
-
 下載 設定檔
-
-<Codecopy>
 
 ```shell
 wget https://dl.photoprism.org/docker/docker-compose.yml
 ```
-
-</Codecopy>
 
 ### 修改設定檔案
 
 比較重要的幾個地方為以下：
 
 Uncomment 下面反白的那行 打開自動重啟
-
-<Codecopy>
 
 ```yaml {10} showLineNumbers
 services:
@@ -634,12 +491,8 @@ services:
       - apparmor:unconfined
 ```
 
-</Codecopy>
-
 改成 Port 80 的話，登入網址就不需要再輸入任何 Port 了。
 我們可以直接從網址 192.168.0.3 登入，而不是 192.168.0.3:2342。
-
-<Codecopy>
 
 ```yaml {4}
 ...
@@ -650,11 +503,7 @@ services:
 ...
 ```
 
-</Codecopy>
-
 修改或是記好登入用的初始密碼 (之後登入之後可以再修改)。
-
-<Codecopy>
 
 ```yaml {2}
 ---
@@ -664,11 +513,7 @@ environment:
   PHOTOPRISM_DEBUG: 'false' # Run in debug mode (shows additional log messages)
 ```
 
-</Codecopy>
-
 於反白處，修改放照片原始檔案的位置，這邊我是用稍早前設定好的 Samba 分享資料夾。
-
-<Codecopy>
 
 ```yaml {3}
 ---
@@ -684,11 +529,7 @@ volumes:
   - './storage:/photoprism/storage'
 ```
 
-</Codecopy>
-
 Uncomment 反白處，打開自動升級。
-
-<Codecopy>
 
 ```yaml {4-11}
 ---
@@ -706,20 +547,14 @@ watchtower:
 #     - "~/.docker/config.json:/config.json" # Optional, for authentication if you have a Docker Hub account
 ```
 
-</Codecopy>
-
 都改好設定檔之後，就可以啟動 PhotoPrism
 以啟動 PhotoPrism。
 
 ### 啟動 PhotoPrism
 
-<Codecopy>
-
 ```shell
 sudo docker-compose up -d
 ```
-
-</Codecopy>
 
 啟動之後要稍微等一下，等環境都設置好。
 
@@ -733,14 +568,10 @@ sudo docker-compose up -d
 
 到 `~/photo` 共享資料夾裡，新增一個 `.ppignore` 的檔案。
 
-<Codecopy>
-
 ```shell
 cd ~/photo
 touch .ppignore
 ```
-
-</Codecopy>
 
 這個檔案可以讓你自訂哪些檔名或資料夾不要被掃描進去 PhotoPrism 的相本裡。
 
@@ -752,13 +583,9 @@ touch .ppignore
 
 在 `~/photoprism` 裡執行
 
-<Codecopy>
-
 ```shell
 docker-compose exec photoprism photoprism index
 ```
-
-</Codecopy>
 
 照片很多的話，建立 index 需要時間。
 
@@ -772,43 +599,27 @@ docker-compose exec photoprism photoprism index
 
 停止 PhotoPrism
 
-<Codecopy>
-
 ```shell
 sudo docker-compose stop photoprism
 ```
 
-</Codecopy>
-
 啟動 PhotoPrism
-
-<Codecopy>
 
 ```shell
 sudo docker-compose up -d photoprism
 ```
 
-</Codecopy>
-
 全部重新掃瞄檔案 (包含已掃描過)
-
-<Codecopy>
 
 ```shell
 sudo docker-compose exec photoprism photoprism index -f
 ```
 
-</Codecopy>
-
 編碼影片
-
-<Codecopy>
 
 ```shell
 sudo docker-compose exec photoprism photoprism convert
 ```
-
-</Codecopy>
 
 更多指令請參考: [https://docs.photoprism.org/getting-started/docker-compose/#examples](https://docs.photoprism.org/getting-started/docker-compose/#examples)
 

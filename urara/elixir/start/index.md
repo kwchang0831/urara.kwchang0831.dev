@@ -14,8 +14,7 @@ tags:
   - 2022
 ---
 
-<script lang="ts">
-  import Codecopy from '$lib/components/extra/codecopy.svelte'
+<script lang="ts">  
   import Img from '$lib/components/extra/zoom.svelte'
   import Infobox from '$lib/components/extra/infobox.svelte'
 </script>
@@ -115,8 +114,6 @@ Elixir 可以用來做後端伺服器 (Back End) 或是全端的網頁 (Full Sta
 
   可以直接修改 `json` 或是使用 UI 的方式來更改以下設定。
 
-<Codecopy>
-
 ```json
 "elixirLS.suggestSpecs": false,
 "elixirLS.dialyzerEnabled": true,
@@ -124,23 +121,15 @@ Elixir 可以用來做後端伺服器 (Back End) 或是全端的網頁 (Full Sta
 "elixirLS.fetchDeps": false,
 ```
 
-</Codecopy>
-
 ## 環境確認
 
 查看已安裝 Elixir 版本
-
-<Codecopy>
 
 ```shell
 elixir -v
 ```
 
-</Codecopy>
-
 結果
-
-<Codecopy>
 
 ```shell
 ❯ elixir -v
@@ -148,8 +137,6 @@ Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-thr
 
 Elixir 1.13.4 (compiled with Erlang/OTP 25)
 ```
-
-</Codecopy>
 
 ## Hello World
 
@@ -161,17 +148,11 @@ iex 是 Elixir 的 [REPL](https://zh.wikipedia.org/zh-tw/%E8%AF%BB%E5%8F%96%EF%B
 
 打開 shell，啟動 iex
 
-<Codecopy>
-
 ```shell
 iex
 ```
 
-</Codecopy>
-
 結果
-
-<Codecopy>
 
 ```shell
 ❯ iex
@@ -181,21 +162,13 @@ Interactive Elixir (1.13.4) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)>
 ```
 
-</Codecopy>
-
 查看幫助，輸入
-
-<Codecopy>
 
 ```shell
 iex(1)> h
 ```
 
-</Codecopy>
-
 輸出 `Hello World` 的程式碼
-
-<Codecopy>
 
 ```shell
 iex(2)> IO.puts "Hello World"
@@ -204,21 +177,15 @@ Hello World
 iex(3)>
 ```
 
-</Codecopy>
-
 `IO.puts "Hello World"` 這裡面的 `IO` 是一個內建 module。裡面有一個 function `puts` ，可以讓我們把輸入的字串印列到電腦螢幕上。
 
 若想了解更多有關 `IO` 這個 module，
 
 第一種方式，可以使用 iex 的 `h`
 
-<Codecopy>
-
 ```shell
 iex(3)> h IO
 ```
-
-</Codecopy>
 
 第二種方式，到 Elixir 的 [hexdocs](https://hexdocs.pm/) 上查看
 
@@ -240,50 +207,32 @@ iex(3)> h IO
 
 建立 `helloWorld.ex` ，輸入以下後存檔
 
-<Codecopy>
-
 ```elixir title="helloWorld.ex"
 IO.puts "Hello World"
 ```
 
-</Codecopy>
-
 在文檔的路徑打開 shell 輸入
-
-<Codecopy>
 
 ```shell
 elixir helloWorld.ex
 ```
 
-</Codecopy>
-
 結果
-
-<Codecopy>
 
 ```shell
 ❯ elixir helloWorld.ex
 Hello World
 ```
 
-</Codecopy>
-
 ### 使用 iex 執行 `helloWorld.ex`
 
 使用 iex 來跑剛剛建立的 `helloWorld.ex`
-
-<Codecopy>
 
 ```shell
 iex helloWorld.ex
 ```
 
-</Codecopy>
-
 結果
-
-<Codecopy>
 
 ```shell
 ❯ iex helloWorld.ex
@@ -294,31 +243,19 @@ Interactive Elixir (1.13.4) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)>
 ```
 
-</Codecopy>
-
 先別結束 iex ，我們打開 `helloWorld.ex` 修改一下後存檔
-
-<Codecopy>
 
 ```elixir title="helloWorld.ex"
 IO.puts "Hello World 2"
 ```
 
-</Codecopy>
-
 回到 iex
-
-<Codecopy>
 
 ```shell
 iex> c "helloWorld.ex"
 ```
 
-</Codecopy>
-
 結果
-
-<Codecopy>
 
 ```shell
 iex(1)> c "helloWorld.ex"
@@ -327,19 +264,13 @@ Hello World 2
 iex(2)>
 ```
 
-</Codecopy>
-
 `c` 這個 function 可以讓我們重新編譯指定的檔案。
 
 若要查看更多說明：
 
-<Codecopy>
-
 ```shell
 iex> h c
 ```
-
-</Codecopy>
 
 <Infobox status="info" title="Optional parentheses">
 
@@ -351,17 +282,11 @@ iex> h c
 
 接下來，我們來嘗試創建一個 Hello World 的專案
 
-<Codecopy>
-
 ```shell
 mix new helloworld
 ```
 
-</Codecopy>
-
 這樣會創建一個 `helloworld` 的資料夾，接下來我們到 `helloworld/lib`，可以在 `lib` 的資料夾中看到檔案 `helloworld.ex`。
-
-<Codecopy>
 
 ```elixir title="helloworld.ex"
 defmodule Helloworld do
@@ -384,23 +309,15 @@ defmodule Helloworld do
 end
 ```
 
-</Codecopy>
-
 預設已經幫我寫好了一個 `module` 與 `function`，在 `@doc` 裡面也有範例告訴我們如何使用，我們來試試看。
 
 在 `helloworld` 資料夾裡打開 shell ，輸入以下指令可以讓我們用 iex 來打開這個專案
-
-<Codecopy>
 
 ```shell
 iex -S mix
 ```
 
-</Codecopy>
-
 結果
-
-<Codecopy>
 
 ```shell
 ❯ iex -S mix
@@ -411,21 +328,13 @@ Interactive Elixir (1.13.4) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)>
 ```
 
-</Codecopy>
-
 我們來測試看看
-
-<Codecopy>
 
 ```shell
 iex> Helloworld.hello()
 ```
 
-</Codecopy>
-
 結果
-
-<Codecopy>
 
 ```shell
 iex(1)> Helloworld.hello()
@@ -433,13 +342,9 @@ iex(1)> Helloworld.hello()
 iex(2)>
 ```
 
-</Codecopy>
-
 如同 `@doc` 裡寫的一樣，這個 `hello()` function 會輸出 `:world`
 
 先不關閉 iex，我們來修改 `helloworld.ex`，在最後新增一行 `IO.puts "Hello World"`
-
-<Codecopy>
 
 ```elixir {18} title="helloworld.ex"
 defmodule Helloworld do
@@ -463,21 +368,13 @@ end
 IO.put "Hello World"
 ```
 
-</Codecopy>
-
 然後回到我們的 iex ，輸入以下指令重新編譯
-
-<Codecopy>
 
 ```shell
 iex> recompile
 ```
 
-</Codecopy>
-
 結果
-
-<Codecopy>
 
 ```shell
 iex(2)> recompile
@@ -486,8 +383,6 @@ Hello World
 :ok
 iex(3)>
 ```
-
-</Codecopy>
 
 我們又輸出了 `Hello World` 了。
 

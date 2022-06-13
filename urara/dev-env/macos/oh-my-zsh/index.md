@@ -11,8 +11,7 @@ tags:
   - 2021
 ---
 
-<script lang="ts">
-  import Codecopy from '$lib/components/extra/codecopy.svelte'
+<script lang="ts">  
 </script>
 
 ## 開頭
@@ -38,87 +37,55 @@ tags:
 
 Homebrew 是一個在 macOS 上主流的套件管理工具，打開 Terminal 輸入以下指令安裝：
 
-<Codecopy>
-
 ```shell
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
-
-</Codecopy>
 
 ### 常用指令
 
 更新套件清單
 
-<Codecopy>
-
 ```shell
 brew update
 ```
 
-</Codecopy>
-
 更新已安裝的套件
-
-<Codecopy>
 
 ```shell
 brew upgrade
 ```
 
-</Codecopy>
-
 Homebrew 安裝套件
-
-<Codecopy>
 
 ```shell
 brew install
 ```
 
-</Codecopy>
-
 更新用 Cask 安裝的套件
-
-<Codecopy>
 
 ```shell
 brew upgrade --cask
 ```
 
-</Codecopy>
-
 清除舊版套件檔案
-
-<Codecopy>
 
 ```shell
 brew cleanup
 ```
 
-</Codecopy>
-
 解除安裝套件
-
-<Codecopy>
 
 ```shell
 brew uninstall
 ```
 
-</Codecopy>
-
 ## 安裝 [iTerm2](https://iterm2.com/)
 
 iTerm2 是一個比內建 Terminal 更好的終端機。打開 Terminal 輸入以下指令，用 Homebrew 的 Cask 來安裝：
 
-<Codecopy>
-
 ```shell
 brew install --cask iterm2
 ```
-
-</Codecopy>
 
 ## 變更 iTerm2 顏色主題
 
@@ -130,146 +97,94 @@ brew install --cask iterm2
 
 ## 查看已安裝的 Shell
 
-<Codecopy>
-
 ```shell
 cat /etc/shells
 ```
 
-</Codecopy>
-
 若沒有看到 zsh ，安裝 zsh
-
-<Codecopy>
 
 ```shell
 brew install zsh
 ```
 
-</Codecopy>
-
 ## 安裝 [Oh My Zsh](https://ohmyz.sh/)
-
-<Codecopy>
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-</Codecopy>
-
 ## (選用) 設定預設 Shell
 
 若之前並沒有成功設定修改預設 Shell，請執行以下指令:
-
-<Codecopy>
 
 ```shell
 chsh -s $(which zsh)
 ```
 
-</Codecopy>
-
 執行 zsh 開始使用
-
-<Codecopy>
 
 ```shell
 zsh
 ```
 
-</Codecopy>
-
 ## 安裝插件
 
 ### 主題 [PowerLevel10k](https://github.com/romkatv/powerlevel10k)
-
-<Codecopy>
 
 ```shell
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 ```
 
-</Codecopy>
-
 ### 插件 [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 
 輸入指令時，如果看到灰色字的自動完成顯示，可以按下<kbd>➔</kbd>來採用。
-
-<Codecopy>
 
 ```shell
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-</Codecopy>
-
 ### 插件 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
-
-<Codecopy>
 
 ```shell
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 
-</Codecopy>
-
 ### (選用) 插件 [Zsh-z](https://github.com/agkozak/zsh-z)
 
 類似於 [autojump](https://github.com/wting/autojump) 的插件，比 `cd` 更快速地直接跳到想去的資料夾，且效能更好沒有一堆依賴包。
-
-<Codecopy>
 
 ```shell
 git clone https://github.com/agkozak/zsh-z $ZSH_CUSTOM/plugins/zsh-z
 ```
 
-</Codecopy>
-
 #### 使用方法
 
 查看已知的資料夾位置
-
-<Codecopy>
 
 ```shell
 z
 ```
 
-</Codecopy>
-
 進入在子資料夾中包含此字串的資料夾，可以用 <kbd>Tab</kbd> 來選擇結果，如果有多個符合 et 的資料的話。
-
-<Codecopy>
 
 ```shell
 cd /
 z et
 ```
 
-</Codecopy>
-
 查看其他用法
-
-<Codecopy>
 
 ```shell
 z -h
 ```
 
-</Codecopy>
-
 ## 啟動插件
 
 1.打開 Zsh 用戶設定檔
 
-<Codecopy>
-
 ```shell
 open ~/.zshrc
 ```
-
-</Codecopy>
 
 2.修改主題
 
@@ -283,13 +198,9 @@ open ~/.zshrc
 
 4.應用修改過的 zshrc
 
-<Codecopy>
-
 ```shell
 source ~/.zshrc
 ```
-
-</Codecopy>
 
 ## Powerlevel10k 設定
 
@@ -297,13 +208,9 @@ source ~/.zshrc
 
 打開 Shell 輸入：
 
-<Codecopy>
-
 ```shell
 p10k configure
 ```
-
-</Codecopy>
 
 應用修改 `~/.zshrc` 之後，因為第一次使用 Powerlevel10k，會自動啟動設定。
 
@@ -326,16 +233,12 @@ p10k configure
 
 或是用指令的方式下載：
 
-<Codecopy>
-
 ```shell
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf &&
 wget https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf
 ```
-
-</Codecopy>
 
 下載完成打開字型檔案，點擊 Install Font 。
 

@@ -41,7 +41,7 @@
           <img class="flex-initial w-20 h-20 ml-auto rounded-xl" alt="owner_avatar" src={info.owner.avatar_url} />
         </div>
         <div class="-ml-2 card-actions">
-          <button class="btn btn-sm btn-ghost">
+          <button aria-label="github button" class="btn btn-sm btn-ghost">
             <svg
               aria-hidden="true"
               viewBox="0 0 16 16"

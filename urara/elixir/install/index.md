@@ -16,8 +16,7 @@ tags:
   - 2022
 ---
 
-<script lang="ts">
-  import Codecopy from '$lib/components/extra/codecopy.svelte'
+<script lang="ts">  
 </script>
 
 ## Windows 安裝 Elixir
@@ -26,13 +25,9 @@ tags:
 
 不然的話，直接使用 [choco](https://community.chocolatey.org/packages/Elixir) 安裝即可。後續就可以直接略過了。
 
-<Codecopy>
-
 ```shell
 sudo choco install elixir -y
 ```
-
-</Codecopy>
 
 ## Ubunut & macOS 安裝 asdf
 
@@ -44,23 +39,15 @@ asdf 是一個軟體版本管理工具，可以讓你安裝不同版本的套件
 
 安裝前置需求
 
-<Codecopy>
-
 ```shell
 sudo apt-get install curl git -y
 ```
 
-</Codecopy>
-
 安裝 asdf
-
-<Codecopy>
 
 ```shell
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 ```
-
-</Codecopy>
 
 #### ZSH & Git
 
@@ -68,27 +55,17 @@ git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 
 打開 zsh 設定檔
 
-<Codecopy>
-
 ```shell
 vi ~/.zshrc
 ```
 
-</Codecopy>
-
 `~/.zshrc` 新增 asdf 插件到 plugins
-
-<Codecopy>
 
 ```shell title="~/.zshrc"
 plugins=(asdf ...)
 ```
 
-</Codecopy>
-
 `~/.zshrc` 文件最底新增 asdf 自動完成 (auto-completion)
-
-<Codecopy>
 
 ```shell title="~/.zshrc"
 # append completions to fpath
@@ -97,21 +74,15 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 ```
 
-</Codecopy>
-
 更多資訊，請參考 "[官方安裝流程 #ZSH & Git](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf)"。
 
 ### macOS
 
 安裝 asdf
 
-<Codecopy>
-
 ```shell
 brew install asdf
 ```
-
-</Codecopy>
 
 #### ZSH & Homebrew
 
@@ -119,23 +90,15 @@ brew install asdf
 
 打開 zsh 設定檔
 
-<Codecopy>
-
 ```shell
 vi ~/.zshrc
 ```
 
-</Codecopy>
-
 `~/.zshrc` 新增 asdf 插件到 plugins
-
-<Codecopy>
 
 ```shell title="~/.zshrc"
 plugins=(asdf ...)
 ```
-
-</Codecopy>
 
 更多資訊，請參考 "[官方安裝流程 #ZSH & Homebrew](https://asdf-vm.com/guide/getting-started.html#_3-install-asdf)"。
 
@@ -143,43 +106,27 @@ plugins=(asdf ...)
 
 安裝需求套件 unzip
 
-<Codecopy>
-
 ```shell
 sudo apt-get install unzip -y
 ```
 
-</Codecopy>
-
 新增 Elixir 插件
-
-<Codecopy>
 
 ```shell
 asdf plugin add elixir
 ```
 
-</Codecopy>
-
 安裝 Elixir 最新版
-
-<Codecopy>
 
 ```shell
 asdf install elixir latest
 ```
 
-</Codecopy>
-
 設定全域使用的 Elixir 版本
-
-<Codecopy>
 
 ```shell
 asdf global elixir latest
 ```
-
-</Codecopy>
 
 有任何 asdf-elixir 插件的問題，請查看 [asdf-elixir 來源庫](https://github.com/asdf-vm/asdf-elixir)。
 
@@ -187,106 +134,66 @@ asdf global elixir latest
 
 安裝 Elixir 特定版本
 
-<Codecopy>
-
 ```shell
 asdf install elixir 1.13.4
 ```
 
-</Codecopy>
-
 設定本地區域使用的 Elixir 版本
 (必須是有安裝過的版本)
-
-<Codecopy>
 
 ```shell
 asdf local elixir 1.13.4
 ```
 
-</Codecopy>
-
 顯示目前已安裝的 Elixir 版本
-
-<Codecopy>
 
 ```shell
 asdf list elixir
 ```
 
-</Codecopy>
-
 顯示所有可安裝的 Elixir 版本
-
-<Codecopy>
 
 ```shell
 asdf list all elixir
 ```
 
-</Codecopy>
-
 顯示目前設定所有套件使用的版本
-
-<Codecopy>
 
 ```shell
 asdf curren
 ```
 
-</Codecopy>
-
 查看更多指令
-
-<Codecopy>
 
 ```shell
 asdf help
 ```
 
-</Codecopy>
-
 ## (建議) 使用 asdf 安裝 Erlang
 
 安裝所有前置套件 (適用於 Ubuntu 20.04 LTS 以上)
-
-<Codecopy>
 
 ```shell
 sudo apt-get install build-essential autoconf m4 libncurses5-dev libwxgtk3.0-gtk3-dev libwxgtk-webview3.0-gtk3-dev libgl1-mesa-dev libglu1-mesa-dev libpng-dev libssh-dev unixodbc-dev xsltproc fop libxml2-utils libncurses-dev openjdk-11-jdk -y
 ```
 
-</Codecopy>
-
 新增 Erlang 插件
-
-<Codecopy>
 
 ```shell
 asdf plugin add erlang
 ```
 
-</Codecopy>
-
 安裝 Erlang 最新版
-
-<Codecopy>
 
 ```shell
 asdf install erlang latest
 ```
 
-</Codecopy>
-
 設定全域使用的 Erlang 版本
-
-<Codecopy>
 
 ```shell
 asdf global erlang latest
 ```
-
-</Codecopy>
 
 有任何 asdf-erlang 插件的問題，請查看 [asdf-erlang 來源庫](https://github.com/asdf-vm/asdf-erlang)。
 
@@ -294,17 +201,11 @@ asdf global erlang latest
 
 ### Erlang Shell 查看版本
 
-<Codecopy>
-
 ```shell
 erl
 ```
 
-</Codecopy>
-
 結果類似於
-
-<Codecopy>
 
 ```shell
 Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
@@ -312,8 +213,6 @@ Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-thr
 Eshell V13.0  (abort with ^G)
 1>
 ```
-
-</Codecopy>
 
 ### 離開 Erlang Shell
 
@@ -323,17 +222,11 @@ Eshell V13.0  (abort with ^G)
 
 ### 查看 Elixir 版本
 
-<Codecopy>
-
 ```shell
 elixir -v
 ```
 
-</Codecopy>
-
 結果類似於
-
-<Codecopy>
 
 ```shell
 Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
@@ -341,23 +234,15 @@ Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-thr
 Elixir 1.13.4 (compiled with Erlang/OTP 25)
 ```
 
-</Codecopy>
-
 ### 進入 Elixir Shell
 
 進入互動式終端機 (iex)
-
-<Codecopy>
 
 ```shell
 iex
 ```
 
-</Codecopy>
-
 結果類似於
-
-<Codecopy>
 
 ```shell
 Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-threads:1] [jit:ns]
@@ -365,8 +250,6 @@ Erlang/OTP 25 [erts-13.0] [source] [64-bit] [smp:12:12] [ds:12:12:10] [async-thr
 Interactive Elixir (1.13.4) - press Ctrl+C to exit (type h() ENTER for help)
 iex(1)>
 ```
-
-</Codecopy>
 
 離開方式如同 Erlang Shell。
 

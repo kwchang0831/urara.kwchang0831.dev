@@ -12,8 +12,7 @@ tags:
   - 2021
 ---
 
-<script lang="ts">
-  import Codecopy from '$lib/components/extra/codecopy.svelte'
+<script lang="ts">  
 </script>
 
 ## 開頭
@@ -32,13 +31,9 @@ tags:
 
 ## 查詢可用 Linux Distro
 
-<Codecopy>
-
 ```shell
 wsl -l -o
 ```
-
-</Codecopy>
 
 列表裡並沒有 Centos7 可以安裝，沒關係，我們去找可供 WSL 安裝的 Image 檔案。
 
@@ -80,25 +75,17 @@ https://github.com/mishamosher/CentOS-WSL/releases/tag/7.9-2009
 
 ## 更新 Centos
 
-<Codecopy>
-
 ```shell
 yum -y update && yum -y upgrade
 ```
-
-</Codecopy>
 
 ## 解除安裝 Centos
 
 如果想要解除安裝，於 Centos 7 存放檔案的資料夾開啟 Windows Terminal ，輸入以下指令：
 
-<Codecopy>
-
 ```shell
 ./Centos7.exe clean
 ```
-
-</Codecopy>
 
 ![fig06](centos/fig06.avif)
 
@@ -111,32 +98,20 @@ NeoFetch 是一個顯示電腦配置的小工具。
 
 1.安装 epel-release
 
-<Codecopy>
-
 ```shell
 yum install epel-release -y
 ```
 
-</Codecopy>
-
 2.增加第三方來源庫
-
-<Codecopy>
 
 ```shell
 curl -o /etc/yum.repos.d/konimex-neofetch-epel-7.repo https://copr.fedorainfracloud.org/coprs/konimex/neofetch/repo/epel-7/konimex-neofetch-epel-7.repo
 ```
 
-</Codecopy>
-
 3.安裝 NeoFetch
-
-<Codecopy>
 
 ```shell
 yum install neofetch -y
 ```
-
-</Codecopy>
 
 ## 完結

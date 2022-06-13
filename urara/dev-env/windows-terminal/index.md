@@ -12,8 +12,7 @@ tags:
   - 2021
 ---
 
-<script lang="ts">
-  import Codecopy from '$lib/components/extra/codecopy.svelte'
+<script lang="ts">  
 </script>
 
 ## 開頭
@@ -34,23 +33,15 @@ https://www.microsoft.com/zh-tw/p/windows-terminal/9n0dx20hk701?rtc=1#activetab=
 
 以有系統管理員權限的 `cmd` 或 `powershell` 執行以下
 
-<Codecopy>
-
 ```shell
 choco install microsoft-windows-terminal -y
 ```
 
-</Codecopy>
-
 若還沒有安裝過 `Chocolatey` ，打開 `powershell` 執行以下指令進行安裝
-
-<Codecopy>
 
 ```shell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
-
-</Codecopy>
 
 ## 更改顯示語言
 
