@@ -47,6 +47,17 @@ Run dev server @ `localhost:3000`
 pnpm dev
 ```
 
+>! For Windows' Users
+
+Modify `package.json`, use `set` instead of `export` for all places appropriate.
+
+```diff
+-   "dev:kit": "export NODE_OPTIONS='--max_old_space_size=20480' && MODE=development svelte-kit dev --host",
++   "dev:kit": "set NODE_OPTIONS='--max_old_space_size=20480' && MODE=development svelte-kit dev --host",
+```
+
+Or, you may consider using `cross-env` from [kentcdodds/cross-env](https://github.com/kentcdodds/cross-env) ( [NPM: cross-env](https://www.npmjs.com/package/cross-env) ).
+
 ## Local Build
 
 ```shell
@@ -57,11 +68,27 @@ pnpm build
 pnpm preview
 ```
 
-## Build & Deploy onto Netlify
+## Create & Build & Deploy onto Netlify
+
+### Create / Link existing site
+
+```shell
+netlify sites:create
+```
+
+or
+
+```shell
+netlify link
+```
+
+### Local Build for Netlify
 
 ```shell
 netlify build
 ```
+
+### Deploy
 
 ```shell
 netlify deploy
@@ -78,7 +105,6 @@ netlify deploy --prod
 
 ## Useful Links
 
-- svelte-magnifier: [https://github.com/ambarvm/svelte-magnifier](https://github.com/ambarvm/svelte-magnifier)
 - avif-cli: [https://github.com/lovell/avif-cli](https://github.com/lovell/avif-cli)
 - icons: [https://icones.js.org/](https://icones.js.org/)
 
