@@ -47,7 +47,7 @@ Run dev server @ `localhost:3000`
 pnpm dev
 ```
 
->! For Windows' Users
+> ! For Windows' Users
 
 Modify `package.json`, use `set` instead of `export` for all places appropriate.
 

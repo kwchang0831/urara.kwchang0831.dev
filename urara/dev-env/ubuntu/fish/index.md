@@ -1,6 +1,6 @@
 ---
-title: Ubuntu 安裝 Fish + Oh My Fish + Tide 與各種插件
-description: 本篇文章紀錄安裝 Fish Shell 與各種好用插件讓開發環境更高效的流程。 包含安裝 Fish, Oh My Fish, Fisher, Tide, Z, Sponge, autopair.fish, fzf.fish, fzf, fd, Bat, asdf 自動完成。
+title: Ubuntu 安裝 Fish Shell + Oh My Fish + Tide 與各種插件
+description: 本篇文章紀錄安裝 Fish Shell 與各種好用插件讓開發環境更高效的流程。 包含安裝 Fish Shell, Oh My Fish, Fisher, Tide, Z, Sponge, autopair.fish, fzf.fish, fzf, fd, Bat, asdf 自動完成。
 summary: 簡單好上手的 Shell，自帶自動完成功能，bash 或 zsh 用膩了可以來試試看
 published: 2022-05-20
 cover: /dev-env/ubuntu/fish/cover.webp
@@ -17,13 +17,13 @@ tags:
   import Infobox from '$lib/components/extra/infobox.svelte'
 </script>
 
-[Slant](https://www.slant.co/topics/513/~best-unix-shells) 2022 年票選第一推薦的 Unix Shell 是 Fish shell。 如果你剛好 Zsh 也用膩了，不如一起來嘗試看看 Fish shell。
+[Slant](https://www.slant.co/topics/513/~best-unix-shells) 2022 年票選第一推薦的 Unix Shell 是 Fish Shell。 如果你剛好 Zsh 也用膩了，不如一起來嘗試看看 Fish Shell。
 
 ## 開頭
 
 本篇文章會安裝以下：
 
-- [Fish](https://fishshell.com/)
+- [Fish Shell](https://fishshell.com/)
 - [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
 - [Fisher](https://github.com/jorgebucaran/fisher)
 - [Tide](https://github.com/IlanCosman/tide)
@@ -271,6 +271,14 @@ shell 輸入
 
 ```shell
 sudo ln -s $(which batcat) /usr/local/bin/bat
+```
+
+### 安裝 fzf.fish
+
+shell 輸入
+
+```shell
+fisher install PatrickF1/fzf.fish
 ```
 
 ## 設定 asdf 自動完成
