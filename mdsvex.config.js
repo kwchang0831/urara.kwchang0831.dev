@@ -75,7 +75,7 @@ export default /** @type {Parameters<typeof import("mdsvex").mdsvex>[0]} */ {
         throw new Error(`Could not parse the codefence for this code sample \n${code}`)
       }
       if (fence?.twoslash === true) twoslash = runTwoSlash(code, lang)
-      return `{@html \`${escapeSvelte(
+      return `{@html String.raw\`${escapeSvelte(
         `<codecopy>` +
           renderCodeToHTML(code, lang, fence ?? {}, {}, await createShikiHighlighter({ theme: 'github-dark' }), twoslash) +
           `</codecopy>`
