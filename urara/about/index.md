@@ -24,14 +24,6 @@ flags:
 
 雖然，在這找不到成功；但，成功最終會回來找他媽的。
 
-### 老實說
-
-我經常會邊看別人的文章邊抱怨，很難 Follow。心理總覺得要是我一定不會寫這樣爛。可惜事與願違。實際開始寫之後，發現上我文章也寫得非常爛。我經常會跳躍式思考，最後根本不知道在寫甚麼。
-
-但為了進步，為了能夠更確實地把腦中的想法具現化。多練習是必須的。
-
-所以我開始寫這些失敗的文章。我深信，我再爛也不會比只會動嘴巴然後甚麼都做不到的還爛，是吧?
-
 ## About Me
 
 A failure: Mother of success.  
@@ -40,29 +32,6 @@ Having fun is all it matters. YOLO!
 
 Never seeking success.  
 That’s all a loser hope for; A successful loser.
-
-### A Little Story
-
-> - What is your greatest failure, and what did you learn from it?
-> - Tell me about a time you were successful?
-
-The above questions are frequently asked during interviews. These questions help interviewers analyze the behavior of interviewees.
-
-However, it only makes sense if the questions were asked from qualified individuals. If you have worked with qualified and brilliant interviewers, you could probably tell the differences.
-
-||Some incompetent interviewers have neither related background knowledge nor sufficient experience to analyze behavior from interviewees. The reason they asked those questions was only because other interviewers at top end companies have done it.||
-
-||You trusted their professionalism, but they judged your definition of success and failure. They looked at you with undisguised contempt and showed you no respect. Later, you find out that with their level of education background and experience, it is absurd that you were scorned.||
-
-||The truth is that any person could split out the same questions pretending to be professional. One can just sit there being ignorantly arrogant and acting superior only because he/she already have his/her butt on that position.||
-
-||What a waste of resource and time! What a shame!||
-
-So, I would say...
-
-||Just let those incompetent people judge all they want with their uneducated and flawed guesses. Do not let them intimidate you. What can you expect from a dog but a bark?||
-
-||Whatever they say, you do not prove a person wrong by cutting out his/her tongue. Moreover, you have nothing to prove to anyone. Your value shall never be judged by external validation.||
 
 Just do your best all the time and try to exceed yourself. Be proud of yourself and be humble to others.
 
